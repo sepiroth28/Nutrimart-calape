@@ -1,11 +1,11 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmMenu 
-   BorderStyle     =   0  'None
-   ClientHeight    =   10515
-   ClientLeft      =   405
-   ClientTop       =   1395
-   ClientWidth     =   16575
+   BorderStyle     =   1  'Fixed Single
+   ClientHeight    =   9855
+   ClientLeft      =   450
+   ClientTop       =   1770
+   ClientWidth     =   19425
    FillStyle       =   0  'Solid
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -20,9 +20,58 @@ Begin VB.Form frmMenu
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   10515
-   ScaleWidth      =   16575
-   ShowInTaskbar   =   0   'False
+   ScaleHeight     =   9855
+   ScaleWidth      =   19425
+   Begin VB.Frame Frame1 
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   6915
+      Left            =   16620
+      TabIndex        =   2
+      Top             =   1200
+      Width           =   2715
+      Begin VB.CommandButton cmdStockout 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000007&
+         Height          =   1035
+         Left            =   240
+         Picture         =   "frmMenu.frx":0000
+         Style           =   1  'Graphical
+         TabIndex        =   40
+         TabStop         =   0   'False
+         Top             =   1680
+         Visible         =   0   'False
+         Width           =   2295
+      End
+      Begin VB.CommandButton cmdAgent 
+         Appearance      =   0  'Flat
+         Caption         =   "Manage &Agent"
+         Height          =   615
+         Left            =   240
+         TabIndex        =   38
+         TabStop         =   0   'False
+         Top             =   960
+         Width           =   2295
+      End
+      Begin VB.CommandButton cmdClose 
+         Appearance      =   0  'Flat
+         Caption         =   "Close"
+         Height          =   615
+         Left            =   240
+         TabIndex        =   37
+         TabStop         =   0   'False
+         Top             =   300
+         Visible         =   0   'False
+         Width           =   2295
+      End
+   End
    Begin VB.CommandButton cmdCancelTransaction 
       BackColor       =   &H0000FF00&
       BeginProperty Font 
@@ -36,10 +85,10 @@ Begin VB.Form frmMenu
       EndProperty
       Height          =   1035
       Left            =   60
-      Picture         =   "frmMenu.frx":0000
+      Picture         =   "frmMenu.frx":65E1
       Style           =   1  'Graphical
-      TabIndex        =   36
-      Top             =   1260
+      TabIndex        =   27
+      Top             =   4800
       Width           =   2295
    End
    Begin MSComctlLib.ImageList ImageList1 
@@ -55,43 +104,42 @@ Begin VB.Form frmMenu
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   7
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":6626
+            Picture         =   "frmMenu.frx":CC07
             Key             =   ""
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":CE57
+            Picture         =   "frmMenu.frx":13438
             Key             =   ""
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":14B89
+            Picture         =   "frmMenu.frx":1B16A
             Key             =   ""
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":1BB2D
+            Picture         =   "frmMenu.frx":2210E
             Key             =   ""
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":227E9
+            Picture         =   "frmMenu.frx":28DCA
             Key             =   ""
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":28F11
+            Picture         =   "frmMenu.frx":2F4F2
             Key             =   ""
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":2F502
+            Picture         =   "frmMenu.frx":35AE3
             Key             =   ""
          EndProperty
       EndProperty
    End
    Begin MSComctlLib.Toolbar Toolbar1 
-      Align           =   1  'Align Top
       Height          =   1230
       Left            =   0
-      TabIndex        =   35
-      Top             =   0
-      Width           =   16575
-      _ExtentX        =   29236
+      TabIndex        =   26
+      Top             =   9900
+      Width           =   16635
+      _ExtentX        =   29342
       _ExtentY        =   2170
       ButtonWidth     =   4154
       ButtonHeight    =   2011
@@ -127,15 +175,6 @@ Begin VB.Form frmMenu
          EndProperty
       EndProperty
       BorderStyle     =   1
-      Begin VB.CommandButton cmdViewSales 
-         Height          =   1095
-         Left            =   14160
-         Picture         =   "frmMenu.frx":365DB
-         Style           =   1  'Graphical
-         TabIndex        =   40
-         Top             =   60
-         Width           =   2415
-      End
    End
    Begin VB.PictureBox Picture1 
       Appearance      =   0  'Flat
@@ -143,12 +182,93 @@ Begin VB.Form frmMenu
       ForeColor       =   &H80000008&
       Height          =   9855
       Left            =   0
-      Picture         =   "frmMenu.frx":37E6D
+      Picture         =   "frmMenu.frx":3CBBC
       ScaleHeight     =   9825
       ScaleWidth      =   16545
-      TabIndex        =   12
-      Top             =   660
+      TabIndex        =   3
+      Top             =   0
       Width           =   16575
+      Begin VB.CommandButton cmdViewSales 
+         Height          =   1215
+         Left            =   60
+         Picture         =   "frmMenu.frx":5EC5C
+         Style           =   1  'Graphical
+         TabIndex        =   39
+         Top             =   3360
+         Width           =   2835
+      End
+      Begin VB.CommandButton cmdInventory 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000007&
+         Height          =   1095
+         Left            =   2340
+         Picture         =   "frmMenu.frx":604EE
+         Style           =   1  'Graphical
+         TabIndex        =   36
+         TabStop         =   0   'False
+         Top             =   2220
+         Width           =   2295
+      End
+      Begin VB.CommandButton cmdPayment 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000007&
+         Height          =   1095
+         Left            =   60
+         Picture         =   "frmMenu.frx":66D0F
+         Style           =   1  'Graphical
+         TabIndex        =   35
+         TabStop         =   0   'False
+         Top             =   2220
+         Width           =   2295
+      End
+      Begin VB.CommandButton cmdView 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000007&
+         Height          =   1095
+         Left            =   2340
+         Picture         =   "frmMenu.frx":6D9BB
+         Style           =   1  'Graphical
+         TabIndex        =   34
+         TabStop         =   0   'False
+         Top             =   1140
+         Width           =   2295
+      End
+      Begin VB.CommandButton cmdStockIn 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000007&
+         Height          =   1095
+         Left            =   60
+         Picture         =   "frmMenu.frx":74A84
+         Style           =   1  'Graphical
+         TabIndex        =   33
+         TabStop         =   0   'False
+         Top             =   1140
+         Width           =   2355
+      End
+      Begin VB.CommandButton cmdCustomer 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000007&
+         Height          =   1095
+         Left            =   2340
+         Picture         =   "frmMenu.frx":7B19C
+         Style           =   1  'Graphical
+         TabIndex        =   32
+         TabStop         =   0   'False
+         Top             =   60
+         Width           =   2295
+      End
+      Begin VB.CommandButton cmdManageItem 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000007&
+         Height          =   1095
+         Left            =   60
+         Picture         =   "frmMenu.frx":82EBE
+         Style           =   1  'Graphical
+         TabIndex        =   31
+         TabStop         =   0   'False
+         Top             =   60
+         Width           =   2295
+      End
       Begin VB.Timer Timer1 
          Interval        =   60000
          Left            =   180
@@ -169,7 +289,7 @@ Begin VB.Form frmMenu
          Height          =   372
          Left            =   14040
          Style           =   1  'Graphical
-         TabIndex        =   31
+         TabIndex        =   22
          Top             =   1800
          Width           =   2232
       End
@@ -188,7 +308,7 @@ Begin VB.Form frmMenu
          Height          =   372
          Left            =   11820
          Style           =   1  'Graphical
-         TabIndex        =   30
+         TabIndex        =   21
          Top             =   1800
          Width           =   2172
       End
@@ -220,7 +340,7 @@ Begin VB.Form frmMenu
          ForeColor       =   &H80000008&
          Height          =   435
          Left            =   5340
-         TabIndex        =   29
+         TabIndex        =   20
          Top             =   6900
          Width           =   2592
       End
@@ -252,7 +372,7 @@ Begin VB.Form frmMenu
          Left            =   5100
          ScaleHeight     =   1725
          ScaleWidth      =   5085
-         TabIndex        =   23
+         TabIndex        =   14
          Top             =   7440
          Width           =   5115
          Begin VB.TextBox txtCustomers 
@@ -268,7 +388,7 @@ Begin VB.Form frmMenu
             EndProperty
             Height          =   456
             Left            =   300
-            TabIndex        =   25
+            TabIndex        =   16
             Top             =   420
             Width           =   3855
          End
@@ -276,7 +396,7 @@ Begin VB.Form frmMenu
             Caption         =   "..."
             Height          =   432
             Left            =   4200
-            TabIndex        =   24
+            TabIndex        =   15
             Top             =   420
             Width           =   492
          End
@@ -294,7 +414,7 @@ Begin VB.Form frmMenu
             ForeColor       =   &H000000C0&
             Height          =   270
             Left            =   2100
-            TabIndex        =   33
+            TabIndex        =   24
             Top             =   960
             Width           =   2670
          End
@@ -313,7 +433,7 @@ Begin VB.Form frmMenu
             EndProperty
             Height          =   210
             Left            =   360
-            TabIndex        =   32
+            TabIndex        =   23
             Top             =   960
             Width           =   1560
          End
@@ -332,7 +452,7 @@ Begin VB.Form frmMenu
             EndProperty
             Height          =   216
             Left            =   1140
-            TabIndex        =   28
+            TabIndex        =   19
             Top             =   120
             Width           =   912
          End
@@ -351,7 +471,7 @@ Begin VB.Form frmMenu
             EndProperty
             Height          =   210
             Left            =   360
-            TabIndex        =   27
+            TabIndex        =   18
             Top             =   1320
             Width           =   675
          End
@@ -369,7 +489,7 @@ Begin VB.Form frmMenu
             ForeColor       =   &H000000C0&
             Height          =   270
             Left            =   1140
-            TabIndex        =   26
+            TabIndex        =   17
             Top             =   1260
             Width           =   2130
          End
@@ -382,7 +502,7 @@ Begin VB.Form frmMenu
          Left            =   10260
          ScaleHeight     =   1725
          ScaleWidth      =   3285
-         TabIndex        =   20
+         TabIndex        =   11
          Top             =   7440
          Width           =   3315
          Begin VB.Label Label7 
@@ -401,7 +521,7 @@ Begin VB.Form frmMenu
             EndProperty
             Height          =   210
             Left            =   60
-            TabIndex        =   22
+            TabIndex        =   13
             Top             =   60
             Width           =   3150
          End
@@ -422,7 +542,7 @@ Begin VB.Form frmMenu
             ForeColor       =   &H000000C0&
             Height          =   270
             Left            =   60
-            TabIndex        =   21
+            TabIndex        =   12
             Top             =   720
             Width           =   3255
          End
@@ -431,7 +551,7 @@ Begin VB.Form frmMenu
          Caption         =   "PROCESS"
          Height          =   1755
          Left            =   13620
-         TabIndex        =   19
+         TabIndex        =   10
          Top             =   7440
          Width           =   2655
       End
@@ -448,7 +568,7 @@ Begin VB.Form frmMenu
          EndProperty
          Height          =   612
          Left            =   14400
-         TabIndex        =   17
+         TabIndex        =   8
          Top             =   6000
          Width           =   1872
       End
@@ -456,14 +576,14 @@ Begin VB.Form frmMenu
          Appearance      =   0  'Flat
          Height          =   612
          Left            =   6480
-         TabIndex        =   15
+         TabIndex        =   6
          Top             =   6000
          Width           =   7872
       End
       Begin MSComctlLib.ListView lsvItemsInCart 
          Height          =   3555
          Left            =   5340
-         TabIndex        =   14
+         TabIndex        =   5
          Top             =   2220
          Width           =   10935
          _ExtentX        =   19288
@@ -545,7 +665,7 @@ Begin VB.Form frmMenu
          Height          =   240
          Left            =   660
          MousePointer    =   99  'Custom
-         TabIndex        =   39
+         TabIndex        =   30
          Top             =   8700
          Width           =   1425
       End
@@ -565,7 +685,7 @@ Begin VB.Form frmMenu
          ForeColor       =   &H00000000&
          Height          =   285
          Left            =   4560
-         TabIndex        =   38
+         TabIndex        =   29
          Top             =   6900
          Width           =   60
       End
@@ -573,7 +693,7 @@ Begin VB.Form frmMenu
          Height          =   660
          Left            =   2220
          MousePointer    =   99  'Custom
-         Picture         =   "frmMenu.frx":59F0D
+         Picture         =   "frmMenu.frx":89E52
          Top             =   8520
          Width           =   2250
       End
@@ -593,7 +713,7 @@ Begin VB.Form frmMenu
          ForeColor       =   &H00000000&
          Height          =   285
          Left            =   1680
-         TabIndex        =   37
+         TabIndex        =   28
          Top             =   7980
          Width           =   780
       End
@@ -612,7 +732,7 @@ Begin VB.Form frmMenu
          ForeColor       =   &H00000080&
          Height          =   216
          Left            =   2940
-         TabIndex        =   34
+         TabIndex        =   25
          Top             =   7080
          Width           =   48
       End
@@ -632,7 +752,7 @@ Begin VB.Form frmMenu
          ForeColor       =   &H00000000&
          Height          =   270
          Left            =   360
-         TabIndex        =   18
+         TabIndex        =   9
          Top             =   6900
          Width           =   690
       End
@@ -642,7 +762,7 @@ Begin VB.Form frmMenu
          Caption         =   "ITEMS"
          Height          =   270
          Left            =   5340
-         TabIndex        =   16
+         TabIndex        =   7
          Top             =   6180
          Width           =   750
       End
@@ -669,117 +789,9 @@ Begin VB.Form frmMenu
          EndProperty
          Height          =   1335
          Left            =   13860
-         TabIndex        =   13
+         TabIndex        =   4
          Top             =   480
          Width           =   2475
-      End
-   End
-   Begin VB.Frame Frame1 
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   11.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   9135
-      Left            =   14580
-      TabIndex        =   2
-      Top             =   10200
-      Width           =   2775
-      Begin VB.CommandButton cmdAgent 
-         Appearance      =   0  'Flat
-         Caption         =   "Manage &Agent"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   11
-         TabStop         =   0   'False
-         Top             =   1800
-         Width           =   2295
-      End
-      Begin VB.CommandButton cmdClose 
-         Appearance      =   0  'Flat
-         Caption         =   "Close"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   10
-         TabStop         =   0   'False
-         Top             =   6120
-         Visible         =   0   'False
-         Width           =   2295
-      End
-      Begin VB.CommandButton cmdStockout 
-         Appearance      =   0  'Flat
-         Caption         =   "Stock &Out"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   9
-         TabStop         =   0   'False
-         Top             =   5400
-         Visible         =   0   'False
-         Width           =   2295
-      End
-      Begin VB.CommandButton cmdInventory 
-         Appearance      =   0  'Flat
-         Caption         =   "&Inventory"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   8
-         TabStop         =   0   'False
-         Top             =   4740
-         Width           =   2295
-      End
-      Begin VB.CommandButton cmdPayment 
-         Appearance      =   0  'Flat
-         Caption         =   "&Payment"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   7
-         TabStop         =   0   'False
-         Top             =   3960
-         Width           =   2295
-      End
-      Begin VB.CommandButton cmdView 
-         Appearance      =   0  'Flat
-         Caption         =   "&View"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   6
-         TabStop         =   0   'False
-         Top             =   3240
-         Width           =   2295
-      End
-      Begin VB.CommandButton cmdStockIn 
-         Appearance      =   0  'Flat
-         Caption         =   "Stock &In"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   5
-         TabStop         =   0   'False
-         Top             =   2520
-         Width           =   2295
-      End
-      Begin VB.CommandButton cmdCustomer 
-         Appearance      =   0  'Flat
-         Caption         =   "Manage &Customer"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   4
-         TabStop         =   0   'False
-         Top             =   1080
-         Width           =   2295
-      End
-      Begin VB.CommandButton cmdManageItem 
-         Appearance      =   0  'Flat
-         Caption         =   "Manage &Item"
-         Height          =   615
-         Left            =   240
-         TabIndex        =   3
-         TabStop         =   0   'False
-         Top             =   360
-         Width           =   2295
       End
    End
 End
