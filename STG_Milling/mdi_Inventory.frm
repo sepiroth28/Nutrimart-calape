@@ -226,6 +226,10 @@ Private Sub mnu_exit_Click()
     End
 End Sub
 
+Private Sub mnu_manage_agent_Click()
+frmAgentForm.Show
+End Sub
+
 Private Sub mnu_manage_manufacturers_Click()
 frmManageManufacturers.Show 1
 End Sub
