@@ -5,7 +5,7 @@ Begin VB.Form frmMenu
    ClientHeight    =   9855
    ClientLeft      =   450
    ClientTop       =   1770
-   ClientWidth     =   19425
+   ClientWidth     =   16545
    FillStyle       =   0  'Solid
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -21,7 +21,7 @@ Begin VB.Form frmMenu
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    ScaleHeight     =   9855
-   ScaleWidth      =   19425
+   ScaleWidth      =   16545
    Begin VB.Frame Frame1 
       BeginProperty Font 
          Name            =   "Tahoma"
