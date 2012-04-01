@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmViewSalesInDetails 
    BackColor       =   &H00C8761C&
    Caption         =   "Detail Items"
@@ -356,7 +356,7 @@ Dim s As New Sales
         lblCustomerName.Caption = s.sold_to.customers_name
         lblAddress.Caption = s.sold_to.customers_add
         
-        lblDate.Caption = FormatDateTime(s.date_transact, vbLongDate)
+            lblDate.Caption = FormatDateTime(s.date_transact, vbLongDate)
         Set cart = s.items_sold
         On Error Resume Next
          Dim amount_of_items As Double

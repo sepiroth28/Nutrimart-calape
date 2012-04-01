@@ -42,3 +42,32 @@ Sub loadPaymentDetailsOnListView(lsv As ListView, details_date As Date)
         Loop
     End If
 End Sub
+
+Sub loadPaymentTotalsInfoReceivedBy(lsv As ListView, payment_data As Date)
+    Dim sql As String
+    Dim rs As New ADODB.Recordset
+    Dim list As ListItem
+    
+    sql = "SELECT received_by,sales_order_no,SUM(amount) as totals FROM `payment_records` where payment_date = '" & Format(payment_data, "yyyy-mm-dd") & "'  group by received_by"
+    Set rs = db.execute(sql)
+    lsv.ListItems.Clear
+    
+    If rs.RecordCount > 0 Then
+        Do Until rs.EOF
+            Set list = lsv.ListItems.Add(, , rs.Fields("received_by").Value)
+            list.SubItems(1) = FormatNumber(rs.Fields("totals").Value, 2)
+            list.ListSubItems(1).ForeColor = vbRed
+        rs.MoveNext
+        Loop
+    End If
+    
+End Sub
+
+
+
+
+
+
+
+
+
