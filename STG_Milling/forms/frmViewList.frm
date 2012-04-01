@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmViewList 
    BackColor       =   &H80000007&
    Caption         =   "View List"
@@ -69,7 +69,6 @@ Begin VB.Form frmViewList
          NumItems        =   0
       End
       Begin VB.Label lblLstOfAll 
-         AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
          Caption         =   "List of all Items"
          BeginProperty Font 
@@ -82,10 +81,10 @@ Begin VB.Form frmViewList
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   4680
+         Left            =   120
          TabIndex        =   4
          Top             =   120
-         Width           =   2160
+         Width           =   12480
       End
       Begin VB.Line Line1 
          X1              =   0
@@ -170,4 +169,15 @@ Sub loadToCustomers()
             lsv_ViewList.ColumnHeaders(2).width = 5000
             lsv_ViewList.ColumnHeaders(3).width = 5000
             lsv_ViewList.ColumnHeaders(4).width = 2000
+End Sub
+
+Private Sub Form_Resize()
+Picture1.width = Me.ScaleWidth - 250
+Picture1.Height = Me.ScaleHeight - 200
+
+End Sub
+
+Private Sub Picture1_Resize()
+lsv_ViewList.width = Picture1.ScaleWidth - 300
+lsv_ViewList.Height = Picture1.ScaleHeight - 2000
 End Sub
