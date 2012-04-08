@@ -315,7 +315,7 @@ Dim SOHistory As New Sales
 Private Sub Form_Load()
 SOHistory.loadSalesOrder selectedSOForHistory
 lblCustomerName.Caption = SOHistory.sold_to.customers_name
-lblAddress.Caption = SOHistory.sold_to.customers_add
+lbladdress.Caption = SOHistory.sold_to.customers_add
 lblContact.Caption = SOHistory.sold_to.customers_number
 lblTechnician.Caption = SOHistory.sold_to.mvaragent.agent_name
 Call loadSalesOrderOfCustomerToListview(SOHistory.sold_to.customers_id, lsvHistory)
