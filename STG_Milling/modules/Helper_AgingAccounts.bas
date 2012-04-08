@@ -12,7 +12,7 @@ sql = "SELECT " & _
         " INNER JOIN account_receivable acr ON sot.sales_order_no = acr.sales_order_no " & _
         " INNER JOIN customers c ON sot.responsible_customer = c.customers_id " & _
         " where DATE_FORMAT(delivery_date,'%m') " & _
-        " between DATE_FORMAT(CURDATE(),'%m') - " & diff_month & " AND DATE_FORMAT(CURDATE(),'%m')" & _
+        " < DATE_FORMAT(CURDATE(),'%m') - " & diff_month & " " & _
         " AND acr.remarks = 'unsettled' " & _
         " group by sot.responsible_customer "
         
