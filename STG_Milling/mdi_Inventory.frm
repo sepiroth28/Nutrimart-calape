@@ -60,6 +60,9 @@ Begin VB.MDIForm mdi_Inventory
             Caption         =   "Account Receivable Sales"
          End
       End
+      Begin VB.Menu mnu_view_aging_account 
+         Caption         =   "View AGING ACCOUNT"
+      End
    End
    Begin VB.Menu mnu_sub 
       Caption         =   "sub_menu"
@@ -240,6 +243,10 @@ End Sub
 
 Private Sub mnu_sales_adjustment_Click()
 frmAdjustSaleTransaction.Show
+End Sub
+
+Private Sub mnu_view_aging_account_Click()
+frmAgingAccounts.Show
 End Sub
 
 Private Sub mnu_view_sales_Click()
