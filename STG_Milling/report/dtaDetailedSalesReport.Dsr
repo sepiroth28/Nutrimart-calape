@@ -1,19 +1,19 @@
 VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport 
    Caption         =   "DataReport1"
-   ClientHeight    =   10980
-   ClientLeft      =   192
-   ClientTop       =   516
-   ClientWidth     =   15144
+   ClientHeight    =   10950
+   ClientLeft      =   225
+   ClientTop       =   555
+   ClientWidth     =   15135
    StartUpPosition =   3  'Windows Default
-   _ExtentX        =   26712
-   _ExtentY        =   19368
+   _ExtentX        =   26696
+   _ExtentY        =   19315
    _Version        =   393216
    _DesignerVersion=   100684101
-   ReportWidth     =   11370
+   ReportWidth     =   11310
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
-      Size            =   8.4
+      Size            =   8.25
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -22,7 +22,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
    EndProperty
    GridX           =   20
    GridY           =   20
-   LeftMargin      =   500
+   LeftMargin      =   100
    RightMargin     =   100
    TopMargin       =   1000
    BottomMargin    =   1440
@@ -62,7 +62,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   360
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -109,7 +109,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -128,7 +128,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -147,7 +147,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -166,7 +166,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -185,7 +185,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -205,7 +205,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   504
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -225,7 +225,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -244,7 +244,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -264,7 +264,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -284,7 +284,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   504
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -303,7 +303,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   495
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -326,7 +326,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Section1"
-      Object.Height          =   342
+      Object.Height          =   312
       NumControls     =   11
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -337,7 +337,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   288
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -364,7 +364,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -391,7 +391,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   288
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -418,7 +418,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -446,7 +446,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -474,7 +474,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -502,7 +502,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -530,7 +530,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   279
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -558,7 +558,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -586,7 +586,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -613,7 +613,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -655,7 +655,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtaDetailedSalesReport
          Object.Height          =   210
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

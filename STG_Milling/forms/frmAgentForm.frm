@@ -3,13 +3,13 @@ Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmAgentForm 
    BackColor       =   &H00E1A00B&
    Caption         =   "Agent Form"
-   ClientHeight    =   8472
+   ClientHeight    =   8475
    ClientLeft      =   120
-   ClientTop       =   456
-   ClientWidth     =   7356
+   ClientTop       =   450
+   ClientWidth     =   7350
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8472
-   ScaleWidth      =   7356
+   ScaleHeight     =   8475
+   ScaleWidth      =   7350
    StartUpPosition =   3  'Windows Default
    Begin VB.PictureBox Picture1 
       Appearance      =   0  'Flat
@@ -17,8 +17,8 @@ Begin VB.Form frmAgentForm
       ForeColor       =   &H80000008&
       Height          =   8355
       Left            =   60
-      ScaleHeight     =   8328
-      ScaleWidth      =   7188
+      ScaleHeight     =   8325
+      ScaleWidth      =   7185
       TabIndex        =   0
       Top             =   60
       Width           =   7215
@@ -46,8 +46,8 @@ Begin VB.Form frmAgentForm
          TabIndex        =   11
          Top             =   4680
          Width           =   3015
-         _ExtentX        =   5313
-         _ExtentY        =   4890
+         _ExtentX        =   5318
+         _ExtentY        =   4895
          View            =   3
          LabelEdit       =   1
          LabelWrap       =   -1  'True
@@ -91,7 +91,7 @@ Begin VB.Form frmAgentForm
          Caption         =   "SAVE"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -108,7 +108,7 @@ Begin VB.Form frmAgentForm
          Appearance      =   0  'Flat
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -125,7 +125,7 @@ Begin VB.Form frmAgentForm
          Appearance      =   0  'Flat
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -143,7 +143,7 @@ Begin VB.Form frmAgentForm
          Appearance      =   0  'Flat
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -162,8 +162,8 @@ Begin VB.Form frmAgentForm
          TabIndex        =   12
          Top             =   4680
          Width           =   3015
-         _ExtentX        =   5313
-         _ExtentY        =   4890
+         _ExtentX        =   5318
+         _ExtentY        =   4895
          View            =   3
          LabelEdit       =   1
          LabelWrap       =   -1  'True
@@ -193,7 +193,7 @@ Begin VB.Form frmAgentForm
          Caption         =   "Contact Number"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -212,7 +212,7 @@ Begin VB.Form frmAgentForm
          Caption         =   "Agent's Name "
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -231,7 +231,7 @@ Begin VB.Form frmAgentForm
          Caption         =   "Address "
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -250,7 +250,7 @@ Begin VB.Form frmAgentForm
          Caption         =   "  Please fill up requireed fields..."
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -330,21 +330,24 @@ Private Sub cmdAssigned_Click()
 End Sub
 
 Private Sub cmdRemove_Click()
- Dim lst As ListItem
- If editmode = True Then
-    Call edit_agent.removeAssignedMunicipality(Val(lsvAssigned.SelectedItem.Text))
-    Call edit_agent.loadAssignedMunicipalities(lsvAssigned)
-    
-    noAssonedYet = edit_agent.loadUnAssignedMunicipalities(lsvUnAssigned)
-        
-        If noAssonedYet = False Then
-            Call loadAllMunicipalities(lsvUnAssigned)
-        End If
- Else
-    Set lst = lsvUnAssigned.ListItems.Add(, , lsvAssigned.SelectedItem.Text)
-        lst.SubItems(1) = lsvAssigned.SelectedItem.SubItems(1)
-    lsvAssigned.ListItems.Remove (lsvAssigned.SelectedItem.Index)
- End If
+
+If lsvAssigned.ListItems.Count > 0 Then
+    Dim lst As ListItem
+    If editmode = True Then
+       Call edit_agent.removeAssignedMunicipality(Val(lsvAssigned.SelectedItem.Text))
+       Call edit_agent.loadAssignedMunicipalities(lsvAssigned)
+       
+       noAssonedYet = edit_agent.loadUnAssignedMunicipalities(lsvUnAssigned)
+           
+           If noAssonedYet = False Then
+               Call loadAllMunicipalities(lsvUnAssigned)
+           End If
+    Else
+       Set lst = lsvUnAssigned.ListItems.Add(, , lsvAssigned.SelectedItem.Text)
+           lst.SubItems(1) = lsvAssigned.SelectedItem.SubItems(1)
+       lsvAssigned.ListItems.Remove (lsvAssigned.SelectedItem.Index)
+    End If
+End If
 End Sub
 
 Private Sub Form_Load()
