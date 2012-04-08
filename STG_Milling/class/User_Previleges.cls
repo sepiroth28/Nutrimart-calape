@@ -46,7 +46,7 @@ End Property
 Public Property Get can_accept_remit_payments() As Boolean
 'used when retrieving value of a property, on the right side of an assignment.
 'Syntax: Debug.Print X.can_accept_remit_payments
-    Set can_accept_remit_payments = mvarcan_accept_remit_payments
+    can_accept_remit_payments = mvarcan_accept_remit_payments
 End Property
 
 

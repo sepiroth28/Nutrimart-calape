@@ -150,6 +150,24 @@ Begin VB.Form frmPaymentReceivedDetails
          EndProperty
          NumItems        =   0
       End
+      Begin VB.Label lblRemitted 
+         BackStyle       =   0  'Transparent
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00008000&
+         Height          =   375
+         Left            =   6300
+         TabIndex        =   7
+         Top             =   7560
+         Width           =   6015
+      End
       Begin VB.Label Label1 
          BackStyle       =   0  'Transparent
          Caption         =   "Payment Received Details"
@@ -189,10 +207,12 @@ Dim insert As String
 
 On Error Resume Next
 'id, accepted_by, date_remit
-insert = "INSERT INTO remitted VALUES(null,'" & activeUser.username & "',CURDATE());"
-db.execute insert
-MsgBox "All Payments Recieved has successfully remitted...", vbInformation, "Remitted"
-
+If MsgBox("Are you sure?", vbYesNo, "?") = vbYes Then
+        insert = "INSERT INTO remitted VALUES(null,'" & activeUser.username & "',CURDATE());"
+        db.execute insert
+        MsgBox "All Payments Recieved has successfully remitted...", vbInformation, "Remitted"
+        cmdDoneRemit.Enabled = False
+End If
 End Sub
 
 Private Sub Command1_Click()
@@ -207,7 +227,22 @@ Call loadPaymentDetailsOnListView(lsvPaymentReceived, activeDate)
 Call loadPaymentTotalsInfoReceivedBy(lsvTotalsInfo, activeDate)
 lsvPaymentReceived.ColumnHeaders(3).width = 3000
 
-
+If activeUser.previliges.can_accept_remit_payments Then
+    cmdDoneRemit.Visible = True
+    
+    Dim sql As String
+    Dim rs As New ADODB.Recordset
+    
+    sql = "SELECT * FROM remitted WHERE date_remit = '" & Format(activeDate, "yyyy-mm-dd") & "'"
+    Set rs = db.execute(sql)
+    
+    If rs.RecordCount > 0 Then
+        lblRemitted.Caption = "Total Payments received are already remitted..."
+        cmdDoneRemit.Enabled = False
+    End If
+Else
+    cmdDoneRemit.Visible = False
+End If
 End Sub
 
 Private Sub lsvPaymentReceived_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)

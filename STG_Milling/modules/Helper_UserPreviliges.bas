@@ -55,6 +55,8 @@ Sub setPrevileges(previleges, action As Boolean)
             activeUser.previliges.canDeleteItem = action
         Case "customer_visibility":
             activeUser.previliges.canManageCustomerVisibility = action
+        Case "can_accept_remit_payments":
+            activeUser.previliges.can_accept_remit_payments = action
     End Select
 End Sub
 
@@ -109,3 +111,6 @@ Sub renderButtonBasedOnUserPreviliges()
        
     End With
 End Sub
+
+
+
