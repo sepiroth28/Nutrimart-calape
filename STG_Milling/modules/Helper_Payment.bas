@@ -52,6 +52,7 @@ Sub loadPaymentTotalsInfoReceivedBy(lsv As ListView, payment_data As Date)
     Set rs = db.execute(sql)
     lsv.ListItems.Clear
     
+    On Error Resume Next
     If rs.RecordCount > 0 Then
         Do Until rs.EOF
             Set list = lsv.ListItems.Add(, , rs.Fields("received_by").Value)
@@ -64,7 +65,39 @@ Sub loadPaymentTotalsInfoReceivedBy(lsv As ListView, payment_data As Date)
 End Sub
 
 
-
+Sub loadSOPaymentHistory(lsv As ListView, so As String)
+    Dim sql As String
+    
+    Dim rs As New ADODB.Recordset
+    Dim list As ListItem
+    
+    sql = "SELECT pr.id, pr.sales_order_no, pr.amount, pr.balance, pr.payment_date, IF(pr.balance=0,'fully paid','unsettled') remarks, received_by " & _
+            " FROM `payment_records` pr " & _
+            " where pr.sales_order_no = '" & so & "' order by payment_date ASC"
+    Set rs = db.execute(sql)
+    lsv.ListItems.Clear
+    
+    On Error Resume Next
+    'id, sales_order_no, amount, balance, payment_date, remarks, received_by
+    If rs.RecordCount > 0 Then
+        Do Until rs.EOF
+        
+            Set list = lsv.ListItems.Add(, , rs.Fields("id").Value)
+              
+            list.SubItems(1) = rs.Fields("sales_order_no")
+            list.SubItems(2) = FormatNumber(rs.Fields("amount").Value, 2)
+            list.SubItems(3) = FormatNumber(rs.Fields("balance").Value, 2)
+            list.SubItems(4) = rs.Fields("payment_date")
+            list.SubItems(5) = rs.Fields("remarks")
+            list.SubItems(6) = rs.Fields("received_by")
+            
+            rs.MoveNext
+        Loop
+    End If
+    
+    Set rs = Nothing
+    
+End Sub
 
 
 

@@ -17,6 +17,7 @@ Public activestockId As Integer
 Public activeReprintStockIN As Integer
 Public activeSalesOrderForViewSales As String
 Public activeSalesOrderForViewSalesDetails As String
+Public activeSalesOrderForPaymentHistory As String
 
 Public selectedSOForHistory As String
 

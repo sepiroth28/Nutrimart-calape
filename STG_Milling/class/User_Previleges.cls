@@ -34,6 +34,23 @@ Private mvarcanDeleteCustomer As Boolean 'local copy
 Private mvarcanManageItem As Boolean 'local copy
 Private mvarcanDeleteItem As Boolean 'local copy
 Private mvarcanManageCustomerVisibility As Boolean 'local copy
+'local variable(s) to hold property value(s)
+Private mvarcan_accept_remit_payments As Boolean 'local copy
+Public Property Let can_accept_remit_payments(ByVal vData As Boolean)
+'used when assigning a value to the property, on the left side of an assignment.
+'Syntax: X.can_accept_remit_payments = 5
+    mvarcan_accept_remit_payments = vData
+End Property
+
+
+Public Property Get can_accept_remit_payments() As Boolean
+'used when retrieving value of a property, on the right side of an assignment.
+'Syntax: Debug.Print X.can_accept_remit_payments
+    Set can_accept_remit_payments = mvarcan_accept_remit_payments
+End Property
+
+
+
 Public Property Let canManageCustomerVisibility(ByVal vData As Boolean)
 'used when assigning a value to the property, on the left side of an assignment.
 'Syntax: X.canManageCustomerVisibility = 5
