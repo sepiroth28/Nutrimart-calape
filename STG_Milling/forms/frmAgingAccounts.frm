@@ -170,6 +170,10 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub cmdClose_Click()
+Unload Me
+End Sub
+
 Private Sub cmdSearch_Click()
 Call loadAgingAccounts(lsvCustomers, Val(cboMonths.Text))
 End Sub
@@ -183,6 +187,9 @@ cboMonths.AddItem "12"
 End Sub
 
 Private Sub lsvCustomers_DblClick()
-customer_id_for_list_of_account_receivable = Val(lsvCustomers.SelectedItem.Text)
-frmCustomerAccountReceivable.Show 1
+
+If lsvCustomers.ListItems.Count > 0 Then
+    customer_id_for_list_of_account_receivable = Val(lsvCustomers.SelectedItem.Text)
+    frmCustomerAccountReceivable.Show 1
+End If
 End Sub
