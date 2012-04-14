@@ -25,10 +25,27 @@ Begin VB.Form frmManageItemRebates
       TabIndex        =   0
       Top             =   60
       Width           =   9555
+      Begin VB.CommandButton cmdUpdate 
+         Caption         =   "&Update"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   675
+         Left            =   6840
+         TabIndex        =   8
+         Top             =   7800
+         Width           =   2532
+      End
       Begin VB.ComboBox cboCategory 
          Height          =   315
          Left            =   6840
-         TabIndex        =   5
+         TabIndex        =   4
          Top             =   780
          Width           =   2595
       End
@@ -44,23 +61,24 @@ Begin VB.Form frmManageItemRebates
             Strikethrough   =   0   'False
          EndProperty
          Height          =   675
-         Left            =   6840
+         Left            =   4200
          TabIndex        =   1
          Top             =   7800
          Width           =   2532
       End
-      Begin MSComctlLib.ListView lsvItems 
+      Begin MSComctlLib.ListView lsvItemList 
          Height          =   6435
-         Left            =   120
-         TabIndex        =   2
-         Top             =   1200
-         Width           =   9315
-         _ExtentX        =   16431
+         Left            =   180
+         TabIndex        =   6
+         Top             =   1260
+         Width           =   9195
+         _ExtentX        =   16219
          _ExtentY        =   11351
          View            =   3
          LabelEdit       =   1
          LabelWrap       =   -1  'True
          HideSelection   =   -1  'True
+         Checkboxes      =   -1  'True
          FullRowSelect   =   -1  'True
          GridLines       =   -1  'True
          _Version        =   393217
@@ -72,21 +90,33 @@ Begin VB.Form frmManageItemRebates
             Name            =   "MS Sans Serif"
             Size            =   9.75
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         NumItems        =   2
-         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            Text            =   "Item Code"
-            Object.Width           =   4410
+         NumItems        =   0
+      End
+      Begin VB.Label lbl 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "select all"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   -1  'True
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
          EndProperty
-         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   1
-            Text            =   "Item Description"
-            Object.Width           =   6174
-         EndProperty
+         ForeColor       =   &H000000C0&
+         Height          =   240
+         Left            =   180
+         TabIndex        =   7
+         Tag             =   "0"
+         Top             =   960
+         Width           =   795
       End
       Begin VB.Label Label2 
          AutoSize        =   -1  'True
@@ -103,7 +133,7 @@ Begin VB.Form frmManageItemRebates
          EndProperty
          Height          =   240
          Left            =   5340
-         TabIndex        =   6
+         TabIndex        =   5
          Top             =   780
          Width           =   1275
       End
@@ -121,7 +151,7 @@ Begin VB.Form frmManageItemRebates
          EndProperty
          Height          =   612
          Left            =   120
-         TabIndex        =   4
+         TabIndex        =   3
          Top             =   60
          Width           =   3732
       End
@@ -146,7 +176,7 @@ Begin VB.Form frmManageItemRebates
          ForeColor       =   &H000000C0&
          Height          =   240
          Left            =   1800
-         TabIndex        =   3
+         TabIndex        =   2
          Top             =   7320
          Width           =   45
       End
@@ -157,7 +187,63 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub Form_Load()
-   Call load_to_category_combo(cboCategory)
+Private Sub cboCategory_Click()
+Dim icat As String
+    icat = cboCategory.Text
+    loadItemsByCategory icat, lsvItemList
+    
+End Sub
 
+Private Sub cmdClose_Click()
+    Unload Me
+End Sub
+
+Private Sub cmdUpdate_Click()
+    Dim list As ListItem
+    
+    For Each list In lsvItemList.ListItems
+        Call updateItemsRebate(Val(list.Text), list.Checked)
+    Next
+    MsgBox "Successfully updated", vbInformation, "updated"
+End Sub
+
+Private Sub Form_Load()
+
+    Call setItemsDescriptionColumns(lsvItemList)
+    lsvItemList.ColumnHeaders(1).width = 250
+    lsvItemList.ColumnHeaders(1).Text = ""
+    lsvItemList.ColumnHeaders(2).width = 3500
+    lsvItemList.ColumnHeaders(3).width = 4500
+    lsvItemList.ColumnHeaders(4).width = 0
+    lsvItemList.ColumnHeaders(5).Alignment = lvwColumnRight
+    lsvItemList.ColumnHeaders(6).Alignment = lvwColumnRight
+    lsvItemList.ColumnHeaders(5).width = 0
+    lsvItemList.ColumnHeaders(6).width = 0
+    lsvItemList.ColumnHeaders(7).width = 0
+    lsvItemList.ColumnHeaders(8).width = 0
+    lsvItemList.ColumnHeaders(9).width = 0
+    
+    Call loadAllItemsToListview(lsvItemList, "item_code")
+    
+    Call load_to_category_combo(cboCategory)
+   
+End Sub
+
+Private Sub lbl_Click()
+Dim list As ListItem
+Dim action As Boolean
+
+If lbl.Tag = 0 Then
+    lbl.Caption = "Unselect All"
+    lbl.Tag = 1
+    action = True
+Else
+    lbl.Caption = "Select All"
+    lbl.Tag = 0
+    action = False
+End If
+
+For Each list In lsvItemList.ListItems
+    list.Checked = action
+Next
 End Sub

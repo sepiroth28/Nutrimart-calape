@@ -229,3 +229,39 @@ Function isInLastInventory(item_id) As Boolean
         isInLastInventory = False
     End If
 End Function
+
+Sub loadItemsByCategory(icat As String, lsv As ListView)
+    Dim rs As New ADODB.Recordset
+    Dim list As ListItem
+    Dim sql As String
+    Dim where As String
+    
+    If icat <> "All" Then
+        where = " where ic.category = '" & icat & "'"
+    Else
+        where = ""
+    End If
+    
+    sql = "SELECT i.item_id,i.item_code,id.item_name " & _
+            " FROM `item_category` ic " & _
+            " inner join items i on ic.item_code = i.item_code " & _
+            " inner join items_description id on i.item_code = id.item_code " & where
+
+    
+    Set rs = db.execute(sql)
+    lsv.ListItems.Clear
+    If rs.RecordCount > 0 Then
+        Do Until rs.EOF
+            Set list = lsv.ListItems.Add(, , rs.Fields("item_id").Value)
+            list.SubItems(1) = rs.Fields("item_code").Value
+            list.SubItems(2) = rs.Fields("item_name").Value
+        rs.MoveNext
+        Loop
+    End If
+End Sub
+
+Sub updateItemsRebate(item_id As Integer, is_include As Boolean)
+    Dim insert As String
+    insert = "UPDATE items SET include_in_rebate = " & is_include & " WHERE item_id = " & item_id
+    db.execute insert
+End Sub
