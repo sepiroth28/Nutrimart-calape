@@ -89,6 +89,12 @@ Begin VB.MDIForm mdi_Inventory
    Begin VB.Menu mnu_print_receipt 
       Caption         =   "Print Receipt"
    End
+   Begin VB.Menu mnu_rebates 
+      Caption         =   "Rebates"
+      Begin VB.Menu mnu_rebate_item 
+         Caption         =   "Rebate Items"
+      End
+   End
 End
 Attribute VB_Name = "mdi_Inventory"
 Attribute VB_GlobalNameSpace = False
@@ -239,6 +245,10 @@ End Sub
 
 Private Sub mnu_print_receipt_Click()
 frmReprint.Show 1
+End Sub
+
+Private Sub mnu_rebate_item_Click()
+frmManageItemRebates.Show
 End Sub
 
 Private Sub mnu_sales_adjustment_Click()

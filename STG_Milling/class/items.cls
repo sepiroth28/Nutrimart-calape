@@ -41,6 +41,23 @@ Private mvardealers_price As Double 'local copy
 Private mvaritem_category As New item_category 'local copy
 'local variable(s) to hold property value(s)
 Private mvartemp_item_code As String 'local copy
+'local variable(s) to hold property value(s)
+Private mvarinclude_in_rebate As Boolean 'local copy
+Public Property Let include_in_rebate(ByVal vData As Boolean)
+'used when assigning a value to the property, on the left side of an assignment.
+'Syntax: X.include_in_rebate = 5
+    mvarinclude_in_rebate = vData
+End Property
+
+
+Public Property Get include_in_rebate() As Boolean
+'used when retrieving value of a property, on the right side of an assignment.
+'Syntax: Debug.Print X.include_in_rebate
+    Set include_in_rebate = mvarinclude_in_rebate
+End Property
+
+
+
 Public Property Let temp_item_code(ByVal vData As String)
 'used when assigning a value to the property, on the left side of an assignment.
 'Syntax: X.temp_item_code = 5
@@ -175,6 +192,7 @@ On Error Resume Next
         .date_modified = rs.Fields("date_modified").Value
         .manufacturers_id = rs.Fields("manufacturers_id").Value
         .reorder_point = rs.Fields("reorder_point").Value
+        .include_in_rebate = rs.Fields("include_in_rebate").Value
         .item_name = rs.Fields("item_name").Value
         .item_description = rs.Fields("item_description").Value
         '.image = rs.Fields("image").Value
@@ -202,6 +220,7 @@ Public Sub update()
                 "date_modified = CURDATE()," & _
                 "manufacturers_id = " & Me.manufacturers_id & "," & _
                 "reorder_point = " & Me.reorder_point & _
+                "include_in_rebate = " & Me.include_in_rebate & _
                 " WHERE item_id = " & Me.item_id
     
     db.execute update
@@ -236,7 +255,8 @@ Public Sub insert()
             "" & Me.date_added & "," & _
             "" & Me.date_modified & "," & _
             "" & Me.manufacturers_id & "," & _
-            "" & Me.reorder_point & ")"
+            "" & Me.reorder_point & "," & _
+            "" & Me.include_in_rebate & ")"
     
     tbl_item_desc = "INSERT INTO items_description " & _
             "VALUES (" & _
