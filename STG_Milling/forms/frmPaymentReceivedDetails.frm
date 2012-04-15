@@ -209,6 +209,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdDoneRemit_Click()
 Dim insert As String
+Dim list As ListItem
 
 On Error Resume Next
 'id, payment_date, remit_by, accepted_by, date_accepted, amount
