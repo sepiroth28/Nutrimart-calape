@@ -256,7 +256,7 @@ End Sub
 
 Sub checkIfRemitted(list As ListItem)
 
-If Not activeUser.previliges.can_accept_remit_payments Then
+If activeUser.previliges.can_accept_remit_payments Then
     cmdDoneRemit.Visible = True
     
     Dim sql As String
