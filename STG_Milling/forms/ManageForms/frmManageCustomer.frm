@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmManageCustomer 
    BackColor       =   &H00000000&
    BorderStyle     =   1  'Fixed Single
@@ -141,6 +141,9 @@ Begin VB.Form frmManageCustomer
       Begin VB.Menu mnu_so_history 
          Caption         =   "SO History"
       End
+      Begin VB.Menu mnu_customer_rebates 
+         Caption         =   "View Rebates"
+      End
       Begin VB.Menu mnu_sep 
          Caption         =   "-"
       End
@@ -192,6 +195,11 @@ Private Sub lsvCustomer_MouseUp(Button As Integer, Shift As Integer, x As Single
 If Button = 2 Then
     Me.PopupMenu mnu_customer_menu
 End If
+End Sub
+
+Private Sub mnu_customer_rebates_Click()
+activeCustomerIdForRebate = Val(lsvCustomer.SelectedItem.Text)
+frmViewRebates.Show 1
 End Sub
 
 Private Sub mnu_delete_Click()

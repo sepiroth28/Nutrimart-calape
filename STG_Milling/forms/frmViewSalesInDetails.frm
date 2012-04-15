@@ -2,14 +2,18 @@ VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmViewSalesInDetails 
    BackColor       =   &H00C8761C&
+   BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Detail Items"
    ClientHeight    =   8820
-   ClientLeft      =   105
-   ClientTop       =   435
+   ClientLeft      =   30
+   ClientTop       =   360
    ClientWidth     =   9750
    LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
    ScaleHeight     =   8820
    ScaleWidth      =   9750
+   ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
    Begin VB.PictureBox Picture1 
       Appearance      =   0  'Flat

@@ -88,6 +88,8 @@ Function getAllItemsCollection(Optional sortBy As String = "") As ItemCollection
                 .manufacturers_id = data.Fields("manufacturers_id").Value
                 .reorder_point = data.Fields("reorder_point").Value
                 .unit_of_measure = data.Fields("unit_of_measure").Value
+                
+                .include_in_rebate = data.Fields("include_in_rebate").Value
                 'add here additional field from items_description
                  
                 'load records manufacturer of this item
@@ -158,7 +160,39 @@ Set Collection = getAllItemsCollection(sort_by)
     Next
     
 End Function
+Function loadAllItemsToListviewForRebates(lsv As ListView, sort_by As String) As ListView
+Dim list As ListItem
+Dim rs As New ADODB.Recordset
+Dim Item As New items
+Dim sql As String
 
+'items_id, item_code, item_qty, item_price, date_added, date_modified, manufacturers_id, reorder_point
+lsv.ListItems.Clear
+Set Collection = getAllItemsCollection(sort_by)
+
+    For Each Item In Collection
+            Set list = lsv.ListItems.Add(, , Item.item_id)
+            
+            list.Checked = Item.include_in_rebate
+            
+            list.SubItems(1) = Item.item_code
+            list.SubItems(2) = Item.item_name
+            list.SubItems(3) = Item.item_description
+            list.SubItems(4) = Item.item_qty
+            list.SubItems(5) = Item.item_price
+            list.SubItems(6) = Item.dealers_price
+            list.SubItems(7) = Item.unit_of_measure
+            
+            If Item.manufacturers_id > 0 Then
+                Item.manufacturer.load_manufacturers (Item.manufacturers_id)
+                list.SubItems(8) = Item.manufacturer.manufacturers_name
+            Else
+                list.SubItems(8) = ""
+            End If
+'            list.SubItems(6) = item.item_status
+    Next
+    
+End Function
 Function loadSearchItemsToListview(lsv As ListView, item_code As String) As ListView
 Dim list As ListItem
 Dim rs As New ADODB.Recordset
@@ -229,3 +263,39 @@ Function isInLastInventory(item_id) As Boolean
         isInLastInventory = False
     End If
 End Function
+
+Sub loadItemsByCategory(icat As String, lsv As ListView)
+    Dim rs As New ADODB.Recordset
+    Dim list As ListItem
+    Dim sql As String
+    Dim where As String
+    
+    If icat <> "All" Then
+        where = " where ic.category = '" & icat & "'"
+    Else
+        where = ""
+    End If
+    
+    sql = "SELECT i.item_id,i.item_code,id.item_name " & _
+            " FROM `item_category` ic " & _
+            " inner join items i on ic.item_code = i.item_code " & _
+            " inner join items_description id on i.item_code = id.item_code " & where
+
+    
+    Set rs = db.execute(sql)
+    lsv.ListItems.Clear
+    If rs.RecordCount > 0 Then
+        Do Until rs.EOF
+            Set list = lsv.ListItems.Add(, , rs.Fields("item_id").Value)
+            list.SubItems(1) = rs.Fields("item_code").Value
+            list.SubItems(2) = rs.Fields("item_name").Value
+        rs.MoveNext
+        Loop
+    End If
+End Sub
+
+Sub updateItemsRebate(item_id As Integer, is_include As Boolean)
+    Dim insert As String
+    insert = "UPDATE items SET include_in_rebate = " & is_include & " WHERE item_id = " & item_id
+    db.execute insert
+End Sub
