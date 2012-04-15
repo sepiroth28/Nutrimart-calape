@@ -104,6 +104,7 @@ Form=forms\frmAgingAccounts.frm
 Module=Helper_AgingAccounts; modules\Helper_AgingAccounts.bas
 Form=forms\frmManageItemRebates.frm
 Form=forms\frmViewRebates.frm
+Module=Helper_Rebates; modules\Helper_Rebates.bas
 Startup="Sub Main"
 HelpFile=""
 ExeName32="STG Milling.exe"

@@ -223,7 +223,7 @@ Private Sub Form_Load()
     lsvItemList.ColumnHeaders(8).width = 0
     lsvItemList.ColumnHeaders(9).width = 0
     
-    Call loadAllItemsToListview(lsvItemList, "item_code")
+    Call loadAllItemsToListviewForRebates(lsvItemList, "item_code")
     
     Call load_to_category_combo(cboCategory)
    

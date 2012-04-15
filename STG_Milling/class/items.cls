@@ -53,7 +53,7 @@ End Property
 Public Property Get include_in_rebate() As Boolean
 'used when retrieving value of a property, on the right side of an assignment.
 'Syntax: Debug.Print X.include_in_rebate
-    Set include_in_rebate = mvarinclude_in_rebate
+    include_in_rebate = mvarinclude_in_rebate
 End Property
 
 

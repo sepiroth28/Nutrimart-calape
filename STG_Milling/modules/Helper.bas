@@ -88,6 +88,8 @@ Function getAllItemsCollection(Optional sortBy As String = "") As ItemCollection
                 .manufacturers_id = data.Fields("manufacturers_id").Value
                 .reorder_point = data.Fields("reorder_point").Value
                 .unit_of_measure = data.Fields("unit_of_measure").Value
+                
+                .include_in_rebate = data.Fields("include_in_rebate").Value
                 'add here additional field from items_description
                  
                 'load records manufacturer of this item
@@ -158,7 +160,39 @@ Set Collection = getAllItemsCollection(sort_by)
     Next
     
 End Function
+Function loadAllItemsToListviewForRebates(lsv As ListView, sort_by As String) As ListView
+Dim list As ListItem
+Dim rs As New ADODB.Recordset
+Dim Item As New items
+Dim sql As String
 
+'items_id, item_code, item_qty, item_price, date_added, date_modified, manufacturers_id, reorder_point
+lsv.ListItems.Clear
+Set Collection = getAllItemsCollection(sort_by)
+
+    For Each Item In Collection
+            Set list = lsv.ListItems.Add(, , Item.item_id)
+            
+            list.Checked = Item.include_in_rebate
+            
+            list.SubItems(1) = Item.item_code
+            list.SubItems(2) = Item.item_name
+            list.SubItems(3) = Item.item_description
+            list.SubItems(4) = Item.item_qty
+            list.SubItems(5) = Item.item_price
+            list.SubItems(6) = Item.dealers_price
+            list.SubItems(7) = Item.unit_of_measure
+            
+            If Item.manufacturers_id > 0 Then
+                Item.manufacturer.load_manufacturers (Item.manufacturers_id)
+                list.SubItems(8) = Item.manufacturer.manufacturers_name
+            Else
+                list.SubItems(8) = ""
+            End If
+'            list.SubItems(6) = item.item_status
+    Next
+    
+End Function
 Function loadSearchItemsToListview(lsv As ListView, item_code As String) As ListView
 Dim list As ListItem
 Dim rs As New ADODB.Recordset
