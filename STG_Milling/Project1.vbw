@@ -79,7 +79,7 @@ frmCalendar = 0, 0, 0, 0, C, 150, 150, 961, 575, C
 frmLogIn = 0, 0, 0, 0, C, 175, 175, 986, 600, C
 frmViewStockIn = 0, 0, 0, 0, C, 200, 200, 1011, 625, C
 Helper_Stock_in = 0, 0, 0, 0, C
-dtaAll_Stockin = 0, 0, 0, 0, C, 75, 75, 1515, 975, C
+dtaAll_Stockin = 0, 0, 0, 0, C, 75, 75, 1461, 863, C
 frmViewSalesInDetails = 0, 0, 0, 0, C, 25, 25, 836, 450, CI
 frmStockInItem = 0, 0, 0, 0, C, 50, 50, 861, 475, C
 Credit = 0, 0, 0, 0, C
@@ -92,13 +92,8 @@ User_Previleges = 0, 0, 811, 425, C
 frmCustomerVisibility = 0, 0, 0, 0, C, 175, 175, 986, 600, C
 frmUpdatePassword = 0, 0, 0, 0, C, 200, 200, 1011, 625, C
 frmPaymentHistoryDetails = 175, 175, 986, 600, C, 50, 50, 861, 475, C
-<<<<<<< HEAD
-frmAgingAccounts = 125, 125, 936, 550, , 100, 100, 911, 525, C
-Helper_AgingAccounts = 175, 175, 986, 600, Z
-=======
 frmAgingAccounts = 125, 125, 936, 550, C, 100, 100, 911, 525, C
 Helper_AgingAccounts = 175, 175, 986, 600, C
 frmManageItemRebates = 10, 24, 865, 541, CI, 100, 100, 955, 617, I
-frmViewRebates = 100, 100, 955, 617, Z, 150, 150, 1005, 667, C
+frmViewRebates = 100, 100, 955, 617, , 150, 150, 1005, 667, C
 Helper_Rebates = 50, 50, 905, 567, I
->>>>>>> 5cb1199f626ec43172d6f75ca63f143737471ce7
