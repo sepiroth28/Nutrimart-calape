@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmManageItemRebates 
    BorderStyle     =   3  'Fixed Dialog
-   Caption         =   "Form1"
+   Caption         =   "View Rebates"
    ClientHeight    =   8715
    ClientLeft      =   45
    ClientTop       =   375
@@ -38,7 +38,7 @@ Begin VB.Form frmManageItemRebates
          EndProperty
          Height          =   675
          Left            =   6840
-         TabIndex        =   8
+         TabIndex        =   7
          Top             =   7800
          Width           =   2532
       End
@@ -113,7 +113,7 @@ Begin VB.Form frmManageItemRebates
          ForeColor       =   &H000000C0&
          Height          =   240
          Left            =   180
-         TabIndex        =   7
+         TabIndex        =   8
          Tag             =   "0"
          Top             =   960
          Width           =   795

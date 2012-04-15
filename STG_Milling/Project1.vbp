@@ -103,6 +103,7 @@ Form=forms\frmPaymentHistoryDetails.frm
 Form=forms\frmAgingAccounts.frm
 Module=Helper_AgingAccounts; modules\Helper_AgingAccounts.bas
 Form=forms\frmManageItemRebates.frm
+Form=forms\frmViewRebates.frm
 Startup="Sub Main"
 HelpFile=""
 ExeName32="STG Milling.exe"
