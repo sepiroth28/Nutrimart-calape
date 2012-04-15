@@ -196,6 +196,10 @@ Private Sub cboMonth_Click()
 Call loadItemsQualifiedForRebatesByCustomer(activeCustomerIdForRebate, cboMonth.Text, lsvItemList)
 End Sub
 
+Private Sub cmdClose_Click()
+Unload Me
+End Sub
+
 Private Sub Form_Load()
 
 Dim x As Integer
