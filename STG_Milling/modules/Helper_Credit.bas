@@ -11,6 +11,8 @@ Function isInLimit(customer_id As Integer) As Boolean
     Else
         isInLimit = False
     End If
+    frmMenu.lblCreditLimit.Caption = "0.00"
+    frmMenu.lblCreditLimit.Caption = FormatNumber(debt, 2)
 End Function
 
 Function getTotalDebtOfThisCustomer(customer_id) As Double
