@@ -368,9 +368,9 @@ Begin VB.Form frmMenu
          Appearance      =   0  'Flat
          BackColor       =   &H00C0FFFF&
          ForeColor       =   &H80000008&
-         Height          =   1755
+         Height          =   2235
          Left            =   5100
-         ScaleHeight     =   1725
+         ScaleHeight     =   2205
          ScaleWidth      =   5085
          TabIndex        =   14
          Top             =   7440
@@ -399,6 +399,44 @@ Begin VB.Form frmMenu
             TabIndex        =   15
             Top             =   420
             Width           =   492
+         End
+         Begin VB.Label lblCreditLimit 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "0.00"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   9
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   210
+            Left            =   2040
+            TabIndex        =   42
+            Top             =   1320
+            Width           =   420
+         End
+         Begin VB.Label Label5 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "CREDIT LIMIT:"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   9
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   210
+            Left            =   360
+            TabIndex        =   41
+            Top             =   1320
+            Width           =   1320
          End
          Begin VB.Label lblDealerType 
             BackStyle       =   0  'Transparent
@@ -472,7 +510,7 @@ Begin VB.Form frmMenu
             Height          =   210
             Left            =   360
             TabIndex        =   18
-            Top             =   1320
+            Top             =   1680
             Width           =   675
          End
          Begin VB.Label lblAgent 
@@ -490,7 +528,7 @@ Begin VB.Form frmMenu
             Height          =   270
             Left            =   1140
             TabIndex        =   17
-            Top             =   1260
+            Top             =   1680
             Width           =   2130
          End
       End
@@ -498,9 +536,9 @@ Begin VB.Form frmMenu
          Appearance      =   0  'Flat
          BackColor       =   &H00E0E0E0&
          ForeColor       =   &H80000008&
-         Height          =   1755
+         Height          =   2235
          Left            =   10260
-         ScaleHeight     =   1725
+         ScaleHeight     =   2205
          ScaleWidth      =   3285
          TabIndex        =   11
          Top             =   7440
