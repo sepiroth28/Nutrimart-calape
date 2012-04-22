@@ -26,6 +26,24 @@ Begin VB.Form frmViewSales
       TabIndex        =   0
       Top             =   60
       Width           =   14835
+      Begin VB.CommandButton cmdCODRemit 
+         Caption         =   "Remit COD"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   435
+         Left            =   12060
+         TabIndex        =   16
+         Top             =   7200
+         Visible         =   0   'False
+         Width           =   2655
+      End
       Begin VB.CommandButton cmdLoadRecords 
          Caption         =   "Load Records"
          BeginProperty Font 
@@ -136,6 +154,27 @@ Begin VB.Form frmViewSales
             Strikethrough   =   0   'False
          EndProperty
          NumItems        =   0
+      End
+      Begin VB.Label lblRemitted 
+         Alignment       =   1  'Right Justify
+         BackStyle       =   0  'Transparent
+         Caption         =   "COD Amount is already remitted"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00008000&
+         Height          =   375
+         Left            =   10740
+         TabIndex        =   17
+         Top             =   7380
+         Visible         =   0   'False
+         Width           =   3795
       End
       Begin VB.Label Label6 
          AutoSize        =   -1  'True
@@ -340,9 +379,11 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cboPaymentType_Change()
+
 If cboPaymentType.Text = "COD" Then
     Call loadAllSalesToListview(lsvSales, True, PAYMENT_COD)
     Call updateTotals(activeDate)
+   
 ElseIf cboPaymentType.Text = "ACCOUNT RECEIVABLE" Then
     Call loadAllSalesToListview(lsvSales, True, PAYMENT_ACCOUNT_RECEIVABLE)
     Call updateTotals(activeDate)
@@ -353,9 +394,11 @@ End If
 End Sub
 
 Private Sub cboPaymentType_Click()
+cmdCODRemit.Visible = False
 If cboPaymentType.Text = "COD" Then
     Call loadAllSalesToListview(lsvSales, True, PAYMENT_COD)
     Call updateTotals(activeDate)
+    cmdCODRemit.Visible = True
 ElseIf cboPaymentType.Text = "ACCOUNT RECEIVABLE" Then
     Call loadAllSalesToListview(lsvSales, True, PAYMENT_ACCOUNT_RECEIVABLE)
     Call updateTotals(activeDate)
@@ -365,11 +408,36 @@ Else
 End If
 End Sub
 
+Private Sub cmdCODRemit_Click()
+Dim insert As String
+Dim remit_by As String
+remit_by = InputBox("Please input name who remitted the cod sales", "Remit by")
+'id, sales_date, remit_by, received_by, date_accepted, amount
+insert = "INSERT INTO cod_remitted VALUES(null,'" & Format(activeDate, "yyyy-mm-dd") & "','" & remit_by & "','" & activeUser.username & "',CURDATE()," & getNetTotalAsOfTodaySales(PAYMENT_COD) & ")"
+If MsgBox("Are you sure you want to save this data?", vbInformation + vbYesNo, "Remit COD") = vbYes Then
+    db.execute insert
+End If
+
+Dim is_cod_remitted As Boolean
+is_cod_remitted = checkCODIfRemitted(activeDate)
+lblRemitted.Visible = is_cod_remitted
+cmdCODRemit.Visible = Not is_cod_remitted
+End Sub
+
 Private Sub cmdLoadRecords_Click()
+
+
 'If cboPaymentType.Text = "COD" Then
     Call loadAllSalesToListview(lsvSales, False, 3, Format(activeDate, "yyyy-mm-dd"))
 'End If
 updateTotals (activeDate)
+
+    Dim is_cod_remitted As Boolean
+    is_cod_remitted = checkCODIfRemitted(activeDate)
+    lblRemitted.Visible = is_cod_remitted
+    If cboPaymentType.Text = "COD" Then
+        cmdCODRemit.Visible = Not is_cod_remitted
+    End If
 End Sub
 
 Private Sub cmdPrint_Click()
@@ -383,6 +451,7 @@ frmCalendar.Show 1
 End Sub
 
 Private Sub Form_Load()
+
 Call setSalesListview(lsvSales)
 lsvSales.ColumnHeaders(2).width = 1800
 lsvSales.ColumnHeaders(6).width = 0
@@ -399,6 +468,8 @@ lsvSales.ColumnHeaders(8).Alignment = lvwColumnRight
 Call loadAllSalesToListview(lsvSales, True, 3)
 txtSalesDate.Text = FormatDateTime(Date, vbLongDate)
 updateTotals (Date)
+
+
 
 End Sub
 

@@ -22,6 +22,10 @@ Private mvaragent_id As String 'local copy
 Private mvaragent_address As String 'local copy
 Public Sub addCustomerToThisAgent(customer_id As Integer)
     Dim insert As String
+    Dim delete As String
+    
+    delete = "DELETE FROM agent_customers WHERE agent_id = " & Me.agent_id & " AND customers_id = " & customer_id
+    db.execute delete
     
     insert = "INSERT INTO agent_customers VALUES (" & Me.agent_id & "," & customer_id & ")"
     db.execute insert
