@@ -398,7 +398,9 @@ cmdCODRemit.Visible = False
 If cboPaymentType.Text = "COD" Then
     Call loadAllSalesToListview(lsvSales, True, PAYMENT_COD)
     Call updateTotals(activeDate)
-    cmdCODRemit.Visible = True
+    If activeUser.previliges.can_accept_remit_payments Then
+        cmdCODRemit.Visible = True
+    End If
 ElseIf cboPaymentType.Text = "ACCOUNT RECEIVABLE" Then
     Call loadAllSalesToListview(lsvSales, True, PAYMENT_ACCOUNT_RECEIVABLE)
     Call updateTotals(activeDate)
@@ -436,7 +438,9 @@ updateTotals (activeDate)
     is_cod_remitted = checkCODIfRemitted(activeDate)
     lblRemitted.Visible = is_cod_remitted
     If cboPaymentType.Text = "COD" Then
-        cmdCODRemit.Visible = Not is_cod_remitted
+        If activeUser.previliges.can_accept_remit_payments Then
+            cmdCODRemit.Visible = Not is_cod_remitted
+        End If
     End If
 End Sub
 
