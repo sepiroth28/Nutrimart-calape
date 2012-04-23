@@ -6,12 +6,12 @@ Begin VB.Form frmViewRebates
    ClientHeight    =   8715
    ClientLeft      =   45
    ClientTop       =   375
-   ClientWidth     =   10470
+   ClientWidth     =   13155
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   8715
-   ScaleWidth      =   10470
+   ScaleWidth      =   13155
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
    Begin VB.PictureBox Picture1 
@@ -21,10 +21,10 @@ Begin VB.Form frmViewRebates
       Height          =   8595
       Left            =   60
       ScaleHeight     =   8565
-      ScaleWidth      =   10305
+      ScaleWidth      =   13005
       TabIndex        =   0
       Top             =   60
-      Width           =   10335
+      Width           =   13035
       Begin VB.ComboBox cboMonth 
          Height          =   315
          Left            =   3900
@@ -44,7 +44,7 @@ Begin VB.Form frmViewRebates
             Strikethrough   =   0   'False
          EndProperty
          Height          =   675
-         Left            =   7560
+         Left            =   10320
          TabIndex        =   1
          Top             =   7800
          Width           =   2532
@@ -54,8 +54,8 @@ Begin VB.Form frmViewRebates
          Left            =   180
          TabIndex        =   2
          Top             =   1020
-         Width           =   9915
-         _ExtentX        =   17489
+         Width           =   12675
+         _ExtentX        =   22357
          _ExtentY        =   11774
          View            =   3
          LabelEdit       =   1
@@ -77,7 +77,7 @@ Begin VB.Form frmViewRebates
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         NumItems        =   5
+         NumItems        =   7
          BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             Text            =   "stock_out_id"
             Object.Width           =   0
@@ -102,6 +102,18 @@ Begin VB.Form frmViewRebates
             SubItemIndex    =   4
             Text            =   "Unit"
             Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            Alignment       =   1
+            SubItemIndex    =   5
+            Text            =   "rebate price"
+            Object.Width           =   2822
+         EndProperty
+         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            Alignment       =   1
+            SubItemIndex    =   6
+            Text            =   "total rebate amount"
+            Object.Width           =   3881
          EndProperty
       End
       Begin VB.Label lblYear 
@@ -194,6 +206,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cboMonth_Click()
 Call loadItemsQualifiedForRebatesByCustomer(activeCustomerIdForRebate, cboMonth.Text, lsvItemList)
+Call renderRebateTableRates(lsvItemList)
 End Sub
 
 Private Sub cmdClose_Click()
