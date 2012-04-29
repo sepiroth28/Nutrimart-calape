@@ -10,6 +10,9 @@ temp = Split(cus.customers_add, ",")
 If UBound(temp) Then
     address = temp(0)
     getTrackingPriceOfCurrentCustomer = getTrackingPrice(address)
+ElseIf UBound(temp) = 0 And cus.customers_add <> "" Then
+    address = cus.customers_add
+    getTrackingPriceOfCurrentCustomer = getTrackingPrice(address)
 Else
     getTrackingPriceOfCurrentCustomer = 0
 End If
