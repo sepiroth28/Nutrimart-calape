@@ -94,6 +94,9 @@ Begin VB.MDIForm mdi_Inventory
       Begin VB.Menu mnu_rebate_item 
          Caption         =   "Rebate Items"
       End
+      Begin VB.Menu mnu_rebate_price_table 
+         Caption         =   "Rebate Price Table"
+      End
    End
 End
 Attribute VB_Name = "mdi_Inventory"
@@ -249,6 +252,10 @@ End Sub
 
 Private Sub mnu_rebate_item_Click()
 frmManageItemRebates.Show
+End Sub
+
+Private Sub mnu_rebate_price_table_Click()
+frmRebatesPriceTable.Show
 End Sub
 
 Private Sub mnu_sales_adjustment_Click()

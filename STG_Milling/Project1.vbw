@@ -2,8 +2,13 @@ items = 50, 50, 905, 567, CI
 DB = 50, 50, 1001, 370, C
 CONFIG = 50, 50, 861, 475, C
 MainModule = 0, 0, 0, 0, C
+<<<<<<< HEAD
 GlobalVars = 75, 75, 886, 500, C
 Helper_items = 136, 5, 991, 522, CI
+=======
+GlobalVars = 75, 75, 886, 500, CI
+Helper_items = 136, 5, 991, 522, C
+>>>>>>> 3f5dd25ce671431041dcdeb58b5d440be6c75b50
 ItemCollection = 0, 0, 0, 0, C
 manufacturers = 0, 0, 0, 0, C
 Helper_manufacturers = 0, 0, 0, 0, C
@@ -47,7 +52,15 @@ cart_items = 0, 0, 0, 0, C
 cart = 0, 0, 0, 0, C
 frmItemList = 0, 0, 0, 0, C, 0, 0, 811, 425, C
 Helper_Cart = 0, 0, 0, 0, C
+<<<<<<< HEAD
 Helper_Sales = 0, 0, 811, 425, CI
+=======
+<<<<<<< HEAD
+Helper_Sales = 0, 0, 811, 425, C
+=======
+Helper_Sales = 0, 0, 811, 425, 
+>>>>>>> 90113794383510add15d31147bdc1de5bb7a792f
+>>>>>>> 3f5dd25ce671431041dcdeb58b5d440be6c75b50
 frmSummary = 0, 0, 0, 0, C, 25, 25, 836, 450, C
 dtaSalesOrder = 0, 0, 0, 0, C, 200, 200, 1225, 968, CZ
 frmViewSales = 150, 150, 961, 575, , 125, 125, 936, 550, C
@@ -73,7 +86,11 @@ account_receivable = 0, 0, 0, 0, C
 frmPaymentReceivedDetails = 115, 24, 926, 577, CI, 125, 125, 936, 550, C
 Helper_Payment = 125, 125, 936, 550, C
 frmAdjustSaleTransaction = 0, 0, 0, 0, C, 75, 75, 886, 500, C
+<<<<<<< HEAD
+mdi_Inventory = 100, 100, 911, 525, C, 75, 75, 886, 500, I
+=======
 mdi_Inventory = 100, 100, 911, 525, I, 75, 75, 886, 500, C
+>>>>>>> 90113794383510add15d31147bdc1de5bb7a792f
 frmReprint = 0, 0, 0, 0, C, 125, 125, 936, 550, C
 frmCalendar = 0, 0, 0, 0, C, 150, 150, 961, 575, C
 frmLogIn = 0, 0, 0, 0, C, 175, 175, 986, 600, C
@@ -96,4 +113,7 @@ frmAgingAccounts = 125, 125, 936, 550, C, 100, 100, 911, 525, C
 Helper_AgingAccounts = 175, 175, 986, 600, C
 frmManageItemRebates = 10, 24, 865, 541, CI, 100, 100, 955, 617, C
 frmViewRebates = 100, 100, 955, 617, C, 150, 150, 1005, 667, C
-Helper_Rebates = 50, 50, 905, 567, I
+Helper_Rebates = 50, 50, 905, 567, C
+frmRebatesPriceTable = 0, 0, 776, 517, C, 202, 205, 978, 722, C
+RebatePriceTable = 50, 50, 826, 567, C
+Helper_RebatePriceTable = 75, 75, 851, 592, I
