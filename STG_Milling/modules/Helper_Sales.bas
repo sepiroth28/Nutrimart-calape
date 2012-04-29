@@ -423,3 +423,15 @@ Function getTotalAmountOfAccountReceivableOfThisCustomer(customer_id As Integer)
     End If
 End Function
 
+Function checkCODIfRemitted(sales_date As Date) As Boolean
+    Dim rs As New ADODB.Recordset
+    Dim sql As String
+    sql = "SELECT * FROM cod_remitted WHERE sales_date = '" & Format(sales_date, "yyyy-mm-dd") & "'"
+    Set rs = db.execute(sql)
+    If rs.RecordCount > 0 Then
+        checkCODIfRemitted = True
+    Else
+        checkCODIfRemitted = False
+    End If
+End Function
+

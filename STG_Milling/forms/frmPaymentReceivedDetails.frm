@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmPaymentReceivedDetails 
    BackColor       =   &H00000000&
    BorderStyle     =   1  'Fixed Single
@@ -200,6 +200,9 @@ Begin VB.Form frmPaymentReceivedDetails
       Begin VB.Menu mnu_payment_details_view_payment_hostory 
          Caption         =   "View Payment History"
       End
+      Begin VB.Menu mnu_payment_details_sohistory 
+         Caption         =   "SO History"
+      End
    End
 End
 Attribute VB_Name = "frmPaymentReceivedDetails"
@@ -301,6 +304,11 @@ End Sub
 
 Private Sub lsvTotalsInfo_Click()
 Call checkIfRemitted(lsvTotalsInfo.SelectedItem)
+End Sub
+
+Private Sub mnu_payment_details_sohistory_Click()
+selectedSOForHistory = lsvPaymentReceived.SelectedItem.SubItems(1)
+frmSOHistory.Show 1
 End Sub
 
 Private Sub mnu_payment_details_view_payment_hostory_Click()
