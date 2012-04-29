@@ -36,6 +36,9 @@ Begin VB.MDIForm mdi_Inventory
       Begin VB.Menu mnuSOResponsible 
          Caption         =   "Sales Order Responsible"
       End
+      Begin VB.Menu mnu_manage_municipal 
+         Caption         =   "Manage Municipalities"
+      End
       Begin VB.Menu mnuSepSOResponsible 
          Caption         =   "-"
       End
@@ -244,6 +247,10 @@ End Sub
 
 Private Sub mnu_manage_manufacturers_Click()
 frmManageManufacturers.Show 1
+End Sub
+
+Private Sub mnu_manage_municipal_Click()
+frmMunicipalities.Show 1
 End Sub
 
 Private Sub mnu_print_receipt_Click()

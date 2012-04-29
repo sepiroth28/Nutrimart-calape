@@ -16,7 +16,21 @@ Public Sub loadAllMunicipalities(lsv As ListView)
     Set rs = Nothing
    
 End Sub
-
+Public Sub loadAllMunicipalitiesToCombo(cbo As ComboBox)
+    Dim rs As New ADODB.Recordset
+    Dim sql As String
+    'municipal_id, municipal_name FROM
+    sql = "SELECT * FROM municipalities"
+    Set rs = db.execute(sql)
+    
+        Do Until rs.EOF
+          cbo.AddItem rs.Fields("municipal_name").Value
+        rs.MoveNext
+        Loop
+    
+    Set rs = Nothing
+   
+End Sub
 Sub loadMunicipalityToListView(lsv As ListView)
     Dim list As ListItem
     Dim rs As New ADODB.Recordset

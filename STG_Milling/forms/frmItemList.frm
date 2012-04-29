@@ -191,6 +191,7 @@ Private Sub cmdSelect_Click()
     If activeSales.isSoldToWalkIn Then
              Call items.Item.load_item(Val(lsvItemList.SelectedItem.Text))
             items.qty_purchased = Val(txtQty.Text)
+            items.tracking_price = getTrackingPriceOfCurrentCustomer(activeSales.sold_to.customers_id)
             If items.Item.item_qty >= items.qty_purchased Then
                 Call activeSales.items_sold.Add(items)
                 Call loadActiveCartItems(frmMenu.lsvItemsInCart)
@@ -212,6 +213,7 @@ Private Sub cmdSelect_Click()
                         MsgBox "Customers reach his/her credit limit...Please refer to the SO history of this customer", vbInformation, "Credit Limit reached"
                     Else
                         items.qty_purchased = Val(txtQty.Text)
+                        items.tracking_price = getTrackingPriceOfCurrentCustomer(activeSales.sold_to.customers_id)
                         If items.Item.item_qty >= items.qty_purchased Then
                             Call activeSales.items_sold.Add(items)
                             Call loadActiveCartItems(frmMenu.lsvItemsInCart)
@@ -227,6 +229,7 @@ Private Sub cmdSelect_Click()
     End If
     
 End Sub
+
 
 Private Sub Form_Load()
 Call setItemsDescriptionColumns(lsvItemList)

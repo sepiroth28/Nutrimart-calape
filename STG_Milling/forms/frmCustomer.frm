@@ -27,7 +27,7 @@ Begin VB.Form frmCustomer
       EndProperty
       Height          =   495
       Left            =   3600
-      TabIndex        =   12
+      TabIndex        =   11
       Top             =   4800
       Width           =   615
    End
@@ -42,6 +42,41 @@ Begin VB.Form frmCustomer
       TabIndex        =   0
       Top             =   120
       Width           =   7215
+      Begin VB.ComboBox cboMunicipalities 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000000&
+         Height          =   360
+         Left            =   1740
+         TabIndex        =   15
+         Top             =   2460
+         Width           =   2895
+      End
+      Begin VB.TextBox txtCustomersAddress 
+         Appearance      =   0  'Flat
+         BeginProperty Font 
+            Name            =   "Century Gothic"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   240
+         MultiLine       =   -1  'True
+         TabIndex        =   14
+         Top             =   6300
+         Width           =   6675
+      End
       Begin VB.ComboBox cboDealersType 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -54,14 +89,14 @@ Begin VB.Form frmCustomer
          EndProperty
          Height          =   336
          Left            =   3420
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   3720
          Width           =   3492
       End
       Begin MSComctlLib.ListView lsvAgent 
          Height          =   1095
          Left            =   240
-         TabIndex        =   11
+         TabIndex        =   10
          Top             =   5160
          Visible         =   0   'False
          Width           =   3855
@@ -102,7 +137,7 @@ Begin VB.Form frmCustomer
          EndProperty
          Height          =   495
          Left            =   240
-         TabIndex        =   4
+         TabIndex        =   3
          Top             =   4680
          Width           =   3255
       End
@@ -119,27 +154,9 @@ Begin VB.Form frmCustomer
          EndProperty
          Height          =   495
          Left            =   240
-         TabIndex        =   3
+         TabIndex        =   2
          Top             =   3720
          Width           =   3015
-      End
-      Begin VB.TextBox txtCustomersAddress 
-         Appearance      =   0  'Flat
-         BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   1095
-         Left            =   240
-         MultiLine       =   -1  'True
-         TabIndex        =   2
-         Top             =   2160
-         Width           =   6735
       End
       Begin VB.TextBox txtCustomersName 
          Appearance      =   0  'Flat
@@ -171,9 +188,46 @@ Begin VB.Form frmCustomer
          EndProperty
          Height          =   675
          Left            =   4320
-         TabIndex        =   5
+         TabIndex        =   4
          Top             =   5520
          Width           =   2655
+      End
+      Begin VB.Label Label5 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   ", Bohol"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   4740
+         TabIndex        =   17
+         Top             =   2520
+         Width           =   735
+      End
+      Begin VB.Label Label4 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Municipalities"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   300
+         TabIndex        =   16
+         Top             =   2520
+         Width           =   2055
       End
       Begin VB.Label Label3 
          AutoSize        =   -1  'True
@@ -190,7 +244,7 @@ Begin VB.Form frmCustomer
          EndProperty
          Height          =   228
          Left            =   3420
-         TabIndex        =   13
+         TabIndex        =   12
          Top             =   3420
          Width           =   1140
       End
@@ -209,7 +263,7 @@ Begin VB.Form frmCustomer
          EndProperty
          Height          =   240
          Left            =   240
-         TabIndex        =   10
+         TabIndex        =   9
          Top             =   4320
          Width           =   1365
       End
@@ -229,7 +283,7 @@ Begin VB.Form frmCustomer
          ForeColor       =   &H000000C0&
          Height          =   315
          Left            =   240
-         TabIndex        =   9
+         TabIndex        =   8
          Top             =   120
          Width           =   6735
       End
@@ -248,7 +302,7 @@ Begin VB.Form frmCustomer
          EndProperty
          Height          =   240
          Left            =   240
-         TabIndex        =   8
+         TabIndex        =   7
          Top             =   1860
          Width           =   855
       End
@@ -267,7 +321,7 @@ Begin VB.Form frmCustomer
          EndProperty
          Height          =   240
          Left            =   240
-         TabIndex        =   7
+         TabIndex        =   6
          Top             =   840
          Width           =   1755
       End
@@ -286,7 +340,7 @@ Begin VB.Form frmCustomer
          EndProperty
          Height          =   240
          Left            =   240
-         TabIndex        =   6
+         TabIndex        =   5
          Top             =   3420
          Width           =   1605
       End
@@ -324,7 +378,7 @@ If editmode = True Then
     With edit_customer
   
         .customers_name = txtCustomersName.Text
-        .customers_add = txtCustomersAddress.Text
+        .customers_add = cboMunicipalities.Text & ",Bohol"
         .customers_number = txtContactNumber.Text
         .dealers_type = mvardealers_type
        If .mvaragent.agent_id <> "NULL" Then
@@ -353,7 +407,7 @@ If editmode = True Then
 Else
     With customer
         .customers_name = mvarcustomers_name
-        .customers_add = mvarcustomers_add
+        .customers_add = cboMunicipalities.Text & ",Bohol"
         .customers_number = mvarcustomers_number
         .dealers_type = mvardealers_type
         Dim newCustomerID As Integer
@@ -389,7 +443,12 @@ Call loadAgentToListview(lsvAgent)
        With edit_customer
             Call .load_customers(activecustomer)
             txtCustomersName.Text = .customers_name
-            txtCustomersAddress.Text = .customers_add
+            'txtCustomersAddress.Text = .customers_add
+            Dim temp() As String
+            temp = Split(.customers_add, ",")
+            If UBound(temp) Then
+                cboMunicipalities.Text = temp(0)
+            End If
             txtContactNumber.Text = .customers_number
             txtAgentName.Text = .mvaragent.agent_name
             cboDealersType.Text = .dealers_type
@@ -399,7 +458,7 @@ Call loadAgentToListview(lsvAgent)
 cboDealersType.AddItem DEALER
 cboDealersType.AddItem CONSUMER
 
-
+Call loadAllMunicipalitiesToCombo(cboMunicipalities)
 End Sub
 
 Private Sub lsvAgent_Click()
