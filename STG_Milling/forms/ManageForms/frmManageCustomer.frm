@@ -147,6 +147,12 @@ Begin VB.Form frmManageCustomer
       Begin VB.Menu mnu_sep 
          Caption         =   "-"
       End
+      Begin VB.Menu mnu_change_agent 
+         Caption         =   "Change Agent"
+      End
+      Begin VB.Menu mnu_sep1 
+         Caption         =   "-"
+      End
       Begin VB.Menu mnu_delete 
          Caption         =   "Delete"
          Enabled         =   0   'False
@@ -195,6 +201,11 @@ Private Sub lsvCustomer_MouseUp(Button As Integer, Shift As Integer, x As Single
 If Button = 2 Then
     Me.PopupMenu mnu_customer_menu
 End If
+End Sub
+
+Private Sub mnu_change_agent_Click()
+activecustomer = Val(lsvCustomer.SelectedItem.Text)
+frmChangeAgent.Show 1
 End Sub
 
 Private Sub mnu_customer_rebates_Click()

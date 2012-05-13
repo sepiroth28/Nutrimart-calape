@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmCustomer 
    BackColor       =   &H00E1A00B&
    BorderStyle     =   1  'Fixed Single
@@ -453,6 +453,9 @@ Call loadAgentToListview(lsvAgent)
             txtAgentName.Text = .mvaragent.agent_name
             cboDealersType.Text = .dealers_type
        End With
+       
+       txtAgentName.Enabled = False
+       cmdSelectAgent.Enabled = False
     End If
     
 cboDealersType.AddItem DEALER
