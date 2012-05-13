@@ -36,6 +36,23 @@ Private mvarcanDeleteItem As Boolean 'local copy
 Private mvarcanManageCustomerVisibility As Boolean 'local copy
 'local variable(s) to hold property value(s)
 Private mvarcan_accept_remit_payments As Boolean 'local copy
+'local variable(s) to hold property value(s)
+Private mvarcan_issue_rebate As Boolean 'local copy
+Public Property Let can_issue_rebate(ByVal vData As Boolean)
+'used when assigning a value to the property, on the left side of an assignment.
+'Syntax: X.can_issue_rebate = 5
+    mvarcan_issue_rebate = vData
+End Property
+
+
+Public Property Get can_issue_rebate() As Boolean
+'used when retrieving value of a property, on the right side of an assignment.
+'Syntax: Debug.Print X.can_issue_rebate
+    can_issue_rebate = mvarcan_issue_rebate
+End Property
+
+
+
 Public Property Let can_accept_remit_payments(ByVal vData As Boolean)
 'used when assigning a value to the property, on the left side of an assignment.
 'Syntax: X.can_accept_remit_payments = 5

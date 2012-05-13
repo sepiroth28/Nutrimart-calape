@@ -8,12 +8,12 @@ Begin VB.Form frmSOHistory
    ClientHeight    =   8580
    ClientLeft      =   45
    ClientTop       =   375
-   ClientWidth     =   13200
+   ClientWidth     =   14610
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   8580
-   ScaleWidth      =   13200
+   ScaleWidth      =   14610
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.PictureBox Picture1 
@@ -23,17 +23,17 @@ Begin VB.Form frmSOHistory
       Height          =   8415
       Left            =   60
       ScaleHeight     =   8385
-      ScaleWidth      =   13005
+      ScaleWidth      =   14445
       TabIndex        =   0
       Top             =   60
-      Width           =   13035
+      Width           =   14475
       Begin MSComctlLib.ListView lsvHistory 
          Height          =   6075
-         Left            =   300
+         Left            =   120
          TabIndex        =   2
          Top             =   1500
-         Width           =   12495
-         _ExtentX        =   22040
+         Width           =   14235
+         _ExtentX        =   25109
          _ExtentY        =   10716
          View            =   3
          LabelEdit       =   1
@@ -55,7 +55,7 @@ Begin VB.Form frmSOHistory
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         NumItems        =   5
+         NumItems        =   6
          BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             Text            =   "Sales Order"
             Object.Width           =   3528
@@ -77,8 +77,13 @@ Begin VB.Form frmSOHistory
          EndProperty
          BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   4
-            Text            =   "prepared by"
+            Text            =   "Date paid"
             Object.Width           =   3528
+         EndProperty
+         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   5
+            Text            =   "prepared by"
+            Object.Width           =   2540
          EndProperty
       End
       Begin VB.Label Label6 
@@ -95,7 +100,7 @@ Begin VB.Form frmSOHistory
             Strikethrough   =   0   'False
          EndProperty
          Height          =   240
-         Left            =   9420
+         Left            =   10920
          TabIndex        =   12
          Top             =   1140
          Width           =   1110
@@ -116,7 +121,7 @@ Begin VB.Form frmSOHistory
          EndProperty
          ForeColor       =   &H000000C0&
          Height          =   270
-         Left            =   10740
+         Left            =   12240
          TabIndex        =   11
          Top             =   1140
          Width           =   2085
@@ -137,7 +142,7 @@ Begin VB.Form frmSOHistory
          EndProperty
          ForeColor       =   &H000000C0&
          Height          =   270
-         Left            =   10740
+         Left            =   12240
          TabIndex        =   10
          Top             =   720
          Width           =   2085
@@ -156,7 +161,7 @@ Begin VB.Form frmSOHistory
             Strikethrough   =   0   'False
          EndProperty
          Height          =   225
-         Left            =   8820
+         Left            =   10320
          TabIndex        =   9
          Top             =   720
          Width           =   1725
@@ -281,7 +286,7 @@ Begin VB.Form frmSOHistory
       Begin VB.Line Line1 
          BorderColor     =   &H00808080&
          X1              =   240
-         X2              =   12840
+         X2              =   14340
          Y1              =   540
          Y2              =   540
       End
@@ -315,7 +320,7 @@ Dim SOHistory As New Sales
 Private Sub Form_Load()
 SOHistory.loadSalesOrder selectedSOForHistory
 lblCustomerName.Caption = SOHistory.sold_to.customers_name
-lbladdress.Caption = SOHistory.sold_to.customers_add
+lblAddress.Caption = SOHistory.sold_to.customers_add
 lblContact.Caption = SOHistory.sold_to.customers_number
 lblTechnician.Caption = SOHistory.sold_to.mvaragent.agent_name
 Call loadSalesOrderOfCustomerToListview(SOHistory.sold_to.customers_id, lsvHistory)

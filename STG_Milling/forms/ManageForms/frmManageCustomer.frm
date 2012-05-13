@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmManageCustomer 
    BackColor       =   &H00000000&
    BorderStyle     =   1  'Fixed Single
@@ -148,7 +148,7 @@ Begin VB.Form frmManageCustomer
          Caption         =   "-"
       End
       Begin VB.Menu mnu_change_agent 
-         Caption         =   "Change Agent"
+         Caption         =   "Change Technician"
       End
       Begin VB.Menu mnu_sep1 
          Caption         =   "-"

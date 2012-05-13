@@ -101,15 +101,6 @@ Begin VB.MDIForm mdi_Inventory
          Caption         =   "Rebate Price Table"
       End
    End
-   Begin VB.Menu mnu_system 
-      Caption         =   "System"
-      Begin VB.Menu mnu_index 
-         Caption         =   "Index management"
-         Begin VB.Menu mnu_system_customer_agent 
-            Caption         =   "Customer Agent"
-         End
-      End
-   End
 End
 Attribute VB_Name = "mdi_Inventory"
 Attribute VB_GlobalNameSpace = False

@@ -17,6 +17,7 @@ If cus.customers_add <> "" Then
         getTrackingPriceOfCurrentCustomer = 0
     End If
 End If
+
 End Function
 
 Function getTrackingPrice(municipal As String)

@@ -267,7 +267,7 @@ Begin VB.Form frmPayment
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            NumItems        =   5
+            NumItems        =   6
             BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
                Text            =   "Quantity"
                Object.Width           =   2540
@@ -280,7 +280,7 @@ Begin VB.Form frmPayment
             BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
                SubItemIndex    =   2
                Text            =   "Description"
-               Object.Width           =   8819
+               Object.Width           =   6174
             EndProperty
             BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
                Alignment       =   1
@@ -291,7 +291,13 @@ Begin VB.Form frmPayment
             BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
                Alignment       =   1
                SubItemIndex    =   4
-               Text            =   "Amount"
+               Text            =   "Net Price"
+               Object.Width           =   2540
+            EndProperty
+            BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+               Alignment       =   1
+               SubItemIndex    =   5
+               Text            =   "Total"
                Object.Width           =   2540
             EndProperty
          End
@@ -404,9 +410,9 @@ Begin VB.Form frmPayment
                Strikethrough   =   0   'False
             EndProperty
             Height          =   255
-            Left            =   8040
+            Left            =   6780
             TabIndex        =   18
-            Top             =   4380
+            Top             =   5040
             Visible         =   0   'False
             Width           =   1695
          End
@@ -424,9 +430,9 @@ Begin VB.Form frmPayment
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   8040
+            Left            =   6900
             TabIndex        =   17
-            Top             =   4800
+            Top             =   4200
             Width           =   1695
          End
          Begin VB.Label lblNetTotal 
@@ -443,18 +449,18 @@ Begin VB.Form frmPayment
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   10500
+            Left            =   9060
             TabIndex        =   16
-            Top             =   4800
+            Top             =   4140
             Width           =   1695
          End
          Begin VB.Line Line2 
             BorderColor     =   &H00808080&
             Visible         =   0   'False
-            X1              =   12300
-            X2              =   9540
-            Y1              =   4680
-            Y2              =   4680
+            X1              =   11040
+            X2              =   8280
+            Y1              =   5340
+            Y2              =   5340
          End
          Begin VB.Label lblDiscount 
             Alignment       =   1  'Right Justify
@@ -469,9 +475,9 @@ Begin VB.Form frmPayment
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   10500
+            Left            =   9240
             TabIndex        =   15
-            Top             =   4320
+            Top             =   4980
             Width           =   1695
          End
          Begin VB.Label lblGrandTotal 
@@ -922,7 +928,7 @@ Sub loadSalesInfo()
                 list.SubItems(3) = items.item_price
                 list.SubItems(4) = FormatCurrency((items.item_price - items.discount) + items.tracking_price, 2)
             End If
-            
+            list.SubItems(5) = FormatCurrency(items.total_price, 2)
         Next
         
     End With

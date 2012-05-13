@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmViewRebates 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "View Rebates"
@@ -192,6 +192,7 @@ Begin VB.Form frmViewRebates
          BackColor       =   -2147483643
          BorderStyle     =   1
          Appearance      =   0
+         Enabled         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
             Size            =   9.75
