@@ -34,3 +34,35 @@ If rs.RecordCount > 0 Then
 End If
 
 End Sub
+
+Sub issueRebate(customer_id As Integer, mo As String, grand_total_amount As Double, grand_total_qty As Double, issue_by As String)
+Dim rs As ADODB.Recordset
+Dim sql As String
+
+'id, customer_id, total_rebate_amount, total_qty_bought, month, issue_by
+sql = "INSERT INTO rebates VALUES(null," & _
+        customer_id & "," & _
+        grand_total_amount & "," & _
+        grand_total_qty & "," & _
+        "'" & mo & "'," & _
+        "'" & issue_by & "'" & _
+        ")"
+
+db.execute sql
+End Sub
+
+Function isDoneIssueRebate(customer_id As Integer, mo As String) As Boolean
+Dim rs As ADODB.Recordset
+Dim sql As String
+
+'id, customer_id, total_rebate_amount, total_qty_bought, month, issue_by
+sql = "SELECT * FROM rebates WHERE customer_id = " & customer_id & " AND month = '" & mo & "'"
+Set rs = db.execute(sql)
+If rs.RecordCount > 0 Then
+    isDoneIssueRebate = True
+Else
+    isDoneIssueRebate = False
+End If
+
+Set rs = Nothing
+End Function

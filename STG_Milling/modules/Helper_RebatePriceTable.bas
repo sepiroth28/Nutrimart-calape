@@ -26,12 +26,18 @@ Dim qty_bought As Double
 Dim rebate_price As Double
 Dim total_amount As Double
 
+rebate_grand_total = 0
+rebate_grand_total_qty = 0
+
 For Each list In lsv.ListItems
     qty_bought = Val(list.SubItems(3))
     rebate_price = getRebateRate(qty_bought)
     total_amount = qty_bought * rebate_price
     list.SubItems(5) = rebate_price
     list.SubItems(6) = total_amount
+    
+    rebate_grand_total = rebate_grand_total + total_amount
+    rebate_grand_total_qty = rebate_grand_total_qty + qty_bought
 Next
 
 End Sub

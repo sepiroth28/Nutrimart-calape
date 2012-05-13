@@ -20,6 +20,9 @@ Public activeSalesOrderForViewSalesDetails As String
 Public activeSalesOrderForPaymentHistory As String
 Public activeCustomerIdForRebate As Integer
 
+'rebate variable
+Public rebate_grand_total As Double
+Public rebate_grand_total_qty As Double
 
 Public selectedSOForHistory As String
 
