@@ -112,6 +112,7 @@ Form=forms\frmMunicipalities.frm
 Module=Helper_TrackingPrice; modules\Helper_TrackingPrice.bas
 Form=forms\frmCustomerAgentIndex.frm
 Form=forms\frmChangeAgent.frm
+Module=Entities; forms\Entities.bas
 Startup="Sub Main"
 HelpFile=""
 ExeName32="STG Milling.exe"

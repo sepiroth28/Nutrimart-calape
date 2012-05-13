@@ -27,14 +27,14 @@ Begin VB.Form frmChangeAgent
       Top             =   60
       Width           =   5715
       Begin MSComctlLib.ListView lsvAgent 
-         Height          =   1215
+         Height          =   1515
          Left            =   180
          TabIndex        =   2
          Top             =   2340
          Visible         =   0   'False
          Width           =   5295
          _ExtentX        =   9340
-         _ExtentY        =   2143
+         _ExtentY        =   2672
          View            =   3
          LabelWrap       =   -1  'True
          HideSelection   =   -1  'True
@@ -71,7 +71,7 @@ Begin VB.Form frmChangeAgent
          Height          =   735
          Left            =   3480
          TabIndex        =   5
-         Top             =   3180
+         Top             =   3120
          Width           =   2055
       End
       Begin VB.CommandButton cmdSelectAgent 
