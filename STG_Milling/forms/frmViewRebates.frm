@@ -185,7 +185,6 @@ Begin VB.Form frmViewRebates
          LabelWrap       =   -1  'True
          HideSelection   =   -1  'True
          HideColumnHeaders=   -1  'True
-         FullRowSelect   =   -1  'True
          GridLines       =   -1  'True
          _Version        =   393217
          ForeColor       =   -2147483640
@@ -262,7 +261,7 @@ Begin VB.Form frmViewRebates
          Top             =   120
          Width           =   2745
       End
-      Begin VB.Label Label4 
+      Begin VB.Label lblDoneRemit 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
          Caption         =   "DONE ISSUE REBATE"
@@ -426,6 +425,7 @@ list.SubItems(3) = rebate_grand_total_qty
 
 prepareRebateButton m
 
+
 Set cus = Nothing
 End Sub
 
@@ -437,4 +437,6 @@ Else
     picIssueRebate.Visible = True
 End If
 
+picIssueRebate.Visible = activeUser.previliges.can_issue_rebate
+lblDoneRemit.Visible = activeUser.previliges.can_issue_rebate
 End Sub
