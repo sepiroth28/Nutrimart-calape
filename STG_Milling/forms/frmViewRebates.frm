@@ -85,7 +85,7 @@ Begin VB.Form frmViewRebates
          Height          =   315
          Left            =   3900
          TabIndex        =   5
-         Top             =   600
+         Top             =   780
          Width           =   2595
       End
       Begin VB.CommandButton cmdClose 
@@ -106,13 +106,13 @@ Begin VB.Form frmViewRebates
          Width           =   2532
       End
       Begin MSComctlLib.ListView lsvItemList 
-         Height          =   6135
+         Height          =   5775
          Left            =   180
          TabIndex        =   2
-         Top             =   1020
+         Top             =   1260
          Width           =   12675
          _ExtentX        =   22357
-         _ExtentY        =   10821
+         _ExtentY        =   10186
          View            =   3
          LabelEdit       =   1
          LabelWrap       =   -1  'True
@@ -241,6 +241,27 @@ Begin VB.Form frmViewRebates
             Object.Width           =   3881
          EndProperty
       End
+      Begin VB.Label lblCustomerName 
+         Alignment       =   1  'Right Justify
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "View Customer Rebates"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000C0&
+         Height          =   285
+         Left            =   10050
+         TabIndex        =   14
+         Top             =   120
+         Width           =   2745
+      End
       Begin VB.Label Label4 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
@@ -277,7 +298,7 @@ Begin VB.Form frmViewRebates
          Height          =   240
          Left            =   6600
          TabIndex        =   7
-         Top             =   600
+         Top             =   780
          Width           =   510
       End
       Begin VB.Label Label2 
@@ -296,7 +317,7 @@ Begin VB.Form frmViewRebates
          Height          =   240
          Left            =   240
          TabIndex        =   6
-         Top             =   600
+         Top             =   780
          Width           =   3555
       End
       Begin VB.Label lblPreparedBy 
@@ -320,9 +341,9 @@ Begin VB.Form frmViewRebates
       End
       Begin VB.Line Line1 
          X1              =   0
-         X2              =   10080
-         Y1              =   420
-         Y2              =   420
+         X2              =   13020
+         Y1              =   540
+         Y2              =   540
       End
       Begin VB.Label Label1 
          BackStyle       =   0  'Transparent
@@ -380,6 +401,10 @@ End Sub
 Private Sub Form_Load()
 Dim list As ListItem
 Dim x As Integer
+Dim cus As New Customers
+cus.load_customers (activeCustomerIdForRebate)
+
+lblCustomerName.Caption = cus.customers_name
 
 For x = 1 To 12
     cboMonth.AddItem MonthName(x)
@@ -401,6 +426,7 @@ list.SubItems(3) = rebate_grand_total_qty
 
 prepareRebateButton m
 
+Set cus = Nothing
 End Sub
 
 Sub prepareRebateButton(mo As String)
