@@ -389,7 +389,10 @@ Sub loadSalesOrderOfCustomerToListview(customer_id As Integer, lsv As ListView)
                 list.ForeColor = vbRed
                 
             End If
-            list.SubItems(4) = rs.Fields("prepared_by").Value
+            If rs.Fields(2).Value = "fully paid" Then
+                list.SubItems(4) = getPaymentDateOfThisSO(rs.Fields(0).Value)
+            End If
+            list.SubItems(5) = rs.Fields("prepared_by").Value
         rs.MoveNext
         Loop
         
@@ -399,7 +402,7 @@ End Sub
 
 Function getSalesOrderOfThisCustomer(customer_id As Integer) As ADODB.Recordset
     Dim sql As String
-    sql = "SELECT acr.sales_order_no,sot.net_total,acr.remarks,DATE_FORMAT(sot.delivery_date,'%m/%d/%Y'),sot.prepared_by " & _
+    sql = "SELECT acr.sales_order_no,sot.net_total,acr.remarks,DATE_FORMAT(sot.delivery_date,'%m/%d/%Y') as delivery_date,sot.prepared_by " & _
               "  FROM `account_receivable` acr " & _
               "  LEFT JOIN `stock_out_transaction` sot " & _
               "  ON acr.sales_order_no = sot.sales_order_no " & _
@@ -435,3 +438,16 @@ Function checkCODIfRemitted(sales_date As Date) As Boolean
     End If
 End Function
 
+Function getPaymentDateOfThisSO(so As String) As String
+Dim sql As String
+Dim rs As ADODB.Recordset
+
+sql = "SELECT * FROM `payment_records` where sales_order_no = '" & so & "' ORDER BY payment_date DESC LIMIT 1"
+
+Set rs = db.execute(sql)
+If rs.RecordCount > 0 Then
+    getPaymentDateOfThisSO = Format(rs.Fields("payment_date").Value, "mm/dd/yyyy")
+End If
+
+Set rs = Nothing
+End Function

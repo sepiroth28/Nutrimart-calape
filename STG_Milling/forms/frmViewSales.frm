@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmViewSales 
    Appearance      =   0  'Flat
    BackColor       =   &H00C8761C&
@@ -433,6 +433,7 @@ Private Sub cmdLoadRecords_Click()
     Call loadAllSalesToListview(lsvSales, False, 3, Format(activeDate, "yyyy-mm-dd"))
 'End If
 updateTotals (activeDate)
+Exit Sub
 
     Dim is_cod_remitted As Boolean
     is_cod_remitted = checkCODIfRemitted(activeDate)

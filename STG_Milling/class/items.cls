@@ -219,7 +219,7 @@ Public Sub update()
                 "dealers_price = " & Me.dealers_price & "," & _
                 "date_modified = CURDATE()," & _
                 "manufacturers_id = " & Me.manufacturers_id & "," & _
-                "reorder_point = " & Me.reorder_point & _
+                "reorder_point = " & Me.reorder_point & "," & _
                 "include_in_rebate = " & Me.include_in_rebate & _
                 " WHERE item_id = " & Me.item_id
     

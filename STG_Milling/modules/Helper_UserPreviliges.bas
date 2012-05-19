@@ -57,6 +57,8 @@ Sub setPrevileges(previleges, action As Boolean)
             activeUser.previliges.canManageCustomerVisibility = action
         Case "can_accept_remit_payments":
             activeUser.previliges.can_accept_remit_payments = action
+        Case "can_issue_rebate":
+            activeUser.previliges.can_issue_rebate = action
     End Select
 End Sub
 
