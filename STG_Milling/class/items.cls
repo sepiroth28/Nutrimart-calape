@@ -268,12 +268,14 @@ Public Sub insert()
             "'" & Me.unit_of_measure & "')"
     
     db.execute tbl_item_insert
+    Dim last_id As Integer
+    last_id = Val(db.execute("select last_insert_id()").Fields(0).Value)
+    
     db.execute tbl_item_desc
     
     'item_id, item_code, beginning_balance, ending_balance, date
     Dim insert_to_last_inventory As String
-    Dim last_id As Integer
-    last_id = Val(db.execute("select last_insert_id()").Fields(0).Value)
+    
     insert_to_last_inventory = "INSERT INTO last_inventory VALUES(" & last_id & ",'" & Me.item_code & "'," & Me.item_qty & "," & Me.item_qty & ",CURDATE())"
      
     
