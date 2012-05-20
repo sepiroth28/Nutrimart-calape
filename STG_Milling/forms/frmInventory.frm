@@ -8,6 +8,7 @@ Begin VB.Form frmInventory
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   11955
+   Icon            =   "frmInventory.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -27,7 +28,7 @@ Begin VB.Form frmInventory
       Width           =   11835
       Begin VB.ComboBox cboCategory 
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   7.5
             Charset         =   0
             Weight          =   400
@@ -36,9 +37,9 @@ Begin VB.Form frmInventory
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         ItemData        =   "frmInventory.frx":0000
+         ItemData        =   "frmInventory.frx":058A
          Left            =   9540
-         List            =   "frmInventory.frx":0002
+         List            =   "frmInventory.frx":058C
          TabIndex        =   8
          Text            =   "cboCategory"
          Top             =   180
@@ -72,9 +73,9 @@ Begin VB.Form frmInventory
             Strikethrough   =   0   'False
          EndProperty
          Height          =   336
-         ItemData        =   "frmInventory.frx":0004
+         ItemData        =   "frmInventory.frx":058E
          Left            =   2280
-         List            =   "frmInventory.frx":0006
+         List            =   "frmInventory.frx":0590
          TabIndex        =   6
          Text            =   "Today"
          Top             =   8520
@@ -146,7 +147,7 @@ Begin VB.Form frmInventory
          BackStyle       =   0  'Transparent
          Caption         =   "Select Category :"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9
             Charset         =   0
             Weight          =   700
@@ -165,7 +166,7 @@ Begin VB.Form frmInventory
          BackStyle       =   0  'Transparent
          Caption         =   "Select Inventory Date: "
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -184,7 +185,7 @@ Begin VB.Form frmInventory
          BackStyle       =   0  'Transparent
          Caption         =   "Ending Balance as of"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   14.25
             Charset         =   0
             Weight          =   700
@@ -203,7 +204,7 @@ Begin VB.Form frmInventory
          BackStyle       =   0  'Transparent
          Caption         =   "Ending Balance as of"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   14.25
             Charset         =   0
             Weight          =   700

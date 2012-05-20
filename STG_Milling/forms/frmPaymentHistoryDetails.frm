@@ -4,10 +4,12 @@ Begin VB.Form frmPaymentHistoryDetails
    Appearance      =   0  'Flat
    BackColor       =   &H00000080&
    BorderStyle     =   1  'Fixed Single
+   Caption         =   "Payment History Details"
    ClientHeight    =   8175
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   13005
+   Icon            =   "frmPaymentHistoryDetails.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False

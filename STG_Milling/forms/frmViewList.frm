@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmViewList 
    BackColor       =   &H80000007&
    Caption         =   "View List"
@@ -7,6 +7,7 @@ Begin VB.Form frmViewList
    ClientLeft      =   120
    ClientTop       =   450
    ClientWidth     =   13005
+   Icon            =   "frmViewList.frx":0000
    LinkTopic       =   "Form3"
    ScaleHeight     =   8700
    ScaleWidth      =   13005
@@ -24,7 +25,7 @@ Begin VB.Form frmViewList
       Width           =   12735
       Begin VB.ComboBox cboViewType 
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -58,7 +59,7 @@ Begin VB.Form frmViewList
          BorderStyle     =   1
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -72,7 +73,7 @@ Begin VB.Form frmViewList
          BackStyle       =   0  'Transparent
          Caption         =   "List of all Items"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   15.75
             Charset         =   0
             Weight          =   700
@@ -97,7 +98,7 @@ Begin VB.Form frmViewList
          BackStyle       =   0  'Transparent
          Caption         =   "Select type of List :"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700

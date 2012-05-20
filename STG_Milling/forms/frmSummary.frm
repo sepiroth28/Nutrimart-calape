@@ -9,6 +9,7 @@ Begin VB.Form frmSummary
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   10665
+   Icon            =   "frmSummary.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -168,7 +169,7 @@ Begin VB.Form frmSummary
          Alignment       =   1  'Right Justify
          BackStyle       =   0  'Transparent
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700
@@ -374,7 +375,7 @@ Begin VB.Form frmSummary
          BackStyle       =   0  'Transparent
          Caption         =   "SUMMARY"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700

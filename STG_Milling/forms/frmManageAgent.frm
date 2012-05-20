@@ -8,6 +8,7 @@ Begin VB.Form frmManageAgent
    ClientLeft      =   8055
    ClientTop       =   2115
    ClientWidth     =   11775
+   Icon            =   "frmManageAgent.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -29,7 +30,7 @@ Begin VB.Form frmManageAgent
       Begin VB.CommandButton cmdAddNewAgent 
          Caption         =   "ADD NEW AGENT"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -96,7 +97,7 @@ Begin VB.Form frmManageAgent
          BackStyle       =   0  'Transparent
          Caption         =   "Search Agent"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -122,7 +123,7 @@ Begin VB.Form frmManageAgent
          BackStyle       =   0  'Transparent
          Caption         =   "Manage Agent"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   14.25
             Charset         =   0
             Weight          =   700

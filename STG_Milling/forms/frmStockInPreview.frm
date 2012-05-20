@@ -8,6 +8,7 @@ Begin VB.Form frmStockInPreview
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   12405
+   Icon            =   "frmStockInPreview.frx":0000
    LinkTopic       =   "Form3"
    MaxButton       =   0   'False
    MinButton       =   0   'False

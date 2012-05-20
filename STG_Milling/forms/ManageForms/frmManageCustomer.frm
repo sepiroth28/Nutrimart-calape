@@ -8,6 +8,7 @@ Begin VB.Form frmManageCustomer
    ClientLeft      =   45
    ClientTop       =   675
    ClientWidth     =   11805
+   Icon            =   "frmManageCustomer.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -47,7 +48,7 @@ Begin VB.Form frmManageCustomer
       Begin VB.CommandButton cmdAddNewCustomer 
          Caption         =   "ADD NEW CUSTOMER"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -95,7 +96,7 @@ Begin VB.Form frmManageCustomer
          BackStyle       =   0  'Transparent
          Caption         =   "Manage Customer"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   14.25
             Charset         =   0
             Weight          =   700
@@ -120,7 +121,7 @@ Begin VB.Form frmManageCustomer
          BackStyle       =   0  'Transparent
          Caption         =   "Search Customer"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700

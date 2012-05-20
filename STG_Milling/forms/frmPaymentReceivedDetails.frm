@@ -8,6 +8,7 @@ Begin VB.Form frmPaymentReceivedDetails
    ClientLeft      =   45
    ClientTop       =   675
    ClientWidth     =   15015
+   Icon            =   "frmPaymentReceivedDetails.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False

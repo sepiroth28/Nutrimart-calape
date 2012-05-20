@@ -2,11 +2,12 @@ VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmStockIn 
    BackColor       =   &H00404040&
-   Caption         =   "Form3"
+   Caption         =   "Manage Stock-in"
    ClientHeight    =   7320
    ClientLeft      =   120
    ClientTop       =   750
    ClientWidth     =   11670
+   Icon            =   "frmStockIn.frx":0000
    LinkTopic       =   "Form3"
    ScaleHeight     =   7320
    ScaleWidth      =   11670
@@ -167,7 +168,7 @@ Begin VB.Form frmStockIn
          BackStyle       =   0  'Transparent
          Caption         =   "Qty"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700
@@ -185,7 +186,7 @@ Begin VB.Form frmStockIn
          BackStyle       =   0  'Transparent
          Caption         =   "Item Code"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700
@@ -210,7 +211,7 @@ Begin VB.Form frmStockIn
          BackStyle       =   0  'Transparent
          Caption         =   "MANAGE STOCK - IN"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700

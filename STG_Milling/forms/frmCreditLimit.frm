@@ -5,14 +5,15 @@ Begin VB.Form frmCreditLimit
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Manage Credit Limit"
    ClientHeight    =   7260
-   ClientLeft      =   36
+   ClientLeft      =   30
    ClientTop       =   360
-   ClientWidth     =   5052
+   ClientWidth     =   5055
+   Icon            =   "frmCreditLimit.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   7260
-   ScaleWidth      =   5052
+   ScaleWidth      =   5055
    StartUpPosition =   2  'CenterScreen
    Begin VB.PictureBox Picture1 
       Appearance      =   0  'Flat
@@ -20,8 +21,8 @@ Begin VB.Form frmCreditLimit
       ForeColor       =   &H80000008&
       Height          =   7152
       Left            =   60
-      ScaleHeight     =   7128
-      ScaleWidth      =   4908
+      ScaleHeight     =   7125
+      ScaleWidth      =   4905
       TabIndex        =   0
       Top             =   60
       Width           =   4932
@@ -29,7 +30,7 @@ Begin VB.Form frmCreditLimit
          Caption         =   "Update"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -55,7 +56,7 @@ Begin VB.Form frmCreditLimit
          EndProperty
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   13.2
+            Size            =   13.5
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -72,7 +73,7 @@ Begin VB.Form frmCreditLimit
          Appearance      =   0  'Flat
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -91,8 +92,8 @@ Begin VB.Form frmCreditLimit
          TabIndex        =   2
          Top             =   600
          Width           =   4512
-         _ExtentX        =   7959
-         _ExtentY        =   6371
+         _ExtentX        =   7964
+         _ExtentY        =   6376
          View            =   3
          LabelEdit       =   1
          LabelWrap       =   -1  'True
@@ -106,7 +107,7 @@ Begin VB.Form frmCreditLimit
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -139,8 +140,8 @@ Begin VB.Form frmCreditLimit
          BackStyle       =   0  'Transparent
          Caption         =   "Credit Limit"
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -158,7 +159,7 @@ Begin VB.Form frmCreditLimit
          BackStyle       =   0  'Transparent
          Caption         =   "Customer name:"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9
             Charset         =   0
             Weight          =   400
@@ -183,8 +184,8 @@ Begin VB.Form frmCreditLimit
          BackStyle       =   0  'Transparent
          Caption         =   "Credit Limit"
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -217,8 +218,8 @@ Begin VB.Form frmCreditLimit
          BackStyle       =   0  'Transparent
          Caption         =   "Manage Credit Limit"
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False

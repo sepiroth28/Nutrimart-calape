@@ -3,10 +3,12 @@ Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmCustomerAccountReceivable 
    BackColor       =   &H00000080&
    BorderStyle     =   3  'Fixed Dialog
+   Caption         =   "List of Account Receivable"
    ClientHeight    =   8730
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   10710
+   Icon            =   "frmCustomerAccountReceivable.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False

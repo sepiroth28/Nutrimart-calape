@@ -6,7 +6,7 @@ Begin VB.Form frmLogIn
    ClientHeight    =   4500
    ClientLeft      =   45
    ClientTop       =   330
-   ClientWidth     =   7470
+   ClientWidth     =   7500
    BeginProperty Font 
       Name            =   "Arial Black"
       Size            =   12
@@ -16,12 +16,13 @@ Begin VB.Form frmLogIn
       Italic          =   0   'False
       Strikethrough   =   0   'False
    EndProperty
+   Icon            =   "frmLogIn.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   Picture         =   "frmLogIn.frx":0000
+   Picture         =   "frmLogIn.frx":058A
    ScaleHeight     =   4500
-   ScaleWidth      =   7470
+   ScaleWidth      =   7500
    StartUpPosition =   2  'CenterScreen
    Begin VB.TextBox txtPassword 
       Appearance      =   0  'Flat
@@ -191,7 +192,7 @@ Sub checkAccount()
     Dim check_useraccount As Boolean
     Dim check_user_type As String
     
-    mvarusername = txtusername.Text
+    mvarusername = txtUsername.Text
     mvarpassword = txtPassword.Text
     
     On Error Resume Next
@@ -202,7 +203,7 @@ Sub checkAccount()
         check_user_type = checkuser.Check_UserType(mvarusername)
             
             If check_user_type = "admin" Then
-                MsgBox "Welcome " & mvarusername
+                MsgBox "Welcome " & mvarusername, vbInformation, "Welcome"
                 activeUser.loadUserAccount mvarusername
                 Call grantUserPreviliges(activeUser.username)
                 
@@ -248,13 +249,11 @@ Next cnt
 End Sub
 
 Private Sub Form_Activate()
-     txtusername.SetFocus
+     txtUsername.SetFocus
 End Sub
 
 Private Sub Form_Load()
-    imgKey.Picture = LoadPicture(App.Path & "\images\keys1.jpg")
-    
-
+    'imgKey.Picture = LoadPicture(App.Path & "\images\keys1.jpg")
 End Sub
 
 

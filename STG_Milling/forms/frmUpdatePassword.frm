@@ -7,6 +7,7 @@ Begin VB.Form frmUpdatePassword
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   4560
+   Icon            =   "frmUpdatePassword.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -85,7 +86,7 @@ Begin VB.Form frmUpdatePassword
          BackStyle       =   0  'Transparent
          Caption         =   "Retype password"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -105,7 +106,7 @@ Begin VB.Form frmUpdatePassword
          BackStyle       =   0  'Transparent
          Caption         =   "New password"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -131,7 +132,7 @@ Begin VB.Form frmUpdatePassword
          BackStyle       =   0  'Transparent
          Caption         =   "Update Password"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700

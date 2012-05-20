@@ -4,15 +4,16 @@ Begin VB.Form frmReprint
    BackColor       =   &H80000009&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Reprint Sales Order"
-   ClientHeight    =   8508
-   ClientLeft      =   48
-   ClientTop       =   384
-   ClientWidth     =   5892
+   ClientHeight    =   8505
+   ClientLeft      =   45
+   ClientTop       =   390
+   ClientWidth     =   5895
+   Icon            =   "frmReprint.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   8508
-   ScaleWidth      =   5892
+   ScaleHeight     =   8505
+   ScaleWidth      =   5895
    StartUpPosition =   2  'CenterScreen
    Begin VB.PictureBox Picture1 
       Appearance      =   0  'Flat
@@ -20,8 +21,8 @@ Begin VB.Form frmReprint
       ForeColor       =   &H80000008&
       Height          =   8352
       Left            =   60
-      ScaleHeight     =   8328
-      ScaleWidth      =   5748
+      ScaleHeight     =   8325
+      ScaleWidth      =   5745
       TabIndex        =   0
       Top             =   60
       Width           =   5775
@@ -32,8 +33,8 @@ Begin VB.Form frmReprint
          Top             =   3660
          Visible         =   0   'False
          Width           =   4272
-         _ExtentX        =   7535
-         _ExtentY        =   3831
+         _ExtentX        =   7541
+         _ExtentY        =   3836
          View            =   3
          LabelEdit       =   1
          LabelWrap       =   -1  'True
@@ -48,7 +49,7 @@ Begin VB.Form frmReprint
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -73,7 +74,7 @@ Begin VB.Form frmReprint
          Caption         =   "PRINT"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -91,7 +92,7 @@ Begin VB.Form frmReprint
          Caption         =   "ACCOUNT RECEIVABLE"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -108,7 +109,7 @@ Begin VB.Form frmReprint
             Appearance      =   0  'Flat
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.6
+               Size            =   9.75
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -136,8 +137,8 @@ Begin VB.Form frmReprint
             Top             =   1260
             Visible         =   0   'False
             Width           =   4335
-            _ExtentX        =   7641
-            _ExtentY        =   3831
+            _ExtentX        =   7646
+            _ExtentY        =   3836
             View            =   3
             LabelEdit       =   1
             LabelWrap       =   -1  'True
@@ -152,7 +153,7 @@ Begin VB.Form frmReprint
             Appearance      =   0
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "MS Sans Serif"
-               Size            =   9.6
+               Size            =   9.75
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -188,8 +189,8 @@ Begin VB.Form frmReprint
             TabIndex        =   9
             Top             =   1560
             Width           =   4935
-            _ExtentX        =   8700
-            _ExtentY        =   4784
+            _ExtentX        =   8705
+            _ExtentY        =   4789
             View            =   3
             LabelEdit       =   1
             LabelWrap       =   -1  'True
@@ -204,7 +205,7 @@ Begin VB.Form frmReprint
             Appearance      =   0
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "MS Sans Serif"
-               Size            =   9.6
+               Size            =   9.75
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -233,8 +234,8 @@ Begin VB.Form frmReprint
             BackStyle       =   0  'Transparent
             Caption         =   "Customer Name:"
             BeginProperty Font 
-               Name            =   "Century Gothic"
-               Size            =   9.6
+               Name            =   "Arial"
+               Size            =   9.75
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -253,7 +254,7 @@ Begin VB.Form frmReprint
          Caption         =   "COD"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -278,7 +279,7 @@ Begin VB.Form frmReprint
             Appearance      =   0  'Flat
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.6
+               Size            =   9.75
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -295,7 +296,7 @@ Begin VB.Form frmReprint
             Caption         =   "Load"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.6
+               Size            =   9.75
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -312,8 +313,8 @@ Begin VB.Form frmReprint
             BackStyle       =   0  'Transparent
             Caption         =   "Sales Order No."
             BeginProperty Font 
-               Name            =   "Century Gothic"
-               Size            =   9.6
+               Name            =   "Arial"
+               Size            =   9.75
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -331,8 +332,8 @@ Begin VB.Form frmReprint
          BackStyle       =   0  'Transparent
          Caption         =   "Customer Name:"
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -350,7 +351,7 @@ Begin VB.Form frmReprint
          Caption         =   "PRINT SALES ORDER"
          BeginProperty Font 
             Name            =   "Tahoma"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False

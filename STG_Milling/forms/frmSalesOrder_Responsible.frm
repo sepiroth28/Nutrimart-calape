@@ -2,13 +2,14 @@ VERSION 5.00
 Begin VB.Form frmSalesOrder_Responsible 
    BackColor       =   &H00FF0000&
    Caption         =   "Sales Order Responsible "
-   ClientHeight    =   5904
+   ClientHeight    =   5910
    ClientLeft      =   60
-   ClientTop       =   348
-   ClientWidth     =   5772
+   ClientTop       =   345
+   ClientWidth     =   5775
+   Icon            =   "frmSalesOrder_Responsible.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   5904
-   ScaleWidth      =   5772
+   ScaleHeight     =   5910
+   ScaleWidth      =   5775
    StartUpPosition =   3  'Windows Default
    Begin VB.PictureBox Picture1 
       Appearance      =   0  'Flat
@@ -16,16 +17,16 @@ Begin VB.Form frmSalesOrder_Responsible
       ForeColor       =   &H80000008&
       Height          =   5655
       Left            =   120
-      ScaleHeight     =   5628
-      ScaleWidth      =   5508
+      ScaleHeight     =   5625
+      ScaleWidth      =   5505
       TabIndex        =   0
       Top             =   120
       Width           =   5535
       Begin VB.TextBox txtChecked_by 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -41,8 +42,8 @@ Begin VB.Form frmSalesOrder_Responsible
       Begin VB.CommandButton cmdAddNewItem 
          Caption         =   "SAVE"
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -58,8 +59,8 @@ Begin VB.Form frmSalesOrder_Responsible
       Begin VB.TextBox txtPrepared_by 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -75,8 +76,8 @@ Begin VB.Form frmSalesOrder_Responsible
       Begin VB.TextBox txtPosted_by 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -92,8 +93,8 @@ Begin VB.Form frmSalesOrder_Responsible
       Begin VB.TextBox txtDelivered_by 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -111,8 +112,8 @@ Begin VB.Form frmSalesOrder_Responsible
          BackStyle       =   0  'Transparent
          Caption         =   "Posted By"
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -130,8 +131,8 @@ Begin VB.Form frmSalesOrder_Responsible
          BackStyle       =   0  'Transparent
          Caption         =   "Prepared By"
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -149,8 +150,8 @@ Begin VB.Form frmSalesOrder_Responsible
          BackStyle       =   0  'Transparent
          Caption         =   "Checked By"
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -169,7 +170,7 @@ Begin VB.Form frmSalesOrder_Responsible
          Caption         =   "  Please fill up requireed fields..."
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -188,8 +189,8 @@ Begin VB.Form frmSalesOrder_Responsible
          BackStyle       =   0  'Transparent
          Caption         =   "Delivered By"
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False

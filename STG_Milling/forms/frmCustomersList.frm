@@ -8,6 +8,7 @@ Begin VB.Form frmCustomersList
    ClientLeft      =   30
    ClientTop       =   660
    ClientWidth     =   5910
+   Icon            =   "frmCustomersList.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -33,7 +34,7 @@ Begin VB.Form frmCustomersList
    End
    Begin VB.TextBox txtSearchCustomer 
       BeginProperty Font 
-         Name            =   "Century Gothic"
+         Name            =   "Arial"
          Size            =   12
          Charset         =   0
          Weight          =   700
@@ -67,7 +68,7 @@ Begin VB.Form frmCustomersList
       BorderStyle     =   1
       Appearance      =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Century Gothic"
+         Name            =   "Arial"
          Size            =   12
          Charset         =   0
          Weight          =   700

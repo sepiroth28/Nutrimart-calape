@@ -6,14 +6,15 @@ Begin VB.Form frmViewStockIn
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Stock In Records"
    ClientHeight    =   9360
-   ClientLeft      =   48
-   ClientTop       =   372
-   ClientWidth     =   15132
+   ClientLeft      =   45
+   ClientTop       =   375
+   ClientWidth     =   15135
+   Icon            =   "frmViewStockIn.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   9360
-   ScaleWidth      =   15132
+   ScaleWidth      =   15135
    StartUpPosition =   2  'CenterScreen
    Begin VB.PictureBox Picture1 
       Appearance      =   0  'Flat
@@ -21,8 +22,8 @@ Begin VB.Form frmViewStockIn
       ForeColor       =   &H80000008&
       Height          =   9255
       Left            =   60
-      ScaleHeight     =   9228
-      ScaleWidth      =   14988
+      ScaleHeight     =   9225
+      ScaleWidth      =   14985
       TabIndex        =   0
       Top             =   60
       Width           =   15015
@@ -38,7 +39,7 @@ Begin VB.Form frmViewStockIn
          Caption         =   "Print"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -53,12 +54,12 @@ Begin VB.Form frmViewStockIn
       End
       Begin MSComctlLib.ListView lsvStockIn 
          Height          =   7635
-         Left            =   60
+         Left            =   120
          TabIndex        =   6
-         Top             =   1500
+         Top             =   1440
          Width           =   14835
-         _ExtentX        =   26162
-         _ExtentY        =   13462
+         _ExtentX        =   26167
+         _ExtentY        =   13467
          View            =   3
          LabelEdit       =   1
          LabelWrap       =   -1  'True
@@ -72,7 +73,7 @@ Begin VB.Form frmViewStockIn
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -85,7 +86,7 @@ Begin VB.Form frmViewStockIn
          Caption         =   "LOAD RECORDS"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -110,7 +111,7 @@ Begin VB.Form frmViewStockIn
          Appearance      =   0  'Flat
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -127,8 +128,8 @@ Begin VB.Form frmViewStockIn
          BackStyle       =   0  'Transparent
          Caption         =   "Date"
          BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.6
+            Name            =   "Arial"
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -145,7 +146,7 @@ Begin VB.Form frmViewStockIn
          BackStyle       =   0  'Transparent
          Caption         =   "VIEW STOCK IN RECORDS"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700

@@ -8,6 +8,7 @@ Begin VB.Form frmUserAccount
    ClientLeft      =   -15
    ClientTop       =   270
    ClientWidth     =   11025
+   Icon            =   "frmUserAccount.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -74,7 +75,7 @@ Begin VB.Form frmUserAccount
       End
       Begin VB.ComboBox cbouser_type 
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   8.25
             Charset         =   0
             Weight          =   700
@@ -111,7 +112,7 @@ Begin VB.Form frmUserAccount
       Begin VB.TextBox txtusername 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -128,7 +129,7 @@ Begin VB.Form frmUserAccount
       Begin VB.CommandButton cmdAddNewItem 
          Caption         =   "SAVE"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -147,7 +148,7 @@ Begin VB.Form frmUserAccount
          BackStyle       =   0  'Transparent
          Caption         =   "User Type"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -166,7 +167,7 @@ Begin VB.Form frmUserAccount
          BackStyle       =   0  'Transparent
          Caption         =   "Password"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -205,7 +206,7 @@ Begin VB.Form frmUserAccount
          BackStyle       =   0  'Transparent
          Caption         =   "User Name "
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -280,7 +281,7 @@ Sub saveData()
     Dim mvarusername, mvarpassword, mvaruser_type As String
     
     mvarusername = txtusername.Text
-    mvarpassword = txtpassword.Text
+    mvarpassword = txtPassword.Text
     mvaruser_type = cbouser_type.Text
    
         If editmode = True Then
@@ -325,7 +326,7 @@ End Sub
 
 Private Sub cmdChangePassword_Click()
 useraccount.loadUserAccount (activeaseraccount_name)
-useraccount.changePassword (txtpassword.Text)
+useraccount.changePassword (txtPassword.Text)
 End Sub
 
 Private Sub Form_Load()

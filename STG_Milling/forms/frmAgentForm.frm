@@ -7,6 +7,7 @@ Begin VB.Form frmAgentForm
    ClientLeft      =   120
    ClientTop       =   450
    ClientWidth     =   7350
+   Icon            =   "frmAgentForm.frx":0000
    LinkTopic       =   "Form1"
    ScaleHeight     =   8475
    ScaleWidth      =   7350
@@ -90,7 +91,7 @@ Begin VB.Form frmAgentForm
       Begin VB.CommandButton cmdAddNewItem 
          Caption         =   "SAVE"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -107,7 +108,7 @@ Begin VB.Form frmAgentForm
       Begin VB.TextBox txtAgentName 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -124,7 +125,7 @@ Begin VB.Form frmAgentForm
       Begin VB.TextBox txtAgentAddress 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -142,7 +143,7 @@ Begin VB.Form frmAgentForm
       Begin VB.TextBox txtAgentContactNumber 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -192,7 +193,7 @@ Begin VB.Form frmAgentForm
          BackStyle       =   0  'Transparent
          Caption         =   "Contact Number"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -211,7 +212,7 @@ Begin VB.Form frmAgentForm
          BackStyle       =   0  'Transparent
          Caption         =   "Agent's Name "
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -230,7 +231,7 @@ Begin VB.Form frmAgentForm
          BackStyle       =   0  'Transparent
          Caption         =   "Address "
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700

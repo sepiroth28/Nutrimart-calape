@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmChangeAgent 
    BackColor       =   &H00000080&
    BorderStyle     =   3  'Fixed Dialog
@@ -8,6 +8,7 @@ Begin VB.Form frmChangeAgent
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   5835
+   Icon            =   "frmChangeAgent.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -47,7 +48,7 @@ Begin VB.Form frmChangeAgent
          BorderStyle     =   1
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -77,7 +78,7 @@ Begin VB.Form frmChangeAgent
       Begin VB.CommandButton cmdSelectAgent 
          Caption         =   "..."
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -94,7 +95,7 @@ Begin VB.Form frmChangeAgent
       Begin VB.TextBox txtAgentName 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -113,7 +114,7 @@ Begin VB.Form frmChangeAgent
          BackStyle       =   0  'Transparent
          Caption         =   "Change Agent"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   14.25
             Charset         =   0
             Weight          =   700
@@ -133,7 +134,7 @@ Begin VB.Form frmChangeAgent
          BackStyle       =   0  'Transparent
          Caption         =   "Agent"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -159,7 +160,7 @@ Begin VB.Form frmChangeAgent
          BackStyle       =   0  'Transparent
          Caption         =   "Change Agent"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   14.25
             Charset         =   0
             Weight          =   700

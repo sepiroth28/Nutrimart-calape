@@ -6,14 +6,15 @@ Begin VB.Form frmCalendar
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Calendar"
    ClientHeight    =   4620
-   ClientLeft      =   48
-   ClientTop       =   372
-   ClientWidth     =   4992
+   ClientLeft      =   45
+   ClientTop       =   375
+   ClientWidth     =   4995
+   Icon            =   "frmCalendar.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   4620
-   ScaleWidth      =   4992
+   ScaleWidth      =   4995
    ShowInTaskbar   =   0   'False
    StartUpPosition =   1  'CenterOwner
    Begin MSACAL.Calendar Calendar1 
@@ -23,8 +24,8 @@ Begin VB.Form frmCalendar
       Top             =   60
       Width           =   4875
       _Version        =   524288
-      _ExtentX        =   8594
-      _ExtentY        =   7959
+      _ExtentX        =   8599
+      _ExtentY        =   7964
       _StockProps     =   1
       BackColor       =   13106931
       Year            =   2011
@@ -46,7 +47,7 @@ Begin VB.Form frmCalendar
       ValueIsNull     =   0   'False
       BeginProperty DayFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Arial"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -55,7 +56,7 @@ Begin VB.Form frmCalendar
       EndProperty
       BeginProperty GridFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Arial"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

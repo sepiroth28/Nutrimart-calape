@@ -6,6 +6,7 @@ Begin VB.MDIForm mdi_Inventory
    ClientLeft      =   5550
    ClientTop       =   750
    ClientWidth     =   13380
+   Icon            =   "mdi_Inventory.frx":0000
    LinkTopic       =   "MDIForm1"
    WindowState     =   2  'Maximized
    Begin VB.Menu mnu_file 

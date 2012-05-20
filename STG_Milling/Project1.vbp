@@ -114,8 +114,10 @@ Form=forms\frmCustomerAgentIndex.frm
 Form=forms\frmChangeAgent.frm
 Module=Entities; forms\Entities.bas
 Designer=report\dtaSoHistory.Dsr
+IconForm="mdi_Inventory"
 Startup="Sub Main"
 HelpFile=""
+Title="Nutrimart"
 ExeName32="STG Milling.exe"
 Command32=""
 Name="Project1"
@@ -141,6 +143,7 @@ Unattended=0
 Retained=0
 ThreadPerObject=0
 MaxNumberOfThreads=1
+DebugStartupOption=0
 
 [MS Transaction Server]
 AutoRefresh=1

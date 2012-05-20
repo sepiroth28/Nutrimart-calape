@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Begin VB.Form frmCustomerVisibility 
    BackColor       =   &H00000040&
@@ -9,6 +9,7 @@ Begin VB.Form frmCustomerVisibility
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   10545
+   Icon            =   "frmCustomerVisibility.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -37,13 +38,13 @@ Begin VB.Form frmCustomerVisibility
          Strikethrough   =   0   'False
       EndProperty
       TabCaption(0)   =   "Visible Customer"
-      TabPicture(0)   =   "frmCustomerVisibility.frx":0000
+      TabPicture(0)   =   "frmCustomerVisibility.frx":058A
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "lsvVisibleCustomer"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "Hidden Customer"
-      TabPicture(1)   =   "frmCustomerVisibility.frx":001C
+      TabPicture(1)   =   "frmCustomerVisibility.frx":05A6
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "lsvHiddenCustomer"
       Tab(1).ControlCount=   1
@@ -68,7 +69,7 @@ Begin VB.Form frmCustomerVisibility
          BorderStyle     =   1
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700
@@ -119,7 +120,7 @@ Begin VB.Form frmCustomerVisibility
          BorderStyle     =   1
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700
@@ -153,7 +154,7 @@ Begin VB.Form frmCustomerVisibility
    Begin VB.TextBox txtSearchCustomer 
       Appearance      =   0  'Flat
       BeginProperty Font 
-         Name            =   "Century Gothic"
+         Name            =   "Arial"
          Size            =   12
          Charset         =   0
          Weight          =   700

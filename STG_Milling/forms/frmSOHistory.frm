@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmSOHistory 
    Appearance      =   0  'Flat
    BackColor       =   &H00000080&
@@ -9,6 +9,7 @@ Begin VB.Form frmSOHistory
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   14610
+   Icon            =   "frmSOHistory.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -348,7 +349,7 @@ End Sub
 Private Sub Form_Load()
 SOHistory.loadSalesOrder selectedSOForHistory
 lblCustomerName.Caption = SOHistory.sold_to.customers_name
-lbladdress.Caption = SOHistory.sold_to.customers_add
+lblAddress.Caption = SOHistory.sold_to.customers_add
 lblContact.Caption = SOHistory.sold_to.customers_number
 lblTechnician.Caption = SOHistory.sold_to.mvaragent.agent_name
 Call loadSalesOrderOfCustomerToListview(SOHistory.sold_to.customers_id, lsvHistory)

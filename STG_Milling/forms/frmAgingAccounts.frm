@@ -4,11 +4,12 @@ Begin VB.Form frmAgingAccounts
    Appearance      =   0  'Flat
    BackColor       =   &H00000080&
    BorderStyle     =   3  'Fixed Dialog
-   Caption         =   "Form1"
+   Caption         =   "Aging Accounts"
    ClientHeight    =   8175
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   8070
+   Icon            =   "frmAgingAccounts.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
