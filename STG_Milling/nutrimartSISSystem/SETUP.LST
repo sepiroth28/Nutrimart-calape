@@ -33,10 +33,10 @@ AppExe=NutrimartSISSystem.exe
 AppToUninstall=NutrimartSISSystem.exe
 
 [Setup1 Files]
-File1=@config.dat,$(AppPath),,,4/8/12 2:51:04 PM,39,0.0.0.0
-File2=@MSCAL.OCX,$(AppPath),,,2/26/09 1:13:04 PM,109424,12.0.6500.5000
+File1=@config.dat,$(AppPath),,,5/20/12 4:10:22 PM,39,0.0.0.0
+File2=@MSCAL.OCX,$(WinSysPath),$(DLLSelfRegister),$(Shared),5/20/12 4:10:21 PM,89600,8.0.0.5007
 File3=@msado21.tlb,$(WinSysPath),,$(Shared),11/20/10 6:43:48 PM,73728,6.1.7601.17514
-File4=@NutrimartSISSystem.exe,$(AppPath),,,5/20/12 4:13:15 PM,1859584,1.0.0.0
+File4=@NutrimartSISSystem.exe,$(AppPath),,,5/20/12 6:41:22 PM,1871872,1.0.0.0
 
 ; The following lines may be deleted in order to obtain extra 
 ; space for customizing this file on a full installation diskette.
