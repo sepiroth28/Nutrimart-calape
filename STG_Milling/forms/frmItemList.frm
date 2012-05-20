@@ -9,6 +9,7 @@ Begin VB.Form frmItemList
    ClientLeft      =   30
    ClientTop       =   360
    ClientWidth     =   11775
+   Icon            =   "frmItemList.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -63,7 +64,7 @@ Begin VB.Form frmItemList
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700
@@ -98,7 +99,7 @@ Begin VB.Form frmItemList
    End
    Begin VB.TextBox txtSearchItem 
       BeginProperty Font 
-         Name            =   "Century Gothic"
+         Name            =   "Arial"
          Size            =   12
          Charset         =   0
          Weight          =   700
@@ -149,7 +150,7 @@ Begin VB.Form frmItemList
       BorderStyle     =   1
       Appearance      =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Century Gothic"
+         Name            =   "Arial"
          Size            =   12
          Charset         =   0
          Weight          =   700

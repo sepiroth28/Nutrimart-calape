@@ -9,6 +9,7 @@ Begin VB.Form frmPayment
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   13095
+   Icon            =   "frmPayment.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -344,7 +345,7 @@ Begin VB.Form frmPayment
             BackStyle       =   0  'Transparent
             Caption         =   "S.O. list :"
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   7.5
                Charset         =   0
                Weight          =   400
@@ -362,7 +363,7 @@ Begin VB.Form frmPayment
             Alignment       =   1  'Right Justify
             BackStyle       =   0  'Transparent
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   14.25
                Charset         =   0
                Weight          =   700
@@ -382,7 +383,7 @@ Begin VB.Form frmPayment
             BackStyle       =   0  'Transparent
             Caption         =   "BALANCE :"
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   12
                Charset         =   0
                Weight          =   700
@@ -401,7 +402,7 @@ Begin VB.Form frmPayment
             BackStyle       =   0  'Transparent
             Caption         =   "Discount :"
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   9.75
                Charset         =   0
                Weight          =   700
@@ -421,7 +422,7 @@ Begin VB.Form frmPayment
             BackStyle       =   0  'Transparent
             Caption         =   "NET TOTAL :"
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   9.75
                Charset         =   0
                Weight          =   700
@@ -440,7 +441,7 @@ Begin VB.Form frmPayment
             BackStyle       =   0  'Transparent
             Caption         =   " "
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   11.25
                Charset         =   0
                Weight          =   400
@@ -466,7 +467,7 @@ Begin VB.Form frmPayment
             Alignment       =   1  'Right Justify
             BackStyle       =   0  'Transparent
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   11.25
                Charset         =   0
                Weight          =   400
@@ -484,7 +485,7 @@ Begin VB.Form frmPayment
             Alignment       =   1  'Right Justify
             BackStyle       =   0  'Transparent
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   11.25
                Charset         =   0
                Weight          =   400
@@ -501,7 +502,7 @@ Begin VB.Form frmPayment
          Begin VB.Label lblAddress 
             BackStyle       =   0  'Transparent
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   9.75
                Charset         =   0
                Weight          =   400
@@ -519,7 +520,7 @@ Begin VB.Form frmPayment
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   12
                Charset         =   0
                Weight          =   700
@@ -537,7 +538,7 @@ Begin VB.Form frmPayment
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   9.75
                Charset         =   0
                Weight          =   700
@@ -555,7 +556,7 @@ Begin VB.Form frmPayment
             BackStyle       =   0  'Transparent
             Caption         =   "Agent Name: "
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   9.75
                Charset         =   0
                Weight          =   400
@@ -573,7 +574,7 @@ Begin VB.Form frmPayment
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   12
                Charset         =   0
                Weight          =   700
@@ -591,7 +592,7 @@ Begin VB.Form frmPayment
             BackStyle       =   0  'Transparent
             Caption         =   "Sales Order No :"
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   9.75
                Charset         =   0
                Weight          =   400
@@ -635,7 +636,7 @@ Begin VB.Form frmPayment
          BackStyle       =   0  'Transparent
          Caption         =   "Remarks"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9
             Charset         =   0
             Weight          =   400
@@ -654,7 +655,7 @@ Begin VB.Form frmPayment
          Alignment       =   1  'Right Justify
          BackStyle       =   0  'Transparent
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   400
@@ -704,7 +705,7 @@ Begin VB.Form frmPayment
          BackStyle       =   0  'Transparent
          Caption         =   "AMOUNT PAID :"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -722,7 +723,7 @@ Begin VB.Form frmPayment
          BackStyle       =   0  'Transparent
          Caption         =   "Sales Order No :"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700
@@ -747,7 +748,7 @@ Begin VB.Form frmPayment
          BackStyle       =   0  'Transparent
          Caption         =   "PAYMENT"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700

@@ -402,7 +402,7 @@ End Sub
 
 Function getSalesOrderOfThisCustomer(customer_id As Integer) As ADODB.Recordset
     Dim sql As String
-    sql = "SELECT acr.sales_order_no,sot.net_total,acr.remarks,DATE_FORMAT(sot.delivery_date,'%m/%d/%Y'),sot.prepared_by " & _
+    sql = "SELECT acr.sales_order_no,sot.net_total,acr.remarks,DATE_FORMAT(sot.delivery_date,'%m/%d/%Y') as delivery_date,sot.prepared_by " & _
               "  FROM `account_receivable` acr " & _
               "  LEFT JOIN `stock_out_transaction` sot " & _
               "  ON acr.sales_order_no = sot.sales_order_no " & _

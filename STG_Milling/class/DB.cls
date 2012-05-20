@@ -35,7 +35,7 @@ conn.CursorLocation = adUseClient
         connect = True
 Exit Function
 Error:
-    MsgBox Err.Description
+    MsgBox Err.Description, vbExclamation, "Database connection error"
         connect = False
 End Function
 

@@ -4,14 +4,15 @@ Begin VB.Form frmAdjustSaleTransaction
    BackColor       =   &H00404040&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Adjust Sales Transaction"
-   ClientHeight    =   7770
+   ClientHeight    =   7695
    ClientLeft      =   45
-   ClientTop       =   375
+   ClientTop       =   450
    ClientWidth     =   15120
+   Icon            =   "frmAdjustSaleTransaction.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   7770
+   ScaleHeight     =   7695
    ScaleWidth      =   15120
    StartUpPosition =   2  'CenterScreen
    Begin VB.PictureBox Picture1 
@@ -402,7 +403,7 @@ Begin VB.Form frmAdjustSaleTransaction
             BackStyle       =   0  'Transparent
             Caption         =   "Sales Order No."
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   9.75
                Charset         =   0
                Weight          =   700
@@ -569,7 +570,7 @@ Begin VB.Form frmAdjustSaleTransaction
             BackStyle       =   0  'Transparent
             Caption         =   "Customer Name:"
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   9.75
                Charset         =   0
                Weight          =   700
@@ -595,7 +596,7 @@ Begin VB.Form frmAdjustSaleTransaction
          BackStyle       =   0  'Transparent
          Caption         =   "Customer Name:"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -613,7 +614,7 @@ Begin VB.Form frmAdjustSaleTransaction
          BackStyle       =   0  'Transparent
          Caption         =   "Agent :"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   400
@@ -631,7 +632,7 @@ Begin VB.Form frmAdjustSaleTransaction
          BackStyle       =   0  'Transparent
          Caption         =   "Customer Name:"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -649,7 +650,7 @@ Begin VB.Form frmAdjustSaleTransaction
          BackStyle       =   0  'Transparent
          Caption         =   "Sales Order No : "
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   400

@@ -1,6 +1,8 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmMenu 
+   Appearance      =   0  'Flat
+   BackColor       =   &H80000005&
    BorderStyle     =   1  'Fixed Single
    ClientHeight    =   9855
    ClientLeft      =   450
@@ -16,10 +18,12 @@ Begin VB.Form frmMenu
       Italic          =   0   'False
       Strikethrough   =   0   'False
    EndProperty
+   Icon            =   "frmMenu.frx":0000
    LinkTopic       =   "Form3"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
+   Picture         =   "frmMenu.frx":058A
    ScaleHeight     =   9855
    ScaleWidth      =   16545
    Begin VB.Frame Frame1 
@@ -42,7 +46,7 @@ Begin VB.Form frmMenu
          BackColor       =   &H80000007&
          Height          =   1035
          Left            =   240
-         Picture         =   "frmMenu.frx":0000
+         Picture         =   "frmMenu.frx":311C2
          Style           =   1  'Graphical
          TabIndex        =   40
          TabStop         =   0   'False
@@ -85,10 +89,10 @@ Begin VB.Form frmMenu
       EndProperty
       Height          =   1035
       Left            =   60
-      Picture         =   "frmMenu.frx":65E1
+      Picture         =   "frmMenu.frx":377A3
       Style           =   1  'Graphical
       TabIndex        =   27
-      Top             =   4800
+      Top             =   4620
       Width           =   2295
    End
    Begin MSComctlLib.ImageList ImageList1 
@@ -104,31 +108,31 @@ Begin VB.Form frmMenu
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   7
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":CC07
+            Picture         =   "frmMenu.frx":3DDC9
             Key             =   ""
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":13438
+            Picture         =   "frmMenu.frx":445FA
             Key             =   ""
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":1B16A
+            Picture         =   "frmMenu.frx":4C32C
             Key             =   ""
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":2210E
+            Picture         =   "frmMenu.frx":532D0
             Key             =   ""
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":28DCA
+            Picture         =   "frmMenu.frx":59F8C
             Key             =   ""
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":2F4F2
+            Picture         =   "frmMenu.frx":606B4
             Key             =   ""
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frmMenu.frx":35AE3
+            Picture         =   "frmMenu.frx":66CA5
             Key             =   ""
          EndProperty
       EndProperty
@@ -182,7 +186,7 @@ Begin VB.Form frmMenu
       ForeColor       =   &H80000008&
       Height          =   9855
       Left            =   0
-      Picture         =   "frmMenu.frx":3CBBC
+      Picture         =   "frmMenu.frx":6DD7E
       ScaleHeight     =   9825
       ScaleWidth      =   16545
       TabIndex        =   3
@@ -191,7 +195,7 @@ Begin VB.Form frmMenu
       Begin VB.CommandButton cmdViewSales 
          Height          =   1215
          Left            =   60
-         Picture         =   "frmMenu.frx":5EC5C
+         Picture         =   "frmMenu.frx":9BDA5
          Style           =   1  'Graphical
          TabIndex        =   39
          Top             =   3360
@@ -202,7 +206,7 @@ Begin VB.Form frmMenu
          BackColor       =   &H80000007&
          Height          =   1095
          Left            =   2340
-         Picture         =   "frmMenu.frx":604EE
+         Picture         =   "frmMenu.frx":9D637
          Style           =   1  'Graphical
          TabIndex        =   36
          TabStop         =   0   'False
@@ -214,7 +218,7 @@ Begin VB.Form frmMenu
          BackColor       =   &H80000007&
          Height          =   1095
          Left            =   60
-         Picture         =   "frmMenu.frx":66D0F
+         Picture         =   "frmMenu.frx":A3E58
          Style           =   1  'Graphical
          TabIndex        =   35
          TabStop         =   0   'False
@@ -226,7 +230,7 @@ Begin VB.Form frmMenu
          BackColor       =   &H80000007&
          Height          =   1095
          Left            =   2340
-         Picture         =   "frmMenu.frx":6D9BB
+         Picture         =   "frmMenu.frx":AAB04
          Style           =   1  'Graphical
          TabIndex        =   34
          TabStop         =   0   'False
@@ -238,7 +242,7 @@ Begin VB.Form frmMenu
          BackColor       =   &H80000007&
          Height          =   1095
          Left            =   60
-         Picture         =   "frmMenu.frx":74A84
+         Picture         =   "frmMenu.frx":B1BCD
          Style           =   1  'Graphical
          TabIndex        =   33
          TabStop         =   0   'False
@@ -250,7 +254,7 @@ Begin VB.Form frmMenu
          BackColor       =   &H80000007&
          Height          =   1095
          Left            =   2340
-         Picture         =   "frmMenu.frx":7B19C
+         Picture         =   "frmMenu.frx":B82E5
          Style           =   1  'Graphical
          TabIndex        =   32
          TabStop         =   0   'False
@@ -262,7 +266,7 @@ Begin VB.Form frmMenu
          BackColor       =   &H80000007&
          Height          =   1095
          Left            =   60
-         Picture         =   "frmMenu.frx":82EBE
+         Picture         =   "frmMenu.frx":C0007
          Style           =   1  'Graphical
          TabIndex        =   31
          TabStop         =   0   'False
@@ -712,7 +716,7 @@ Begin VB.Form frmMenu
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700
@@ -731,7 +735,7 @@ Begin VB.Form frmMenu
          Height          =   660
          Left            =   2220
          MousePointer    =   99  'Custom
-         Picture         =   "frmMenu.frx":89E52
+         Picture         =   "frmMenu.frx":C6F9B
          Top             =   8520
          Width           =   2250
       End
@@ -740,7 +744,7 @@ Begin VB.Form frmMenu
          BackStyle       =   0  'Transparent
          Caption         =   "Label4"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   12
             Charset         =   0
             Weight          =   700
@@ -779,7 +783,7 @@ Begin VB.Form frmMenu
          BackStyle       =   0  'Transparent
          Caption         =   "Label4"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   10.5
             Charset         =   0
             Weight          =   700
@@ -803,13 +807,6 @@ Begin VB.Form frmMenu
          TabIndex        =   7
          Top             =   6180
          Width           =   750
-      End
-      Begin VB.Line Line1 
-         BorderColor     =   &H00808080&
-         X1              =   5340
-         X2              =   16260
-         Y1              =   1740
-         Y2              =   1740
       End
       Begin VB.Label lblTotalAmount 
          Alignment       =   1  'Right Justify

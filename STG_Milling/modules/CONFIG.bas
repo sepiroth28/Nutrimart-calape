@@ -25,7 +25,7 @@ Dim dba_username As String
 Dim dba_pass As String
 
 intEmpFileNbr = FreeFile
-file_name = App.Path & "\config\config.dat"
+file_name = App.Path & "\config.dat"
 
 Open file_name For Input As #intEmpFileNbr
 

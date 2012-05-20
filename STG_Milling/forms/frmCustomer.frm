@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmCustomer 
    BackColor       =   &H00E1A00B&
    BorderStyle     =   1  'Fixed Single
@@ -8,6 +8,7 @@ Begin VB.Form frmCustomer
    ClientLeft      =   4470
    ClientTop       =   2565
    ClientWidth     =   7440
+   Icon            =   "frmCustomer.frx":0000
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -17,7 +18,7 @@ Begin VB.Form frmCustomer
    Begin VB.CommandButton cmdSelectAgent 
       Caption         =   "..."
       BeginProperty Font 
-         Name            =   "Century Gothic"
+         Name            =   "Arial"
          Size            =   9.75
          Charset         =   0
          Weight          =   700
@@ -62,7 +63,7 @@ Begin VB.Form frmCustomer
       Begin VB.TextBox txtCustomersAddress 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -114,7 +115,7 @@ Begin VB.Form frmCustomer
          BorderStyle     =   1
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -127,7 +128,7 @@ Begin VB.Form frmCustomer
       Begin VB.TextBox txtAgentName 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -144,7 +145,7 @@ Begin VB.Form frmCustomer
       Begin VB.TextBox txtContactNumber 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -161,7 +162,7 @@ Begin VB.Form frmCustomer
       Begin VB.TextBox txtCustomersName 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -178,7 +179,7 @@ Begin VB.Form frmCustomer
       Begin VB.CommandButton cmdAddNewItem 
          Caption         =   "SAVE"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -234,7 +235,7 @@ Begin VB.Form frmCustomer
          BackStyle       =   0  'Transparent
          Caption         =   "Dealers type"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -253,7 +254,7 @@ Begin VB.Form frmCustomer
          BackStyle       =   0  'Transparent
          Caption         =   "Agent's Name"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -292,7 +293,7 @@ Begin VB.Form frmCustomer
          BackStyle       =   0  'Transparent
          Caption         =   "Address "
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -311,7 +312,7 @@ Begin VB.Form frmCustomer
          BackStyle       =   0  'Transparent
          Caption         =   "Customer's Name "
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -330,7 +331,7 @@ Begin VB.Form frmCustomer
          BackStyle       =   0  'Transparent
          Caption         =   "Contact Number"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700

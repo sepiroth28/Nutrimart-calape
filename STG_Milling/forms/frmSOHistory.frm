@@ -9,6 +9,7 @@ Begin VB.Form frmSOHistory
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   14610
+   Icon            =   "frmSOHistory.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -27,6 +28,23 @@ Begin VB.Form frmSOHistory
       TabIndex        =   0
       Top             =   60
       Width           =   14475
+      Begin VB.CommandButton cmdPrint 
+         Caption         =   "PRINT"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   675
+         Left            =   12000
+         TabIndex        =   13
+         Top             =   7620
+         Width           =   2355
+      End
       Begin MSComctlLib.ListView lsvHistory 
          Height          =   6075
          Left            =   120
@@ -316,6 +334,17 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim SOHistory As New Sales
+
+Private Sub cmdPrint_Click()
+Dim rs As New ADODB.Recordset
+Set rs = getSalesOrderOfThisCustomer(SOHistory.sold_to.customers_id)
+
+Set dtaSoHistory.DataSource = rs
+dtaSoHistory.Sections(1).Controls("lblCustomerName").Caption = SOHistory.sold_to.customers_name
+dtaSoHistory.Sections(1).Controls("lblAddress").Caption = SOHistory.sold_to.customers_add
+dtaSoHistory.Sections(1).Controls("lblDate").Caption = Date
+dtaSoHistory.Show 1
+End Sub
 
 Private Sub Form_Load()
 SOHistory.loadSalesOrder selectedSOForHistory

@@ -5,8 +5,9 @@ Begin VB.Form frmManageUserAccount
    Caption         =   "Manage User Account"
    ClientHeight    =   8370
    ClientLeft      =   225
-   ClientTop       =   855
+   ClientTop       =   825
    ClientWidth     =   9405
+   Icon            =   "frmManageUserAccount.frx":0000
    LinkTopic       =   "Form1"
    ScaleHeight     =   8370
    ScaleWidth      =   9405
@@ -25,7 +26,7 @@ Begin VB.Form frmManageUserAccount
       Begin VB.CommandButton cmdAddNewItem 
          Caption         =   "ADD NEW USER"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -92,7 +93,7 @@ Begin VB.Form frmManageUserAccount
          BackStyle       =   0  'Transparent
          Caption         =   "Search User Name"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -111,7 +112,7 @@ Begin VB.Form frmManageUserAccount
          BackStyle       =   0  'Transparent
          Caption         =   "Manage User Account"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   14.25
             Charset         =   0
             Weight          =   700

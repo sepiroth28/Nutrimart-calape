@@ -8,6 +8,7 @@ Begin VB.Form frmDiscount
    ClientLeft      =   -15
    ClientTop       =   270
    ClientWidth     =   5775
+   Icon            =   "frmDiscount.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -29,7 +30,7 @@ Begin VB.Form frmDiscount
          Alignment       =   1  'Right Justify
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -46,7 +47,7 @@ Begin VB.Form frmDiscount
       Begin VB.TextBox txtDiscount_Code 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -63,7 +64,7 @@ Begin VB.Form frmDiscount
       Begin VB.CommandButton cmdAddNewItem 
          Caption         =   "SAVE"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -80,7 +81,7 @@ Begin VB.Form frmDiscount
       Begin VB.TextBox txtDiscount_Name 
          Appearance      =   0  'Flat
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -119,7 +120,7 @@ Begin VB.Form frmDiscount
          BackStyle       =   0  'Transparent
          Caption         =   "Discount Name"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -138,7 +139,7 @@ Begin VB.Form frmDiscount
          BackStyle       =   0  'Transparent
          Caption         =   "Discount Code"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -157,7 +158,7 @@ Begin VB.Form frmDiscount
          BackStyle       =   0  'Transparent
          Caption         =   "Discount Amount"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700

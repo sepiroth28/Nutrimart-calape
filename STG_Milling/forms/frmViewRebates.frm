@@ -7,6 +7,7 @@ Begin VB.Form frmViewRebates
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   13155
+   Icon            =   "frmViewRebates.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -66,7 +67,7 @@ Begin VB.Form frmViewRebates
             BackStyle       =   0  'Transparent
             Caption         =   "Issue by:"
             BeginProperty Font 
-               Name            =   "Century Gothic"
+               Name            =   "Arial"
                Size            =   9.75
                Charset         =   0
                Weight          =   700
@@ -266,7 +267,7 @@ Begin VB.Form frmViewRebates
          BackStyle       =   0  'Transparent
          Caption         =   "DONE ISSUE REBATE"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -286,7 +287,7 @@ Begin VB.Form frmViewRebates
          BackStyle       =   0  'Transparent
          Caption         =   "year "
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -305,7 +306,7 @@ Begin VB.Form frmViewRebates
          BackStyle       =   0  'Transparent
          Caption         =   "List all items purchased on Month of "
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700

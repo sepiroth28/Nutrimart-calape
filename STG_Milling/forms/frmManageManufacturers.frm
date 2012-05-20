@@ -8,6 +8,7 @@ Begin VB.Form frmManageManufacturers
    ClientLeft      =   150
    ClientTop       =   480
    ClientWidth     =   11655
+   Icon            =   "frmManageManufacturers.frx":0000
    LinkTopic       =   "Form3"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -46,7 +47,7 @@ Begin VB.Form frmManageManufacturers
       Begin VB.CommandButton cmdAddNewManufacturer 
          Caption         =   "ADD NEW MANUFACTURER"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -94,7 +95,7 @@ Begin VB.Form frmManageManufacturers
          BackStyle       =   0  'Transparent
          Caption         =   "Manage Manufacturers"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   14.25
             Charset         =   0
             Weight          =   700
@@ -119,7 +120,7 @@ Begin VB.Form frmManageManufacturers
          BackStyle       =   0  'Transparent
          Caption         =   "Search Manufactures name"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700

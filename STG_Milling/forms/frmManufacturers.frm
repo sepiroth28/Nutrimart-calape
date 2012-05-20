@@ -6,6 +6,7 @@ Begin VB.Form frmManufacturersForm
    ClientLeft      =   120
    ClientTop       =   450
    ClientWidth     =   7305
+   Icon            =   "frmManufacturers.frx":0000
    LinkTopic       =   "Form3"
    ScaleHeight     =   4455
    ScaleWidth      =   7305
@@ -79,7 +80,7 @@ Begin VB.Form frmManufacturersForm
       Begin VB.CommandButton cmdAddNewItem 
          Caption         =   "SAVE"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -97,7 +98,7 @@ Begin VB.Form frmManufacturersForm
          BackStyle       =   0  'Transparent
          Caption         =   "Manufacturers name"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -115,7 +116,7 @@ Begin VB.Form frmManufacturersForm
          BackStyle       =   0  'Transparent
          Caption         =   "Manufacturers address"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -133,7 +134,7 @@ Begin VB.Form frmManufacturersForm
          BackStyle       =   0  'Transparent
          Caption         =   "Manufacturers phone number"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700

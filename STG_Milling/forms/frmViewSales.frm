@@ -7,8 +7,9 @@ Begin VB.Form frmViewSales
    Caption         =   "View Sales"
    ClientHeight    =   8790
    ClientLeft      =   150
-   ClientTop       =   780
+   ClientTop       =   750
    ClientWidth     =   14970
+   Icon            =   "frmViewSales.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -117,9 +118,9 @@ Begin VB.Form frmViewSales
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         ItemData        =   "frmViewSales.frx":0000
+         ItemData        =   "frmViewSales.frx":058A
          Left            =   1680
-         List            =   "frmViewSales.frx":000D
+         List            =   "frmViewSales.frx":0597
          TabIndex        =   4
          Text            =   "ALL"
          Top             =   7980
@@ -433,6 +434,7 @@ Private Sub cmdLoadRecords_Click()
     Call loadAllSalesToListview(lsvSales, False, 3, Format(activeDate, "yyyy-mm-dd"))
 'End If
 updateTotals (activeDate)
+
 
     Dim is_cod_remitted As Boolean
     is_cod_remitted = checkCODIfRemitted(activeDate)

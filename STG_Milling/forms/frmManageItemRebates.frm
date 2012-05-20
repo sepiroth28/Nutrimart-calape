@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmManageItemRebates 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "View Rebates"
@@ -7,6 +7,7 @@ Begin VB.Form frmManageItemRebates
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   9660
+   Icon            =   "frmManageItemRebates.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -123,7 +124,7 @@ Begin VB.Form frmManageItemRebates
          BackStyle       =   0  'Transparent
          Caption         =   "Item Catgory"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700

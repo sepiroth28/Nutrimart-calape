@@ -9,6 +9,7 @@ Begin VB.Form frmManageItem
    ClientLeft      =   45
    ClientTop       =   675
    ClientWidth     =   14280
+   Icon            =   "frmManageItem.frx":0000
    LinkTopic       =   "Form3"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -63,7 +64,7 @@ Begin VB.Form frmManageItem
       Begin VB.CommandButton cmdAddNewItem 
          Caption         =   "ADD NEW ITEM"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -128,7 +129,7 @@ Begin VB.Form frmManageItem
          BackStyle       =   0  'Transparent
          Caption         =   "Search Itemcode"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -154,7 +155,7 @@ Begin VB.Form frmManageItem
          BackStyle       =   0  'Transparent
          Caption         =   "Manage Item"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   14.25
             Charset         =   0
             Weight          =   700

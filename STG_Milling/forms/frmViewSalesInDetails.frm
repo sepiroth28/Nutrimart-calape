@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmViewSalesInDetails 
    BackColor       =   &H00C8761C&
    BorderStyle     =   3  'Fixed Dialog
@@ -8,6 +8,7 @@ Begin VB.Form frmViewSalesInDetails
    ClientLeft      =   30
    ClientTop       =   360
    ClientWidth     =   9750
+   Icon            =   "frmViewSalesInDetails.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False

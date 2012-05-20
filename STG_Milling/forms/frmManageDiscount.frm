@@ -6,8 +6,9 @@ Begin VB.Form frmManageDiscount
    Caption         =   "Manage Discount"
    ClientHeight    =   8325
    ClientLeft      =   150
-   ClientTop       =   780
+   ClientTop       =   750
    ClientWidth     =   9435
+   Icon            =   "frmManageDiscount.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -47,7 +48,7 @@ Begin VB.Form frmManageDiscount
       Begin VB.CommandButton cmdAddNewItem 
          Caption         =   "ADD NEW ITEM"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -101,7 +102,7 @@ Begin VB.Form frmManageDiscount
          BackStyle       =   0  'Transparent
          Caption         =   "Manage Discount"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   14.25
             Charset         =   0
             Weight          =   700
@@ -119,7 +120,7 @@ Begin VB.Form frmManageDiscount
          BackStyle       =   0  'Transparent
          Caption         =   "Search Discount Name"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700

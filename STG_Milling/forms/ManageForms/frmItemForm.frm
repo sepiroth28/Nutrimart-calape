@@ -9,6 +9,7 @@ Begin VB.Form frmItemForm
    ClientLeft      =   45
    ClientTop       =   375
    ClientWidth     =   7305
+   Icon            =   "frmItemForm.frx":0000
    LinkTopic       =   "Form3"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -139,7 +140,7 @@ Begin VB.Form frmItemForm
       Begin VB.CommandButton cmdAddNewItem 
          Caption         =   "SAVE"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -296,7 +297,7 @@ Begin VB.Form frmItemForm
          BackStyle       =   0  'Transparent
          Caption         =   "Dealear's Price"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -314,7 +315,7 @@ Begin VB.Form frmItemForm
          BackStyle       =   0  'Transparent
          Caption         =   "Qty"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -332,7 +333,7 @@ Begin VB.Form frmItemForm
          BackStyle       =   0  'Transparent
          Caption         =   "Add new Unit of measure here..."
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9
             Charset         =   0
             Weight          =   400
@@ -372,7 +373,7 @@ Begin VB.Form frmItemForm
          BackStyle       =   0  'Transparent
          Caption         =   "Item Price"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -390,7 +391,7 @@ Begin VB.Form frmItemForm
          BackStyle       =   0  'Transparent
          Caption         =   "Manufacturer"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -408,7 +409,7 @@ Begin VB.Form frmItemForm
          BackStyle       =   0  'Transparent
          Caption         =   "Reorder point"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -426,7 +427,7 @@ Begin VB.Form frmItemForm
          BackStyle       =   0  'Transparent
          Caption         =   "Unit of measure"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -444,7 +445,7 @@ Begin VB.Form frmItemForm
          BackStyle       =   0  'Transparent
          Caption         =   "Item Description"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -462,7 +463,7 @@ Begin VB.Form frmItemForm
          BackStyle       =   0  'Transparent
          Caption         =   "Item name"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
@@ -480,7 +481,7 @@ Begin VB.Form frmItemForm
          BackStyle       =   0  'Transparent
          Caption         =   "Item Code"
          BeginProperty Font 
-            Name            =   "Century Gothic"
+            Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
