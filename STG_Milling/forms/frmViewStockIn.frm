@@ -200,17 +200,18 @@ Private Sub cmdRefresh_Click()
 End Sub
 
 Private Sub Form_Load()
-Call setViewStockInListview(lsvStockIn)
-With lsvStockIn
-    .ColumnHeaders(1).width = 0
-    .ColumnHeaders(2).width = 2000
-    .ColumnHeaders(3).width = 4000
-    .ColumnHeaders(4).width = 3000
-    .ColumnHeaders(5).width = 3000
-'    .ColumnHeaders(6).width = 2500
-End With
 
-Call loadStockInListByDate(Format(activeDate, "yyyy-mm-dd"), lsvStockIn)
+    Call setViewStockInListview(lsvStockIn)
+    With lsvStockIn
+        .ColumnHeaders(1).width = 0
+        .ColumnHeaders(2).width = 2000
+        .ColumnHeaders(3).width = 4000
+        .ColumnHeaders(4).width = 3000
+        .ColumnHeaders(5).width = 3000
+    '    .ColumnHeaders(6).width = 2500
+    End With
+    
+    Call loadStockInListByDate(Format(activeDate, "yyyy-mm-dd"), lsvStockIn)
 
 End Sub
 

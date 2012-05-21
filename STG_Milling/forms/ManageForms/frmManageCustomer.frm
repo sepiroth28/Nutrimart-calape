@@ -193,6 +193,7 @@ Call loadAllCustomersToListview(lsvCustomer)
 End Sub
 
 Private Sub lsvCustomer_DblClick()
+On Error Resume Next
     editmode = True
     activecustomer = Val(lsvCustomer.SelectedItem.Text)
     frmCustomer.Show 1
@@ -205,13 +206,17 @@ End If
 End Sub
 
 Private Sub mnu_change_agent_Click()
-activecustomer = Val(lsvCustomer.SelectedItem.Text)
-frmChangeAgent.Show 1
+If lsvCustomer.ListItems.Count > 0 Then
+    activecustomer = Val(lsvCustomer.SelectedItem.Text)
+    frmChangeAgent.Show 1
+End If
 End Sub
 
 Private Sub mnu_customer_rebates_Click()
-activeCustomerIdForRebate = Val(lsvCustomer.SelectedItem.Text)
-frmViewRebates.Show 1
+If lsvCustomer.ListItems.Count > 0 Then
+    activeCustomerIdForRebate = Val(lsvCustomer.SelectedItem.Text)
+    frmViewRebates.Show 1
+End If
 End Sub
 
 Private Sub mnu_delete_Click()
@@ -222,6 +227,8 @@ Private Sub mnu_delete_Click()
 End Sub
 
 Private Sub mnu_so_history_Click()
-customer_id_for_list_of_account_receivable = Val(lsvCustomer.SelectedItem.Text)
-frmCustomerAccountReceivable.Show 1
+If lsvCustomer.ListItems.Count > 0 Then
+    customer_id_for_list_of_account_receivable = Val(lsvCustomer.SelectedItem.Text)
+    frmCustomerAccountReceivable.Show 1
+End If
 End Sub

@@ -39,7 +39,7 @@ CREATE TABLE  `dbinventory`.`agent` (
   `Name` varchar(45) NOT NULL,
   `Mobile` varchar(45) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`agent_id`) USING BTREE
+  PRIMARY KEY (`agent_id`) 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `dbinventory`.`agent_customers`;
@@ -90,7 +90,7 @@ CREATE TABLE  `dbinventory`.`customers` (
   `dealers_type` varchar(45) DEFAULT 'dealer',
   `credit_limit` double(10,2) DEFAULT NULL,
   `visible` tinyint(3) unsigned DEFAULT '1',
-  PRIMARY KEY (`customers_id`) USING BTREE
+  PRIMARY KEY (`customers_id`) 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `dbinventory`.`customers_discount`;
@@ -152,7 +152,7 @@ CREATE TABLE  `dbinventory`.`items` (
   `manufacturers_id` int(10) unsigned DEFAULT NULL,
   `reorder_point` int(10) unsigned DEFAULT NULL,
   `include_in_rebate` tinyint(3) unsigned DEFAULT NULL,
-  PRIMARY KEY (`item_id`,`item_code`) USING BTREE
+  PRIMARY KEY (`item_id`,`item_code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `dbinventory`.`items_description`;
@@ -181,7 +181,7 @@ CREATE TABLE  `dbinventory`.`manufacturers` (
   `manufacturers_name` varchar(45) DEFAULT NULL,
   `manufacturers_add` varchar(45) DEFAULT NULL,
   `manufacturers_number` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`manufacturers_id`) USING BTREE
+  PRIMARY KEY (`manufacturers_id`) 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `dbinventory`.`municipal_agent`;
@@ -195,8 +195,35 @@ CREATE TABLE  `dbinventory`.`municipalities` (
   `municipal_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `municipal_name` varchar(45) NOT NULL,
   `tracking_price` double(10,2) DEFAULT NULL,
-  PRIMARY KEY (`municipal_id`) USING BTREE
+  PRIMARY KEY (`municipal_id`) 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+/*!40000 ALTER TABLE `municipalities` DISABLE KEYS */;
+INSERT INTO `municipalities` (`municipal_id`,`municipal_name`,`tracking_price`) VALUES 
+ (1,'CALAPE',0.00),
+ (2,'TUBIGON',0.00),
+ (3,'CLARIN',10.00),
+ (4,'LOON',0.00),
+ (5,'UBAY',0.00),
+ (6,'SAGBAYAN',15.00),
+ (7,'BIEN UNIDO',0.00),
+ (8,'TRINIDAD',NULL),
+ (9,'TALIBON',20.00),
+ (10,'INABANGGA',15.00),
+ (11,'BUENAVISTA',15.00),
+ (12,'JETAFE',NULL),
+ (13,'CARMEN',NULL),
+ (14,'SAN MIGUEL',NULL),
+ (15,'BILAR',NULL),
+ (16,'BATUAN',NULL),
+ (17,'DAGOHOY',NULL),
+ (18,'S-BULLONES',NULL),
+ (19,'SAN ISIDRO',NULL),
+ (20,'DANAO',NULL),
+ (21,'CATIGBI-AN',NULL),
+ (22,'BALILIHAN',NULL);
+/*!40000 ALTER TABLE `municipalities` ENABLE KEYS */;
+
 
 DROP TABLE IF EXISTS `dbinventory`.`payment`;
 CREATE TABLE  `dbinventory`.`payment` (
@@ -226,6 +253,32 @@ CREATE TABLE  `dbinventory`.`previleges` (
   `previleges` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+/*!40000 ALTER TABLE `previleges` DISABLE KEYS */;
+INSERT INTO `previleges` (`id`,`previleges`) VALUES 
+ (16,'payment'),
+ (17,'customer_add'),
+ (18,'stockin'),
+ (19,'inventory'),
+ (20,'stockout'),
+ (21,'technician'),
+ (22,'manage_manufacturer'),
+ (23,'sales_order_responsible'),
+ (24,'manage_useraccount'),
+ (25,'view_sales'),
+ (26,'print_sales_details'),
+ (27,'credit_limit'),
+ (28,'view_stock_in'),
+ (29,'sales_adjustment'),
+ (30,'print_receipt'),
+ (31,'delete_customer'),
+ (32,'manage_item'),
+ (33,'delete_item'),
+ (34,'customer_visibility'),
+ (35,'can_accept_remit_payments'),
+ (36,'can_issue_rebate');
+/*!40000 ALTER TABLE `previleges` ENABLE KEYS */;
+
 
 DROP TABLE IF EXISTS `dbinventory`.`rebate_price_table`;
 CREATE TABLE  `dbinventory`.`rebate_price_table` (
@@ -281,6 +334,12 @@ CREATE TABLE  `dbinventory`.`stock_in_reference` (
   `reference_no` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+/*!40000 ALTER TABLE `stock_in_reference` DISABLE KEYS */;
+INSERT INTO `stock_in_reference` (`reference_no`) VALUES 
+ ('1');
+
+
+
 DROP TABLE IF EXISTS `dbinventory`.`stock_in_transaction`;
 CREATE TABLE  `dbinventory`.`stock_in_transaction` (
   `stock_in_transaction_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -320,6 +379,9 @@ CREATE TABLE  `dbinventory`.`stock_out_reference` (
   `reference_no` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO `stock_out_reference` (`reference_no`) VALUES 
+ ('1');
+
 DROP TABLE IF EXISTS `dbinventory`.`stock_out_transaction`;
 CREATE TABLE  `dbinventory`.`stock_out_transaction` (
   `sales_order_no` varchar(45) NOT NULL,
@@ -358,6 +420,32 @@ CREATE TABLE  `dbinventory`.`user_previleges` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
+/*!40000 ALTER TABLE `user_previleges` DISABLE KEYS */;
+INSERT INTO `user_previleges` (`id`,`username`,`previleges`,`status`) VALUES 
+ (1043,'admin','16','1'),
+ (1044,'admin','17','1'),
+ (1045,'admin','18','1'),
+ (1046,'admin','19','1'),
+ (1047,'admin','20','1'),
+ (1048,'admin','21','1'),
+ (1049,'admin','22','1'),
+ (1050,'admin','23','1'),
+ (1051,'admin','24','1'),
+ (1052,'admin','25','1'),
+ (1053,'admin','26','1'),
+ (1054,'admin','27','1'),
+ (1055,'admin','28','1'),
+ (1056,'admin','29','1'),
+ (1057,'admin','30','1'),
+ (1058,'admin','31','1'),
+ (1059,'admin','32','1'),
+ (1060,'admin','33','1'),
+ (1061,'admin','34','1'),
+ (1062,'admin','35','1'),
+ (1063,'admin','36','1');
+
+
+
 DROP TABLE IF EXISTS `dbinventory`.`useraccount`;
 CREATE TABLE  `dbinventory`.`useraccount` (
   `username` varchar(50) NOT NULL,
@@ -366,7 +454,8 @@ CREATE TABLE  `dbinventory`.`useraccount` (
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
+INSERT INTO `useraccount` (`username`,`password`,`user_type`) VALUES 
+ ('admin',md5('admin'),'admin');
 
 
 

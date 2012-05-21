@@ -372,6 +372,8 @@ End If
 End Sub
 
 Private Sub lsvHistory_Click()
-activeSalesOrderForViewSalesDetails = lsvHistory.SelectedItem.Text
+If lsvHistory.ListItems.Count > 0 Then
+    activeSalesOrderForViewSalesDetails = lsvHistory.SelectedItem.Text
     frmViewSalesInDetails.Show 1
+End If
 End Sub

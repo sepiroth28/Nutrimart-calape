@@ -248,17 +248,19 @@ cmdSelect.Enabled = False
 End Sub
 
 Private Sub lsvItemList_Click()
-Dim Item As New items
-lblSelectedItem.Caption = lsvItemList.SelectedItem.SubItems(2)
-
-Item.load_item (Val(lsvItemList.SelectedItem.Text))
-lblAvailability.Caption = Item.displayAvailability
-    If Item.checkStockQty Then
-        cmdSelect.Enabled = True
-    Else
-        cmdSelect.Enabled = False
-    End If
-Set Item = Nothing
+If lsvItemList.ListItems.Count > 0 Then
+    Dim Item As New items
+    lblSelectedItem.Caption = lsvItemList.SelectedItem.SubItems(2)
+    
+    Item.load_item (Val(lsvItemList.SelectedItem.Text))
+    lblAvailability.Caption = Item.displayAvailability
+        If Item.checkStockQty Then
+            cmdSelect.Enabled = True
+        Else
+            cmdSelect.Enabled = False
+        End If
+    Set Item = Nothing
+End If
 End Sub
 
 Private Sub lsvItemList_DblClick()

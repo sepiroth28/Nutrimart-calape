@@ -255,6 +255,10 @@ Function updateReferenceNo()
 End Function
 Function getLastRerefenceNo() As Integer
     Dim sql As String
+    Dim rs As New ADODB.Recordset
     sql = "SELECT * FROM stock_in_reference"
-    getLastRerefenceNo = Val(db.execute(sql).Fields(0).Value)
+    Set rs = db.execute(sql)
+    If rs.RecordCount > 0 Then
+        getLastRerefenceNo = Val(rs.Fields(0).Value)
+    End If
 End Function

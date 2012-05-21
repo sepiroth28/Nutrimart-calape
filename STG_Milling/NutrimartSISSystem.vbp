@@ -113,6 +113,7 @@ Form=forms\frmCustomerAgentIndex.frm
 Form=forms\frmChangeAgent.frm
 Module=Entities; forms\Entities.bas
 Designer=report\dtaSoHistory.Dsr
+Form=forms\frmRebatesPriceTable.frm
 IconForm="mdi_Inventory"
 Startup="Sub Main"
 HelpFile=""

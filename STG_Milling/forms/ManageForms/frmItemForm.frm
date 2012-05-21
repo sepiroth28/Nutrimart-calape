@@ -629,6 +629,7 @@ activeItemId = 0
 End Sub
 
 Private Sub lsvManufacturers_Click()
+On Error Resume Next
 If editmode = True Then
     edit_item.manufacturers_id = Val(lsvManufacturers.SelectedItem.Text)
     txtManufacturers.Text = lsvManufacturers.SelectedItem.SubItems(1)

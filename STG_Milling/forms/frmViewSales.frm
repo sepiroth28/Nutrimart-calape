@@ -7,7 +7,7 @@ Begin VB.Form frmViewSales
    Caption         =   "View Sales"
    ClientHeight    =   8790
    ClientLeft      =   150
-   ClientTop       =   750
+   ClientTop       =   780
    ClientWidth     =   14970
    Icon            =   "frmViewSales.frx":0000
    LinkTopic       =   "Form1"
@@ -515,8 +515,10 @@ End If
 End Sub
 
 Private Sub mnuSalesOrderHistory_Click()
-selectedSOForHistory = lsvSales.SelectedItem.Text
-frmSOHistory.Show 1
+If lsvSales.ListItems.Count > 0 Then
+    selectedSOForHistory = lsvSales.SelectedItem.Text
+    frmSOHistory.Show 1
+End If
 End Sub
 
 Private Sub txtSalesDate_Click()

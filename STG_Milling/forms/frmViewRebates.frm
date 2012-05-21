@@ -441,3 +441,4 @@ End If
 picIssueRebate.Visible = activeUser.previliges.can_issue_rebate
 lblDoneRemit.Visible = activeUser.previliges.can_issue_rebate
 End Sub
+

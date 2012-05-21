@@ -121,11 +121,12 @@ Sub loadToSalesOrder_Responsible()
     str = "SELECT * FROM salesorder_responsible"
     
     Set rs = db.execute(str)
-    Me.prepared_by = rs.Fields(1).Value
-    Me.checked_by = rs.Fields(2).Value
-    Me.posted_by = rs.Fields(3).Value
-    Me.delivered_by = rs.Fields(4).Value
-    
+    If rs.RecordCount > 0 Then
+        Me.prepared_by = rs.Fields(1).Value
+        Me.checked_by = rs.Fields(2).Value
+        Me.posted_by = rs.Fields(3).Value
+        Me.delivered_by = rs.Fields(4).Value
+    End If
     Set rs = Nothing
     
     

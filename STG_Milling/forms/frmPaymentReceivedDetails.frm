@@ -308,17 +308,22 @@ Call checkIfRemitted(lsvTotalsInfo.SelectedItem)
 End Sub
 
 Private Sub mnu_payment_details_sohistory_Click()
-selectedSOForHistory = lsvPaymentReceived.SelectedItem.SubItems(1)
-frmSOHistory.Show 1
+If lsvPaymentReceived.ListItems.Count > 0 Then
+    selectedSOForHistory = lsvPaymentReceived.SelectedItem.SubItems(1)
+    frmSOHistory.Show 1
+End If
 End Sub
 
 Private Sub mnu_payment_details_view_payment_hostory_Click()
+If lsvPaymentReceived.ListItems.Count > 0 Then
     activeSalesOrderForPaymentHistory = lsvPaymentReceived.SelectedItem.SubItems(1)
     frmPaymentHistoryDetails.Show 1
+End If
 End Sub
 
 Private Sub mnu_payment_details_view_so_details_Click()
-On Error Resume Next
+If lsvPaymentReceived.ListItems.Count > 0 Then
     activeSalesOrderForViewSalesDetails = lsvPaymentReceived.SelectedItem.SubItems(1)
     frmViewSalesInDetails.Show 1
+End If
 End Sub

@@ -429,6 +429,7 @@ End Function
 Function getLastRerefenceNo() As Integer
     Dim sql As String
     sql = "SELECT * FROM stock_out_reference"
+    On Error Resume Next
     getLastRerefenceNo = Val(db.execute(sql).Fields(0).Value)
 End Function
 

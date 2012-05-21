@@ -826,11 +826,13 @@ Call loadAllCustomersToListview(lsvCustomerList)
 End Sub
 
 Private Sub lsvCustomerList_Click()
-Call toogleListView(lsvCustomerList)
-txtSalesOrder.Text = lsvCustomerList.SelectedItem.SubItems(1)
-clearSalesInfo
-Call loadSalesOrderOfCustomerToListview(Val(lsvCustomerList.SelectedItem.Text), lsvSales)
-lblAmountCustomer.Caption = FormatNumber(getTotalAmountOfAccountReceivableOfThisCustomer(Val(lsvCustomerList.SelectedItem.Text)), 2)
+If lsvCustomerList.ListItems.Count > 0 Then
+    Call toogleListView(lsvCustomerList)
+    txtSalesOrder.Text = lsvCustomerList.SelectedItem.SubItems(1)
+    clearSalesInfo
+    Call loadSalesOrderOfCustomerToListview(Val(lsvCustomerList.SelectedItem.Text), lsvSales)
+    lblAmountCustomer.Caption = FormatNumber(getTotalAmountOfAccountReceivableOfThisCustomer(Val(lsvCustomerList.SelectedItem.Text)), 2)
+End If
 End Sub
 Sub clearSalesInfo()
     lsvItemsPurchased.ListItems.Clear
@@ -847,12 +849,12 @@ Sub clearSalesInfo()
 End Sub
 
 Private Sub lsvSales_Click()
-
+If lsvSales.ListItems.Count > 0 Then
     lsvRemarks.ListItems.Clear
     
 'Call toogleListView(lsvSales)
- Call loadSalesInfo
- 
+    Call loadSalesInfo
+End If
 End Sub
 
 Private Sub txtAmountPaid_Change()
