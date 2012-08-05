@@ -399,6 +399,19 @@ Sub loadSalesOrderOfCustomerToListview(customer_id As Integer, lsv As ListView)
         'list.SubItems(1) = FormatNumber(getTotalAmountOfAccountReceivableOfThisCustomer(customer_id), 2)
     End If
 End Sub
+Sub PrintsalesorderofCustomer(customer_id As Integer, total As Double)
+    Dim newcus As New Customers
+    newcus.load_customers (customer_id)
+    Dim rs As New ADODB.Recordset
+    Dim list As ListItem
+    Set rs = getUnsettleSalesOrderOfthisCustomer(customer_id)
+    Set dtaListOfAccountReceivable.DataSource = rs
+        dtaListOfAccountReceivable.Sections(1).Controls("lblCustomerName").Caption = newcus.customers_name
+        dtaListOfAccountReceivable.Sections(1).Controls("lblCustomerAdd").Caption = newcus.customers_add
+        dtaListOfAccountReceivable.Sections(5).Controls("lblTotal").Caption = total
+        dtaListOfAccountReceivable.Show 1
+    Set rs = Nothing
+End Sub
 
 Function getSalesOrderOfThisCustomer(customer_id As Integer) As ADODB.Recordset
     Dim sql As String
@@ -409,6 +422,15 @@ Function getSalesOrderOfThisCustomer(customer_id As Integer) As ADODB.Recordset
               "  WHERE sot.responsible_customer = " & customer_id & " ORDER BY sot.delivery_date DESC"
     Set getSalesOrderOfThisCustomer = db.execute(sql)
     
+End Function
+Function getUnsettleSalesOrderOfthisCustomer(customer_id As Integer) As ADODB.Recordset
+    Dim sql As String
+    sql = "SELECT acr.sales_order_no,sot.net_total,acr.remarks,DATE_FORMAT(sot.delivery_date,'%m/%d/%Y') as delivery_date,sot.prepared_by " & _
+              "  FROM `account_receivable` acr " & _
+              "  LEFT JOIN `stock_out_transaction` sot " & _
+              "  ON acr.sales_order_no = sot.sales_order_no " & _
+              "  WHERE sot.responsible_customer = " & customer_id & " and acr.remarks='unsettled' ORDER BY sot.delivery_date DESC"
+    Set getUnsettleSalesOrderOfthisCustomer = db.execute(sql)
 End Function
 
 Function getTotalAmountOfAccountReceivableOfThisCustomer(customer_id As Integer) As Double
@@ -423,6 +445,29 @@ Function getTotalAmountOfAccountReceivableOfThisCustomer(customer_id As Integer)
     Set rs = db.execute(sql)
     If rs.RecordCount > 0 Then
         getTotalAmountOfAccountReceivableOfThisCustomer = rs.Fields(0).Value
+    End If
+End Function
+Function getReceiverRemit(sales_date As Date) As String
+    Dim rs As New ADODB.Recordset
+    Dim sql As String
+    sql = "SELECT * FROM cod_remitted WHERE sales_date = '" & Format(sales_date, "yyyy-mm-dd") & "'"
+    Set rs = db.execute(sql)
+    If rs.RecordCount > 0 Then
+        getReceiverRemit = rs.Fields("remit_by").Value
+    Else
+        getReceiverRemit = ""
+    End If
+End Function
+
+Function getAcceptByRemit(sales_date As Date) As String
+    Dim rs As New ADODB.Recordset
+    Dim sql As String
+    sql = "SELECT * FROM cod_remitted WHERE sales_date = '" & Format(sales_date, "yyyy-mm-dd") & "'"
+    Set rs = db.execute(sql)
+    If rs.RecordCount > 0 Then
+        getAcceptByRemit = rs.Fields("received_by").Value
+    Else
+        getAcceptByRemit = ""
     End If
 End Function
 

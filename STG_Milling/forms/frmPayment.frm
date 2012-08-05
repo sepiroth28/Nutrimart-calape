@@ -24,7 +24,7 @@ Begin VB.Form frmPayment
       Left            =   60
       ScaleHeight     =   8385
       ScaleWidth      =   12945
-      TabIndex        =   0
+      TabIndex        =   7
       Top             =   60
       Width           =   12975
       Begin VB.TextBox txtRemarks 
@@ -32,14 +32,14 @@ Begin VB.Form frmPayment
          Height          =   732
          Left            =   7140
          MultiLine       =   -1  'True
-         TabIndex        =   31
+         TabIndex        =   5
          Top             =   7560
          Width           =   3072
       End
       Begin MSComctlLib.ListView lsvCustomerList 
          Height          =   2175
          Left            =   2220
-         TabIndex        =   4
+         TabIndex        =   2
          Top             =   1260
          Visible         =   0   'False
          Width           =   4335
@@ -103,7 +103,7 @@ Begin VB.Form frmPayment
          EndProperty
          Height          =   555
          Left            =   4680
-         TabIndex        =   24
+         TabIndex        =   4
          Top             =   7620
          Width           =   2352
       End
@@ -122,7 +122,7 @@ Begin VB.Form frmPayment
          Height          =   795
          Left            =   10260
          Style           =   1  'Graphical
-         TabIndex        =   23
+         TabIndex        =   6
          Top             =   7500
          Width           =   2532
       End
@@ -134,13 +134,13 @@ Begin VB.Form frmPayment
          Left            =   180
          ScaleHeight     =   5925
          ScaleWidth      =   12585
-         TabIndex        =   6
+         TabIndex        =   10
          Top             =   1320
          Width           =   12615
          Begin MSComctlLib.ListView lsvSales 
             Height          =   1755
             Left            =   5640
-            TabIndex        =   28
+            TabIndex        =   3
             Top             =   300
             Width           =   6675
             _ExtentX        =   11774
@@ -195,17 +195,17 @@ Begin VB.Form frmPayment
             Caption         =   "Remarks"
             ForeColor       =   &H80000008&
             Height          =   1635
-            Left            =   240
-            TabIndex        =   19
+            Left            =   120
+            TabIndex        =   23
             Top             =   4140
-            Width           =   6615
+            Width           =   7215
             Begin MSComctlLib.ListView lsvRemarks 
                Height          =   1215
                Left            =   180
-               TabIndex        =   20
+               TabIndex        =   24
                Top             =   240
-               Width           =   6255
-               _ExtentX        =   11033
+               Width           =   6915
+               _ExtentX        =   12197
                _ExtentY        =   2143
                View            =   3
                LabelEdit       =   1
@@ -218,10 +218,10 @@ Begin VB.Form frmPayment
                BackColor       =   -2147483643
                BorderStyle     =   1
                Appearance      =   0
-               NumItems        =   4
+               NumItems        =   5
                BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
                   Text            =   "No"
-                  Object.Width           =   2540
+                  Object.Width           =   1235
                EndProperty
                BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
                   SubItemIndex    =   1
@@ -238,12 +238,17 @@ Begin VB.Form frmPayment
                   Text            =   "date paid"
                   Object.Width           =   2540
                EndProperty
+               BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+                  SubItemIndex    =   4
+                  Text            =   "received by"
+                  Object.Width           =   3528
+               EndProperty
             End
          End
          Begin MSComctlLib.ListView lsvItemsPurchased 
             Height          =   1575
             Left            =   240
-            TabIndex        =   13
+            TabIndex        =   17
             Top             =   2520
             Width           =   12075
             _ExtentX        =   21299
@@ -355,7 +360,7 @@ Begin VB.Form frmPayment
             EndProperty
             Height          =   195
             Left            =   5760
-            TabIndex        =   29
+            TabIndex        =   30
             Top             =   60
             Width           =   2595
          End
@@ -374,7 +379,7 @@ Begin VB.Form frmPayment
             ForeColor       =   &H000000C0&
             Height          =   315
             Left            =   9060
-            TabIndex        =   22
+            TabIndex        =   26
             Top             =   5400
             Width           =   3255
          End
@@ -393,7 +398,7 @@ Begin VB.Form frmPayment
             EndProperty
             Height          =   315
             Left            =   7080
-            TabIndex        =   21
+            TabIndex        =   25
             Top             =   5460
             Width           =   1695
          End
@@ -412,7 +417,7 @@ Begin VB.Form frmPayment
             EndProperty
             Height          =   255
             Left            =   6780
-            TabIndex        =   18
+            TabIndex        =   22
             Top             =   5040
             Visible         =   0   'False
             Width           =   1695
@@ -432,7 +437,7 @@ Begin VB.Form frmPayment
             EndProperty
             Height          =   315
             Left            =   6900
-            TabIndex        =   17
+            TabIndex        =   21
             Top             =   4200
             Width           =   1695
          End
@@ -451,7 +456,7 @@ Begin VB.Form frmPayment
             EndProperty
             Height          =   315
             Left            =   9060
-            TabIndex        =   16
+            TabIndex        =   20
             Top             =   4140
             Width           =   1695
          End
@@ -477,7 +482,7 @@ Begin VB.Form frmPayment
             EndProperty
             Height          =   315
             Left            =   9240
-            TabIndex        =   15
+            TabIndex        =   19
             Top             =   4980
             Width           =   1695
          End
@@ -495,7 +500,7 @@ Begin VB.Form frmPayment
             EndProperty
             Height          =   315
             Left            =   10500
-            TabIndex        =   14
+            TabIndex        =   18
             Top             =   4020
             Width           =   1695
          End
@@ -512,7 +517,7 @@ Begin VB.Form frmPayment
             EndProperty
             Height          =   375
             Left            =   180
-            TabIndex        =   12
+            TabIndex        =   16
             Top             =   1140
             Width           =   6195
          End
@@ -530,7 +535,7 @@ Begin VB.Form frmPayment
             EndProperty
             Height          =   285
             Left            =   180
-            TabIndex        =   11
+            TabIndex        =   15
             Top             =   840
             Width           =   60
          End
@@ -548,7 +553,7 @@ Begin VB.Form frmPayment
             EndProperty
             Height          =   240
             Left            =   1920
-            TabIndex        =   10
+            TabIndex        =   14
             Top             =   480
             Width           =   60
          End
@@ -566,7 +571,7 @@ Begin VB.Form frmPayment
             EndProperty
             Height          =   375
             Left            =   180
-            TabIndex        =   9
+            TabIndex        =   13
             Top             =   480
             Width           =   1695
          End
@@ -584,7 +589,7 @@ Begin VB.Form frmPayment
             EndProperty
             Height          =   285
             Left            =   1920
-            TabIndex        =   8
+            TabIndex        =   12
             Top             =   60
             Width           =   60
          End
@@ -602,7 +607,7 @@ Begin VB.Form frmPayment
             EndProperty
             Height          =   375
             Left            =   180
-            TabIndex        =   7
+            TabIndex        =   11
             Top             =   120
             Width           =   1815
          End
@@ -611,7 +616,7 @@ Begin VB.Form frmPayment
          Caption         =   "..."
          Height          =   495
          Left            =   5940
-         TabIndex        =   5
+         TabIndex        =   0
          Top             =   720
          Width           =   615
       End
@@ -628,7 +633,7 @@ Begin VB.Form frmPayment
          EndProperty
          Height          =   495
          Left            =   2220
-         TabIndex        =   3
+         TabIndex        =   1
          Top             =   720
          Width           =   3675
       End
@@ -646,7 +651,7 @@ Begin VB.Form frmPayment
          EndProperty
          Height          =   252
          Left            =   7140
-         TabIndex        =   30
+         TabIndex        =   31
          Top             =   7320
          Visible         =   0   'False
          Width           =   912
@@ -665,7 +670,7 @@ Begin VB.Form frmPayment
          EndProperty
          Height          =   375
          Left            =   8640
-         TabIndex        =   27
+         TabIndex        =   29
          Top             =   840
          Width           =   4095
       End
@@ -686,7 +691,7 @@ Begin VB.Form frmPayment
          ForeColor       =   &H000000FF&
          Height          =   288
          Left            =   300
-         TabIndex        =   26
+         TabIndex        =   28
          Top             =   7560
          Visible         =   0   'False
          Width           =   2340
@@ -715,7 +720,7 @@ Begin VB.Form frmPayment
          EndProperty
          Height          =   312
          Left            =   2040
-         TabIndex        =   25
+         TabIndex        =   27
          Top             =   7740
          Width           =   2292
       End
@@ -733,7 +738,7 @@ Begin VB.Form frmPayment
          EndProperty
          Height          =   375
          Left            =   180
-         TabIndex        =   2
+         TabIndex        =   9
          Top             =   780
          Width           =   1815
       End
@@ -758,7 +763,7 @@ Begin VB.Form frmPayment
          EndProperty
          Height          =   615
          Left            =   180
-         TabIndex        =   1
+         TabIndex        =   8
          Top             =   120
          Width           =   1455
       End
@@ -848,12 +853,23 @@ Sub clearSalesInfo()
     cmdProcess.Enabled = False
 End Sub
 
+Private Sub lsvCustomerList_KeyPress(KeyAscii As Integer)
+If KeyAscii = 13 Then
+    Call lsvCustomerList_Click
+End If
+End Sub
+
 Private Sub lsvSales_Click()
 If lsvSales.ListItems.Count > 0 Then
     lsvRemarks.ListItems.Clear
     
 'Call toogleListView(lsvSales)
     Call loadSalesInfo
+End If
+End Sub
+Private Sub lsvSales_KeyPress(KeyAscii As Integer)
+If KeyAscii = 13 Then
+    Call lsvSales_Click
 End If
 End Sub
 
@@ -877,6 +893,18 @@ Sub validateInputToBalance()
         'new_payment.remarks = ""
         fully_paid = False
     End If
+End Sub
+
+Private Sub txtAmountPaid_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then
+        Call cmdProcess_Click
+    End If
+End Sub
+
+Private Sub txtRemarks_KeyPress(KeyAscii As Integer)
+If KeyAscii = 13 Then
+    Call cmdProcess_Click
+End If
 End Sub
 
 Private Sub txtSalesOrder_Change()

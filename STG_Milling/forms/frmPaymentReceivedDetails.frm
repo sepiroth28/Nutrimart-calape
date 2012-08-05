@@ -7,13 +7,13 @@ Begin VB.Form frmPaymentReceivedDetails
    ClientHeight    =   9390
    ClientLeft      =   45
    ClientTop       =   675
-   ClientWidth     =   15015
+   ClientWidth     =   15810
    Icon            =   "frmPaymentReceivedDetails.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   9390
-   ScaleWidth      =   15015
+   ScaleWidth      =   15810
    StartUpPosition =   2  'CenterScreen
    Begin VB.PictureBox Picture1 
       Appearance      =   0  'Flat
@@ -23,10 +23,10 @@ Begin VB.Form frmPaymentReceivedDetails
       Height          =   9255
       Left            =   60
       ScaleHeight     =   9225
-      ScaleWidth      =   14865
+      ScaleWidth      =   15645
       TabIndex        =   0
       Top             =   60
-      Width           =   14895
+      Width           =   15675
       Begin VB.Frame Frame1 
          BackColor       =   &H80000018&
          Caption         =   "Totals Received info"
@@ -43,7 +43,7 @@ Begin VB.Form frmPaymentReceivedDetails
          Left            =   120
          TabIndex        =   4
          Top             =   6840
-         Width           =   6075
+         Width           =   8655
          Begin VB.CommandButton cmdDoneRemit 
             Caption         =   "MARK AS REMITTED"
             BeginProperty Font 
@@ -56,7 +56,7 @@ Begin VB.Form frmPaymentReceivedDetails
                Strikethrough   =   0   'False
             EndProperty
             Height          =   435
-            Left            =   3540
+            Left            =   6120
             Style           =   1  'Graphical
             TabIndex        =   6
             Top             =   1740
@@ -68,8 +68,8 @@ Begin VB.Form frmPaymentReceivedDetails
             Left            =   180
             TabIndex        =   5
             Top             =   300
-            Width           =   5715
-            _ExtentX        =   10081
+            Width           =   8295
+            _ExtentX        =   14631
             _ExtentY        =   2355
             View            =   3
             LabelEdit       =   1
@@ -92,7 +92,7 @@ Begin VB.Form frmPaymentReceivedDetails
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            NumItems        =   3
+            NumItems        =   4
             BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
                Text            =   "Received By:"
                Object.Width           =   3528
@@ -105,7 +105,12 @@ Begin VB.Form frmPaymentReceivedDetails
             EndProperty
             BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
                SubItemIndex    =   2
-               Object.Width           =   6174
+               Object.Width           =   1764
+            EndProperty
+            BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+               SubItemIndex    =   3
+               Text            =   "Received by"
+               Object.Width           =   5292
             EndProperty
          End
          Begin VB.Label lblRemitted 
@@ -149,8 +154,8 @@ Begin VB.Form frmPaymentReceivedDetails
          Left            =   60
          TabIndex        =   1
          Top             =   600
-         Width           =   14655
-         _ExtentX        =   25850
+         Width           =   15495
+         _ExtentX        =   27331
          _ExtentY        =   10821
          View            =   3
          LabelEdit       =   1
@@ -239,6 +244,7 @@ Dim list As ListItem
 Call setPaymentReceivedListview(lsvPaymentReceived)
 lsvPaymentReceived.ColumnHeaders(1).width = 0
 lsvPaymentReceived.ColumnHeaders(2).width = 2500
+lsvPaymentReceived.ColumnHeaders(9).width = 2000
 Call loadPaymentDetailsOnListView(lsvPaymentReceived, activeDate)
 Call loadPaymentTotalsInfoReceivedBy(lsvTotalsInfo, activeDate)
 lsvPaymentReceived.ColumnHeaders(3).width = 3000
@@ -246,6 +252,8 @@ lsvPaymentReceived.ColumnHeaders(3).width = 3000
 For Each list In lsvTotalsInfo.ListItems
     Call loadRemittedStatus(list)
 Next
+
+
 
 End Sub
 
@@ -292,6 +300,7 @@ Sub loadRemittedStatus(list As ListItem)
     Set rs = db.execute(sql)
     If rs.RecordCount > 0 Then
         list.SubItems(2) = "Done"
+        list.SubItems(3) = "Accepted by  " & rs.Fields("accepted_by").Value
     Else
         list.SubItems(2) = ""
     End If

@@ -27,7 +27,7 @@ Sub setPaymentReceivedListview(lsv As ListView)
         .Add "payment date"
         .Add "remarks"
         .Add "received_by"
-       
+        .Add "date purchased"
     End With
      setListviewColumn lsv, payment_column
     Set payment_column = Nothing

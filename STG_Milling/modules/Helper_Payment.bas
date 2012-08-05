@@ -38,6 +38,10 @@ Sub loadPaymentDetailsOnListView(lsv As ListView, details_date As Date)
                 list.SubItems(5) = rs.Fields(5).Value
                 list.SubItems(6) = rs.Fields("remarks").Value
                 list.SubItems(7) = rs.Fields("received_by").Value
+                Dim so As New Sales
+                so.loadSalesOrder (rs.Fields(1).Value)
+                list.SubItems(8) = FormatDateTime(so.date_transact, vbShortDate)
+                Set so = Nothing
             rs.MoveNext
         Loop
     End If

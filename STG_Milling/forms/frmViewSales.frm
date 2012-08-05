@@ -38,12 +38,12 @@ Begin VB.Form frmViewSales
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   435
-         Left            =   12060
+         Height          =   675
+         Left            =   10890
          TabIndex        =   16
-         Top             =   7200
+         Top             =   6390
          Visible         =   0   'False
-         Width           =   2655
+         Width           =   3735
       End
       Begin VB.CommandButton cmdLoadRecords 
          Caption         =   "Load Records"
@@ -156,10 +156,10 @@ Begin VB.Form frmViewSales
          EndProperty
          NumItems        =   0
       End
-      Begin VB.Label lblRemitted 
+      Begin VB.Label lblAcceptedBy 
          Alignment       =   1  'Right Justify
          BackStyle       =   0  'Transparent
-         Caption         =   "COD Amount is already remitted"
+         Caption         =   "COD Amount is already remitted to"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   9.75
@@ -171,11 +171,32 @@ Begin VB.Form frmViewSales
          EndProperty
          ForeColor       =   &H00008000&
          Height          =   375
-         Left            =   10740
-         TabIndex        =   17
+         Left            =   7500
+         TabIndex        =   18
          Top             =   7380
          Visible         =   0   'False
-         Width           =   3795
+         Width           =   7035
+      End
+      Begin VB.Label lblRemitted 
+         Alignment       =   1  'Right Justify
+         BackStyle       =   0  'Transparent
+         Caption         =   "COD Amount is already remitted by"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00008000&
+         Height          =   375
+         Left            =   7500
+         TabIndex        =   17
+         Top             =   7140
+         Visible         =   0   'False
+         Width           =   7035
       End
       Begin VB.Label Label6 
          AutoSize        =   -1  'True
@@ -438,11 +459,23 @@ updateTotals (activeDate)
 
     Dim is_cod_remitted As Boolean
     is_cod_remitted = checkCODIfRemitted(activeDate)
-    lblRemitted.Visible = is_cod_remitted
+    
     If cboPaymentType.Text = "COD" Then
         If activeUser.previliges.can_accept_remit_payments Then
             cmdCODRemit.Visible = Not is_cod_remitted
+            'lblRemitted.Visible = is_cod_remitted
+            lblRemitted.Visible = is_cod_remitted
+            lblAcceptedBy.Visible = is_cod_remitted
+            If is_cod_remitted Then
+                lblRemitted.Caption = lblRemitted.Caption & " " & getReceiverRemit(activeDate)
+                lblAcceptedBy.Caption = lblAcceptedBy.Caption & " " & getAcceptByRemit(activeDate)
+            End If
         End If
+    Else
+        cmdCODRemit.Visible = Not is_cod_remitted
+            'lblRemitted.Visible = is_cod_remitted
+        lblRemitted.Visible = is_cod_remitted
+        lblAcceptedBy.Visible = is_cod_remitted
     End If
 End Sub
 

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmMenu 
    Appearance      =   0  'Flat
    BackColor       =   &H80000005&
@@ -690,6 +690,25 @@ Begin VB.Form frmMenu
             Object.Width           =   2540
          EndProperty
       End
+      Begin VB.Label Label8 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Welcome,"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   12.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000C0&
+         Height          =   405
+         Left            =   3210
+         TabIndex        =   44
+         Top             =   3540
+         Width           =   1365
+      End
       Begin VB.Label lblChangePassword 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
@@ -754,9 +773,9 @@ Begin VB.Form frmMenu
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   285
-         Left            =   1680
+         Left            =   3390
          TabIndex        =   28
-         Top             =   7980
+         Top             =   3870
          Width           =   780
       End
       Begin VB.Label lblWalkInCustomer 
@@ -828,6 +847,26 @@ Begin VB.Form frmMenu
          Top             =   480
          Width           =   2475
       End
+   End
+   Begin VB.Label Label6 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Label4"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000000&
+      Height          =   285
+      Left            =   4350
+      TabIndex        =   43
+      Top             =   5970
+      Width           =   780
    End
 End
 Attribute VB_Name = "frmMenu"

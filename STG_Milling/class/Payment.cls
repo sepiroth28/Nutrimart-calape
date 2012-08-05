@@ -100,11 +100,13 @@ Public Sub loadRemarksToListview(lsv As ListView)
     If rs.RecordCount > 0 Then
         lsv.ListItems.Clear
         ctr = 1
+        On Error Resume Next
         Do Until rs.EOF
             Set list = lsv.ListItems.Add(, , ctr)
             list.SubItems(1) = FormatNumber(rs.Fields("amount").Value, 2)
             list.SubItems(2) = FormatNumber(rs.Fields("balance").Value, 2)
             list.SubItems(3) = rs.Fields("payment_date").Value
+            list.SubItems(4) = rs.Fields("received_by").Value
         ctr = ctr + 1
         rs.MoveNext
         Loop

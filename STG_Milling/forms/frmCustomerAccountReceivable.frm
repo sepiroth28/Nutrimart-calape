@@ -16,6 +16,23 @@ Begin VB.Form frmCustomerAccountReceivable
    ScaleWidth      =   10710
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton cmdPrint 
+      Caption         =   "&PRINT"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   675
+      Left            =   5640
+      TabIndex        =   10
+      Top             =   7830
+      Width           =   2355
+   End
    Begin VB.PictureBox Picture1 
       Appearance      =   0  'Flat
       BackColor       =   &H00C0FFFF&
@@ -242,6 +259,18 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub cmdClose_Click()
+Unload Me
+End Sub
+
+Private Sub cmdPrint_Click()
+Dim cus As New Customers
+Dim total As Double
+total = FormatNumber(getTotalDebtOfThisCustomer(customer_id_for_list_of_account_receivable), 2)
+'Call PrintsalesorderofCustomer(customer_id_for_list_of_account_receivable, cus.customers_name, cus.customers_add, lblUnsettled.Caption)
+Call PrintsalesorderofCustomer(customer_id_for_list_of_account_receivable, total)
+End Sub
+
 Private Sub Form_Load()
 Dim cus As New Customers
 cus.load_customers (customer_id_for_list_of_account_receivable)

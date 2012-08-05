@@ -17,6 +17,23 @@ Begin VB.Form frmAgingAccounts
    ScaleWidth      =   8070
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton cmdPrint 
+      Caption         =   "&Print"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   675
+      Left            =   2700
+      TabIndex        =   8
+      Top             =   7350
+      Width           =   2532
+   End
    Begin VB.PictureBox Picture1 
       Appearance      =   0  'Flat
       BackColor       =   &H80000005&
@@ -173,6 +190,10 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdClose_Click()
 Unload Me
+End Sub
+
+Private Sub cmdPrint_Click()
+Call printAgingAccount(Val(cboMonths.Text))
 End Sub
 
 Private Sub cmdSearch_Click()
