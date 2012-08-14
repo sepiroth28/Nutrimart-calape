@@ -4,10 +4,10 @@ Begin VB.Form frmMenu
    Appearance      =   0  'Flat
    BackColor       =   &H80000005&
    BorderStyle     =   1  'Fixed Single
-   ClientHeight    =   9855
+   ClientHeight    =   9870
    ClientLeft      =   450
    ClientTop       =   1770
-   ClientWidth     =   16545
+   ClientWidth     =   16560
    FillStyle       =   0  'Solid
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -24,8 +24,8 @@ Begin VB.Form frmMenu
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmMenu.frx":058A
-   ScaleHeight     =   9855
-   ScaleWidth      =   16545
+   ScaleHeight     =   9870
+   ScaleWidth      =   16560
    Begin VB.Frame Frame1 
       BeginProperty Font 
          Name            =   "Tahoma"

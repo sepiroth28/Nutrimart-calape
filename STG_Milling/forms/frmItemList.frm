@@ -1,11 +1,12 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmItemList 
    Appearance      =   0  'Flat
    BackColor       =   &H80000018&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Item List"
-   ClientHeight    =   6405
+   ClientHeight    =   8430
    ClientLeft      =   30
    ClientTop       =   360
    ClientWidth     =   11775
@@ -13,9 +14,20 @@ Begin VB.Form frmItemList
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   6405
+   ScaleHeight     =   8430
    ScaleWidth      =   11775
    StartUpPosition =   2  'CenterScreen
+   Begin MSFlexGridLib.MSFlexGrid MSFlexGrid1 
+      Height          =   4275
+      Left            =   90
+      TabIndex        =   9
+      Top             =   210
+      Width           =   11565
+      _ExtentX        =   20399
+      _ExtentY        =   7541
+      _Version        =   393216
+      Cols            =   6
+   End
    Begin VB.PictureBox Picture1 
       Appearance      =   0  'Flat
       BackColor       =   &H00C0FFC0&
@@ -25,7 +37,7 @@ Begin VB.Form frmItemList
       ScaleHeight     =   705
       ScaleWidth      =   11565
       TabIndex        =   5
-      Top             =   4860
+      Top             =   6780
       Width           =   11595
       Begin VB.PictureBox Picture2 
          Appearance      =   0  'Flat
@@ -94,7 +106,7 @@ Begin VB.Form frmItemList
       Left            =   8340
       TabIndex        =   1
       Text            =   "1"
-      Top             =   5700
+      Top             =   7620
       Width           =   1632
    End
    Begin VB.TextBox txtSearchItem 
@@ -110,7 +122,7 @@ Begin VB.Form frmItemList
       Height          =   612
       Left            =   60
       TabIndex        =   0
-      Top             =   5700
+      Top             =   7620
       Width           =   4332
    End
    Begin VB.CommandButton cmdSelect 
@@ -127,17 +139,17 @@ Begin VB.Form frmItemList
       Height          =   612
       Left            =   10080
       TabIndex        =   2
-      Top             =   5700
+      Top             =   7620
       Width           =   1572
    End
    Begin MSComctlLib.ListView lsvItemList 
-      Height          =   4695
+      Height          =   2115
       Left            =   60
       TabIndex        =   3
-      Top             =   60
+      Top             =   4560
       Width           =   11595
       _ExtentX        =   20452
-      _ExtentY        =   8281
+      _ExtentY        =   3731
       View            =   3
       LabelEdit       =   1
       LabelWrap       =   -1  'True
@@ -176,7 +188,7 @@ Begin VB.Form frmItemList
       Height          =   315
       Left            =   7500
       TabIndex        =   4
-      Top             =   5820
+      Top             =   7740
       Width           =   810
    End
 End

@@ -418,15 +418,16 @@ Sub loadSalesOrder(sales_order_no As String)
 End Sub
 
 
+
 Private Sub Class_Initialize()
-    Dim x As Integer
-    x = getLastRerefenceNo
-    Me.transaction_id = "SO-" & String((7 - Len(x)), "0") & x
+    Dim x As Long
+   x = getLastRerefenceNo
+   Me.transaction_id = "SO-" & String((7 - Len(x)), "0") & x
 End Sub
 Function updateReferenceNo()
     db.execute ("UPDATE stock_out_reference SET reference_no = reference_no + 1")
 End Function
-Function getLastRerefenceNo() As Integer
+Function getLastRerefenceNo() As Long
     Dim sql As String
     sql = "SELECT * FROM stock_out_reference"
     On Error Resume Next
