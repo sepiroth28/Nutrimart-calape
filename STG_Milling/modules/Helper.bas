@@ -235,7 +235,7 @@ Sub loadItemRSToListCiew(lsv As ListView, rs As ADODB.Recordset)
 Dim list As ListItem
 lsv.ListItems.Clear
     Do Until rs.EOF
-    
+    On Error Resume Next
         Set list = lsv.ListItems.Add(, , rs.Fields("item_id").Value)
             list.SubItems(1) = rs.Fields("item_code").Value
             list.SubItems(2) = rs.Fields("item_name").Value
@@ -299,3 +299,39 @@ Sub updateItemsRebate(item_id As Integer, is_include As Boolean)
     insert = "UPDATE items SET include_in_rebate = " & is_include & " WHERE item_id = " & item_id
     db.execute insert
 End Sub
+
+Sub addItemToGrid(list As ListItem, grid As MSHFlexGrid)
+
+Dim selectedrow0 As String
+Dim selectedrow1 As String
+Dim selectedrow4 As String
+Dim selectedrow5 As String
+Dim selectedrow6 As String
+Dim i As Long
+
+
+i = grid.Rows
+
+selectedrow0 = frmItemList.lsvItemList.SelectedItem.Text
+selectedrow1 = frmItemList.lsvItemList.SelectedItem.SubItems(1)
+selectedrow4 = frmItemList.lsvItemList.SelectedItem.SubItems(4)
+selectedrow5 = frmItemList.lsvItemList.SelectedItem.SubItems(5)
+selectedrow6 = frmItemList.lsvItemList.SelectedItem.SubItems(6)
+
+grid.Rows = grid.Rows + 1
+
+grid.TextMatrix(i, 0) = selectedrow0
+grid.TextMatrix(i, 1) = selectedrow1
+grid.TextMatrix(i, 2) = selectedrow4
+grid.TextMatrix(i, 3) = selectedrow5
+grid.TextMatrix(i, 4) = selectedrow6
+grid.TextMatrix(i, 5) = frmItemList.txtQty.Text
+
+With frmItemList
+    .txtSearchItem.Text = ""
+    .SetFocus
+End With
+ 
+   frmItemList.txtQty.Text = "1"
+End Sub
+

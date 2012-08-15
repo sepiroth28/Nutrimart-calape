@@ -19,6 +19,7 @@ Public activeSalesOrderForViewSales As String
 Public activeSalesOrderForViewSalesDetails As String
 Public activeSalesOrderForPaymentHistory As String
 Public activeCustomerIdForRebate As Integer
+Public overwrite As Boolean
 
 
 'rebate variable
@@ -34,6 +35,7 @@ Public editManufacturer As Boolean
 Public edit_manufacturer_id As Integer
 
 Public amount_to_be_debt As Double
+Public quick_create_new_customer As Boolean
 
 Sub resetAllGlobalVars()
 Set activeSales = New Sales

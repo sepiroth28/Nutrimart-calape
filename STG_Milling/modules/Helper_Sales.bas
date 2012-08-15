@@ -1,6 +1,6 @@
 Attribute VB_Name = "Helper_Sales"
 Public Sub loadActiveCartItems(lsv As ListView)
-    Dim cart As New cart
+  Dim cart As New cart
     Dim items As New cart_items
     Dim list As ListItem
     Dim ctr As Integer

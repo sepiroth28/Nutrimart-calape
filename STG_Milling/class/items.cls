@@ -43,6 +43,13 @@ Private mvaritem_category As New item_category 'local copy
 Private mvartemp_item_code As String 'local copy
 'local variable(s) to hold property value(s)
 Private mvarinclude_in_rebate As Boolean 'local copy
+'local variable(s) to hold property value(s)
+'Private mvaritem_with_tracking As Integer
+''local variable(s) to hold property value(s)
+'Private mvaritem_with_half_tracking As Integer
+Private mvaritem_with_tracking As New item_with_tracking
+'
+
 Public Property Let include_in_rebate(ByVal vData As Boolean)
 'used when assigning a value to the property, on the left side of an assignment.
 'Syntax: X.include_in_rebate = 5
@@ -85,8 +92,18 @@ Public Property Get item_category() As item_category
 'Syntax: Debug.Print X.item_category
     Set item_category = mvaritem_category
 End Property
+Public Property Set item_with_tracking(ByVal vData As item_with_tracking)
+'used when assigning an Object to the property, on the left side of a Set statement.
+'Syntax: Set x.item_category = Form1
+    Set mvaritem_with_tracking = vData
+End Property
 
 
+Public Property Get item_with_tracking() As item_with_tracking
+'used when retrieving value of a property, on the right side of an assignment.
+'Syntax: Debug.Print X.item_category
+    Set item_with_tracking = mvaritem_with_tracking
+End Property
 
 Public Property Let dealers_price(ByVal vData As Double)
 'used when assigning a value to the property, on the left side of an assignment.
@@ -178,13 +195,15 @@ Public Function load_item(item_id As Integer) As items
     Dim temp As New items
     
     'item_id,item_code, item_qty, item_price,dealers_price date_added, date_modified, manufacturers_id, reorder_point, item_code, item_name, item_description, image, status, unit_of_measure
-    sql = "SELECT * FROM `items` LEFT JOIN `items_description` ON `items`.item_code = `items_description`.item_code WHERE `items`.item_id = " & item_id
+    'sql = "SELECT * FROM `items` LEFT JOIN `items_description` ON `items`.item_code = `items_description`.item_code WHERE `items`.item_id = " & item_id
+     sql = "SELECT * FROM `items` LEFT JOIN `items_description` ON `items`.item_code = `items_description`.item_code left join `items_with_tracking` on `items`.item_code=`items_with_tracking`.item_code WHERE `items`.item_id = " & item_id
+
     Set rs = db.execute(sql)
     
 '    Me.setItemId (rs.Fields("item_id").Value)
 On Error Resume Next
     With Me
-        .item_id = rs.Fields("item_id").Value
+       .item_id = rs.Fields("item_id").Value
         .item_code = rs.Fields("item_code").Value
         .temp_item_code = rs.Fields("item_code").Value
         .item_qty = rs.Fields("item_qty").Value
@@ -195,13 +214,13 @@ On Error Resume Next
         .include_in_rebate = rs.Fields("include_in_rebate").Value
         .item_name = rs.Fields("item_name").Value
         .item_description = rs.Fields("item_description").Value
-        '.image = rs.Fields("image").Value
         .item_status = rs.Fields("status").Value
         .unit_of_measure = rs.Fields("unit_of_measure").Value
         .item_price = rs.Fields("item_price").Value
         .dealers_price = rs.Fields("dealers_price").Value
         .manufacturer.load_manufacturers (.manufacturers_id)
         .item_category.load_item_category (.item_code)
+        .item_with_tracking.load_item_with_tracking (.item_code)
     End With
     Set rs = Nothing
     'Set load_item = temp
@@ -236,7 +255,6 @@ Public Sub update()
     
     update = "UPDATE inventory set item_code = '" & Me.item_code & "' WHERE item_id = " & Me.item_id
     db.execute update
-    
     'MsgBox update
 End Sub
 
@@ -429,6 +447,29 @@ Public Property Get item_qty() As Double
 'Syntax: Debug.Print X.item_qty
     item_qty = mvaritem_qty
 End Property
+'Public Property Let item_with_tracking(ByVal vData As Integer)
+'used when assigning a value to the property, on the left side of an assignment.
+'Syntax: X.item_with_tracking = 5
+'    mvaritem_with_tracking = vData
+'End Property
+
+'Public Property Get item_with_tracking() As Integer
+'used when retrieving value of a property, on the right side of an assignment.
+'Syntax: Debug.Print X.item_with_tracking
+'    item_with_tracking = mvaritem_with_tracking
+'End Property
+Public Property Let item_with_half_tracking(ByVal vData As Integer)
+'used when assigning a value to the property, on the left side of an assignment.
+'Syntax: X.item_with_half_tracking = 5
+    mvaritem_with_half_tracking = vData
+End Property
+
+Public Property Get item_with_half_tracking() As Integer
+'used when retrieving value of a property, on the right side of an assignment.
+'Syntax: Debug.Print X.item_with_half_tracking
+    item_with_half_tracking = mvaritem_with_half_tracking
+End Property
+
 
 Public Property Let item_code(ByVal vData As String)
 'used when assigning a value to the property, on the left side of an assignment.
@@ -451,4 +492,6 @@ Private Sub Class_Initialize()
     Me.dealers_price = 0
     Me.item_qty = 0
     Me.item_status = 1
+    Me.item_with_half_tracking = 0
+    Me.item_with_tracking = 0
 End Sub

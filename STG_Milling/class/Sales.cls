@@ -422,7 +422,7 @@ End Sub
 Private Sub Class_Initialize()
     Dim x As Long
    x = getLastRerefenceNo
-   Me.transaction_id = "SO-" & String((7 - Len(x)), "0") & x
+   Me.transaction_id = "SO-" & String((6 - Len(x)), "0") & x
 End Sub
 Function updateReferenceNo()
     db.execute ("UPDATE stock_out_reference SET reference_no = reference_no + 1")

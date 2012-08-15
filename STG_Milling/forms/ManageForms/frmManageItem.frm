@@ -244,3 +244,8 @@ If MsgBox("Are you sure you want to delete? Item will be loss and may affect oth
 End If
 End Sub
 
+Private Sub txtSearchItemCode_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then
+    Call cmdSearch_Click
+    End If
+End Sub

@@ -192,6 +192,22 @@ Begin VB.Form frmMenu
       TabIndex        =   3
       Top             =   0
       Width           =   16575
+      Begin VB.CommandButton Command1 
+         Caption         =   "Command1"
+         Height          =   765
+         Left            =   3150
+         TabIndex        =   44
+         Top             =   4800
+         Width           =   1305
+      End
+      Begin VB.CommandButton cmdNewCustomer 
+         Caption         =   "New Customer"
+         Height          =   435
+         Left            =   5100
+         TabIndex        =   43
+         Top             =   6930
+         Width           =   2355
+      End
       Begin VB.CommandButton cmdViewSales 
          Height          =   1215
          Left            =   60
@@ -280,7 +296,7 @@ Begin VB.Form frmMenu
       End
       Begin VB.CommandButton cmdAddTracking 
          BackColor       =   &H0080FF80&
-         Caption         =   "ADD TRUCKING PRICE"
+         Caption         =   "ADJUST TRUCKING PRICE"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   9
@@ -299,7 +315,7 @@ Begin VB.Form frmMenu
       End
       Begin VB.CommandButton cmdAddDiscount 
          BackColor       =   &H00FF80FF&
-         Caption         =   "ADD DISCOUNT"
+         Caption         =   "ADD DISCOUNT/ITEM"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   9
@@ -343,9 +359,9 @@ Begin VB.Form frmMenu
          Caption         =   "Walk in Customer"
          ForeColor       =   &H80000008&
          Height          =   435
-         Left            =   5340
+         Left            =   2280
          TabIndex        =   20
-         Top             =   6900
+         Top             =   6420
          Width           =   2592
       End
       Begin VB.CommandButton cmdNewTransaction 
@@ -1058,7 +1074,19 @@ Private Sub cmdStockIn_Click()
 End Sub
 
 Private Sub Command1_Click()
-    
+Dim so As New Sales
+Dim new_cart As New cart
+Dim new_cart_items As New cart_items
+Dim i As New items
+
+so.loadSalesOrder ("SO-00000999")
+Set new_cart = so.items_sold
+For Each new_cart_items In new_cart
+    Dim qty_to_return As Double
+    qty_to_return = new_cart_items.qty_purchased
+    new_cart_items.Item.addStock (qty_to_return)
+    MsgBox "return " & qty_to_return & " to " & new_cart_items.Item.item_code
+Next
 End Sub
 
 Private Sub cmdView_Click()
