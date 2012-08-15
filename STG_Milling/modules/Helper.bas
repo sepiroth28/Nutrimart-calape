@@ -335,3 +335,14 @@ End With
    frmItemList.txtQty.Text = "1"
 End Sub
 
+Sub addConvertionDetails(parent_id As String, associated_id As String, qty As Double)
+    Dim delete As String
+    Dim insert As String
+    
+    delete = "DELETE FROM item_conversion_details WHERE parent_id = '" & parent_id & "' AND associated_id = '" & associated_id & "'"
+    db.execute delete
+    
+    insert = "INSERT INTO item_conversion_details VALUES ('" & parent_id & "','" & associated_id & "'," & qty & ")"
+    db.execute insert
+End Sub
+

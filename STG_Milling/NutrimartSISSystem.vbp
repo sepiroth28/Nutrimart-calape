@@ -51,7 +51,6 @@ Form=forms\frmCustomersList.frm
 Class=Sales; class\Sales.cls
 Class=cart_items; class\cart_items.cls
 Class=cart; class\cart.cls
-Form=forms\frmItemList.frm
 Module=Helper_Cart; modules\Helper_Cart.bas
 Module=Helper_Sales; modules\Helper_Sales.bas
 Form=forms\frmSummary.frm

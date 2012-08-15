@@ -493,5 +493,5 @@ Private Sub Class_Initialize()
     Me.item_qty = 0
     Me.item_status = 1
     Me.item_with_half_tracking = 0
-    Me.item_with_tracking = 0
+'    Me.item_with_tracking = 0
 End Sub

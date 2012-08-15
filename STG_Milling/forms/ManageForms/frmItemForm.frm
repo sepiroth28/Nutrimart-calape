@@ -27,27 +27,34 @@ Begin VB.Form frmItemForm
       TabIndex        =   0
       Top             =   60
       Width           =   7155
-      Begin VB.PictureBox picConvertToRetailContainer 
+      Begin VB.Frame fraConvertContainer 
          Appearance      =   0  'Flat
          BackColor       =   &H00E0E0E0&
+         BorderStyle     =   0  'None
+         Enabled         =   0   'False
          ForeColor       =   &H80000008&
          Height          =   945
-         Left            =   240
-         ScaleHeight     =   915
-         ScaleWidth      =   6645
-         TabIndex        =   27
+         Left            =   210
+         TabIndex        =   28
          Top             =   5790
-         Width           =   6675
-         Begin VB.CommandButton cmdViewProductList 
+         Width           =   6705
+         Begin VB.TextBox txtEquivQty 
             Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            Caption         =   "..."
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
             Height          =   435
-            Left            =   5700
-            Style           =   1  'Graphical
+            Left            =   120
             TabIndex        =   31
+            Tag             =   "*Item price"
             Top             =   390
-            Width           =   675
+            Width           =   1065
          End
          Begin VB.TextBox txtAssociatedConvertedProduct 
             Appearance      =   0  'Flat
@@ -67,10 +74,22 @@ Begin VB.Form frmItemForm
             Top             =   390
             Width           =   3705
          End
-         Begin VB.TextBox txtEquivQty 
+         Begin VB.CommandButton cmdViewProductList 
             Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            Caption         =   "..."
+            Height          =   435
+            Left            =   5700
+            Style           =   1  'Graphical
+            TabIndex        =   29
+            Top             =   390
+            Width           =   675
+         End
+         Begin VB.Label Label11 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Equivalent QTY"
             BeginProperty Font 
-               Name            =   "MS Sans Serif"
+               Name            =   "Arial"
                Size            =   9.75
                Charset         =   0
                Weight          =   700
@@ -78,12 +97,11 @@ Begin VB.Form frmItemForm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Height          =   435
-            Left            =   120
-            TabIndex        =   28
-            Tag             =   "*Item price"
-            Top             =   390
-            Width           =   1065
+            Height          =   345
+            Left            =   90
+            TabIndex        =   33
+            Top             =   60
+            Width           =   1665
          End
          Begin VB.Label Label12 
             BackStyle       =   0  'Transparent
@@ -102,24 +120,6 @@ Begin VB.Form frmItemForm
             TabIndex        =   32
             Top             =   90
             Width           =   2925
-         End
-         Begin VB.Label Label11 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Equivalent QTY"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   345
-            Left            =   120
-            TabIndex        =   29
-            Top             =   60
-            Width           =   1665
          End
       End
       Begin VB.ComboBox cboCategory 
@@ -145,7 +145,7 @@ Begin VB.Form frmItemForm
          Left            =   2010
          TabIndex        =   24
          Tag             =   "*Item price"
-         Top             =   4140
+         Top             =   4020
          Width           =   1605
       End
       Begin VB.TextBox txtQty 
@@ -163,7 +163,7 @@ Begin VB.Form frmItemForm
          Left            =   5550
          TabIndex        =   5
          Tag             =   "*Item price"
-         Top             =   4140
+         Top             =   4020
          Width           =   1245
       End
       Begin VB.TextBox txtNewUnitOfMeasure 
@@ -180,7 +180,7 @@ Begin VB.Form frmItemForm
          Height          =   435
          Left            =   3240
          TabIndex        =   7
-         Top             =   5010
+         Top             =   4890
          Width           =   2955
       End
       Begin VB.ComboBox cboUnitOfMeasure 
@@ -197,7 +197,7 @@ Begin VB.Form frmItemForm
          Left            =   240
          TabIndex        =   6
          Text            =   "- Unit of measure -"
-         Top             =   5010
+         Top             =   4890
          Width           =   2895
       End
       Begin MSComctlLib.ListView lsvManufacturers 
@@ -296,7 +296,7 @@ Begin VB.Form frmItemForm
          Left            =   240
          TabIndex        =   4
          Tag             =   "*Item price"
-         Top             =   4140
+         Top             =   4020
          Width           =   1605
       End
       Begin VB.TextBox txtManufacturers 
@@ -331,7 +331,7 @@ Begin VB.Form frmItemForm
          Left            =   3930
          TabIndex        =   8
          Text            =   "0"
-         Top             =   4140
+         Top             =   4020
          Width           =   1335
       End
       Begin VB.TextBox txtItemDescription 
@@ -403,8 +403,8 @@ Begin VB.Form frmItemForm
          ForeColor       =   &H000000C0&
          Height          =   435
          Left            =   240
-         TabIndex        =   33
-         Top             =   5430
+         TabIndex        =   27
+         Top             =   5370
          Width           =   2535
       End
       Begin VB.Label Label10 
@@ -422,7 +422,7 @@ Begin VB.Form frmItemForm
          Height          =   435
          Left            =   2010
          TabIndex        =   25
-         Top             =   3840
+         Top             =   3720
          Width           =   2115
       End
       Begin VB.Label Label9 
@@ -440,7 +440,7 @@ Begin VB.Form frmItemForm
          Height          =   435
          Left            =   5550
          TabIndex        =   23
-         Top             =   3840
+         Top             =   3720
          Width           =   1035
       End
       Begin VB.Label Label8 
@@ -459,7 +459,7 @@ Begin VB.Form frmItemForm
          Height          =   435
          Left            =   3300
          TabIndex        =   22
-         Top             =   4710
+         Top             =   4590
          Width           =   3555
       End
       Begin VB.Label lblRequiredMsg 
@@ -498,7 +498,7 @@ Begin VB.Form frmItemForm
          Height          =   435
          Left            =   240
          TabIndex        =   18
-         Top             =   3840
+         Top             =   3720
          Width           =   2115
       End
       Begin VB.Label Label6 
@@ -534,7 +534,7 @@ Begin VB.Form frmItemForm
          Height          =   435
          Left            =   3930
          TabIndex        =   16
-         Top             =   3840
+         Top             =   3720
          Width           =   2115
       End
       Begin VB.Label Label4 
@@ -552,7 +552,7 @@ Begin VB.Form frmItemForm
          Height          =   435
          Left            =   240
          TabIndex        =   15
-         Top             =   4650
+         Top             =   4530
          Width           =   2115
       End
       Begin VB.Label Label3 
@@ -620,7 +620,7 @@ Dim new_item As New items
 Dim edit_item As New items
 
 Private Sub chkConvertibleToRetail_Click()
-    picConvertToRetailContainer.Enabled = chkConvertibleToRetail.Value
+    fraConvertContainer.Enabled = chkConvertibleToRetail.Value
 End Sub
 
 Private Sub cmdAddNewItem_Click()
