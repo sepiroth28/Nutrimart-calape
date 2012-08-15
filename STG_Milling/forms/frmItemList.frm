@@ -1,15 +1,12 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-<<<<<<< HEAD
-=======
 Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
->>>>>>> 79f95129c7db3750cd55fba094fd7ee833c23c16
 Begin VB.Form frmItemList 
    Appearance      =   0  'Flat
    BackColor       =   &H80000018&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Item List"
-   ClientHeight    =   6405
+   ClientHeight    =   8430
    ClientLeft      =   30
    ClientTop       =   360
    ClientWidth     =   11775
@@ -17,7 +14,7 @@ Begin VB.Form frmItemList
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   6405
+   ScaleHeight     =   8430
    ScaleWidth      =   11775
    StartUpPosition =   2  'CenterScreen
    Begin VB.PictureBox Picture1 
@@ -29,7 +26,7 @@ Begin VB.Form frmItemList
       ScaleHeight     =   705
       ScaleWidth      =   11565
       TabIndex        =   5
-      Top             =   4860
+      Top             =   6780
       Width           =   11595
       Begin VB.PictureBox Picture2 
          Appearance      =   0  'Flat
@@ -98,7 +95,7 @@ Begin VB.Form frmItemList
       Left            =   6540
       TabIndex        =   1
       Text            =   "1"
-      Top             =   5700
+      Top             =   7620
       Width           =   1632
    End
    Begin VB.TextBox txtSearchItem 
@@ -114,7 +111,7 @@ Begin VB.Form frmItemList
       Height          =   612
       Left            =   60
       TabIndex        =   0
-      Top             =   5700
+      Top             =   7620
       Width           =   4332
    End
    Begin VB.CommandButton cmdSelect 
@@ -131,22 +128,17 @@ Begin VB.Form frmItemList
       Height          =   612
       Left            =   8280
       TabIndex        =   2
-<<<<<<< HEAD
-      Top             =   5700
-      Width           =   1572
-=======
       Top             =   7620
       Width           =   3375
->>>>>>> 79f95129c7db3750cd55fba094fd7ee833c23c16
    End
    Begin MSComctlLib.ListView lsvItemList 
-      Height          =   4695
+      Height          =   2115
       Left            =   60
       TabIndex        =   3
-      Top             =   60
+      Top             =   4560
       Width           =   11595
       _ExtentX        =   20452
-      _ExtentY        =   8281
+      _ExtentY        =   3731
       View            =   3
       LabelEdit       =   1
       LabelWrap       =   -1  'True
@@ -217,7 +209,7 @@ Begin VB.Form frmItemList
       Height          =   315
       Left            =   5700
       TabIndex        =   4
-      Top             =   5820
+      Top             =   7740
       Width           =   810
    End
 End
@@ -397,17 +389,19 @@ End If
 End Sub
 
 Private Sub lsvItemList_Click()
-Dim Item As New items
-lblSelectedItem.Caption = lsvItemList.SelectedItem.SubItems(2)
-
-Item.load_item (Val(lsvItemList.SelectedItem.Text))
-lblAvailability.Caption = Item.displayAvailability
-    If Item.checkStockQty Then
-        cmdSelect.Enabled = True
-    Else
-        cmdSelect.Enabled = False
-    End If
-Set Item = Nothing
+If lsvItemList.ListItems.Count > 0 Then
+    Dim Item As New items
+    lblSelectedItem.Caption = lsvItemList.SelectedItem.SubItems(2)
+    
+    Item.load_item (Val(lsvItemList.SelectedItem.Text))
+    lblAvailability.Caption = Item.displayAvailability
+        If Item.checkStockQty Then
+            cmdSelect.Enabled = True
+        Else
+            cmdSelect.Enabled = False
+        End If
+    Set Item = Nothing
+End If
 End Sub
 
 Private Sub lsvItemList_DblClick()

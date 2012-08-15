@@ -20,7 +20,8 @@ Public activeSalesOrderForViewSalesDetails As String
 Public activeSalesOrderForPaymentHistory As String
 Public activeCustomerIdForRebate As Integer
 Public overwrite As Boolean
-
+Public activeAssociatedItemCode As String
+Public activeTextbox As TextBox
 
 'rebate variable
 Public rebate_grand_total As Double

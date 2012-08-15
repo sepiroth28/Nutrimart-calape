@@ -26,6 +26,26 @@ Begin VB.Form frmMenu
    Picture         =   "frmMenu.frx":058A
    ScaleHeight     =   9870
    ScaleWidth      =   16560
+   Begin VB.CommandButton cmdNewCustomer 
+      BackColor       =   &H0080FF80&
+      Caption         =   "NEW CUSTOMER"
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   9
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   555
+      Left            =   5070
+      Style           =   1  'Graphical
+      TabIndex        =   45
+      Top             =   6870
+      Width           =   2595
+   End
    Begin VB.Frame Frame1 
       BeginProperty Font 
          Name            =   "Tahoma"
@@ -192,22 +212,6 @@ Begin VB.Form frmMenu
       TabIndex        =   3
       Top             =   0
       Width           =   16575
-      Begin VB.CommandButton Command1 
-         Caption         =   "Command1"
-         Height          =   765
-         Left            =   3150
-         TabIndex        =   44
-         Top             =   4800
-         Width           =   1305
-      End
-      Begin VB.CommandButton cmdNewCustomer 
-         Caption         =   "New Customer"
-         Height          =   435
-         Left            =   5100
-         TabIndex        =   43
-         Top             =   6930
-         Width           =   2355
-      End
       Begin VB.CommandButton cmdViewSales 
          Height          =   1215
          Left            =   60
@@ -359,9 +363,9 @@ Begin VB.Form frmMenu
          Caption         =   "Walk in Customer"
          ForeColor       =   &H80000008&
          Height          =   435
-         Left            =   2280
+         Left            =   5340
          TabIndex        =   20
-         Top             =   6420
+         Top             =   6900
          Width           =   2592
       End
       Begin VB.CommandButton cmdNewTransaction 
@@ -985,6 +989,7 @@ End Sub
 Private Sub cmdCancelTransaction_Click()
     Call prepareNewTransaction
     cmdNewAccountReceivable.SetFocus
+    cmdNewCustomer.Enabled = False
 End Sub
 
 Private Sub cmdClose_Click()
@@ -1022,6 +1027,7 @@ lblPaymentType.Caption = "ACCOUNT RECEIVABLE"
 activeSales.date_transact = Format(Date, "YYYY-mm-dd") & " " & intHour & ":" & intMinute & ":" & intSecond
 
 cmdBrowseItem.SetFocus
+cmdNewCustomer.Enabled = True
 End Sub
 
 Private Sub cmdNewAccountReceivable_KeyDown(KeyCode As Integer, Shift As Integer)
@@ -1030,6 +1036,11 @@ If KeyCode = vbKeyF2 Then
 ElseIf KeyCode = vbKeyF3 Then
     cmdNewTransaction_Click
 End If
+End Sub
+
+Private Sub cmdNewCustomer_Click()
+Call createNewCustomer(frmCustomer.cboDealersType)
+frmCustomer.Show 1
 End Sub
 
 Private Sub cmdNewTransaction_Click()
@@ -1053,6 +1064,7 @@ lblPaymentType.Caption = "CASH ON DELIVERY"
 activeSales.date_transact = Format(Date, "YYYY-mm-dd") & " " & intHour & ":" & intMinute & ":" & intSecond
 
 cmdBrowseItem.SetFocus
+cmdNewCustomer.Enabled = True
 End Sub
 
 Private Sub cmdPayment_Click()
@@ -1074,19 +1086,7 @@ Private Sub cmdStockIn_Click()
 End Sub
 
 Private Sub Command1_Click()
-Dim so As New Sales
-Dim new_cart As New cart
-Dim new_cart_items As New cart_items
-Dim i As New items
-
-so.loadSalesOrder ("SO-00000999")
-Set new_cart = so.items_sold
-For Each new_cart_items In new_cart
-    Dim qty_to_return As Double
-    qty_to_return = new_cart_items.qty_purchased
-    new_cart_items.Item.addStock (qty_to_return)
-    MsgBox "return " & qty_to_return & " to " & new_cart_items.Item.item_code
-Next
+    
 End Sub
 
 Private Sub cmdView_Click()

@@ -102,3 +102,9 @@ lsv.ListItems.Clear
     Loop
 End Sub
 
+Sub createNewCustomer(cbo As ComboBox)
+With cbo
+.Text = "consumer"
+.Enabled = False
+End With
+End Sub

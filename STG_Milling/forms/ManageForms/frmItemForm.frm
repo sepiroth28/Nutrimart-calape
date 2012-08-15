@@ -50,9 +50,8 @@ Begin VB.Form frmItemForm
                Strikethrough   =   0   'False
             EndProperty
             Height          =   435
-            Left            =   120
-            TabIndex        =   31
-            Tag             =   "*Item price"
+            Left            =   4950
+            TabIndex        =   32
             Top             =   390
             Width           =   1065
          End
@@ -68,9 +67,9 @@ Begin VB.Form frmItemForm
                Strikethrough   =   0   'False
             EndProperty
             Height          =   435
-            Left            =   1920
+            Left            =   150
+            Locked          =   -1  'True
             TabIndex        =   30
-            Tag             =   "*Item price"
             Top             =   390
             Width           =   3705
          End
@@ -79,7 +78,7 @@ Begin VB.Form frmItemForm
             BackColor       =   &H00E0E0E0&
             Caption         =   "..."
             Height          =   435
-            Left            =   5700
+            Left            =   3930
             Style           =   1  'Graphical
             TabIndex        =   29
             Top             =   390
@@ -98,7 +97,7 @@ Begin VB.Form frmItemForm
                Strikethrough   =   0   'False
             EndProperty
             Height          =   345
-            Left            =   90
+            Left            =   4920
             TabIndex        =   33
             Top             =   60
             Width           =   1665
@@ -116,8 +115,8 @@ Begin VB.Form frmItemForm
                Strikethrough   =   0   'False
             EndProperty
             Height          =   345
-            Left            =   1920
-            TabIndex        =   32
+            Left            =   150
+            TabIndex        =   31
             Top             =   90
             Width           =   2925
          End
@@ -622,10 +621,26 @@ Dim edit_item As New items
 Private Sub chkConvertibleToRetail_Click()
     fraConvertContainer.Enabled = chkConvertibleToRetail.Value
 End Sub
-
+Function validateConversion() As Boolean
+    If chkConvertibleToRetail.Value Then
+        If txtAssociatedConvertedProduct.Text = "" Or txtEquivQty.Text = "" Then
+            validateConversion = True
+        Else
+            validateConversion = False
+        End If
+    Else
+        validateConversion = False
+    End If
+End Function
 Private Sub cmdAddNewItem_Click()
 Dim validated As Boolean
 validated = validateRequiredValueInForm(frmItemForm)
+
+If validateConversion Then
+    MsgBox "Please fill up conversion data..", vbOKOnly, "Conversion data"
+    Exit Sub
+End If
+
 If validated Then
      lblRequiredMsg.Visible = False
    With new_item
@@ -666,6 +681,11 @@ If validated Then
                     .item_category.item_code = .item_code
                     .item_category.category = cboCategory.Text
                     .item_category.update
+                    If chkConvertibleToRetail.Value Then
+                        Call addConvertionDetails(.item_code, txtAssociatedConvertedProduct.Text, Val(txtEquivQty.Text))
+                    Else
+                        Call removeConversionDetails(.item_code)
+                    End If
                ' .checkSql
                End With
                 editmode = False
@@ -677,6 +697,11 @@ If validated Then
             .item_category.item_code = .item_code
             .item_category.category = cboCategory.Text
             .item_category.save
+            
+            If chkConvertibleToRetail.Value Then
+               Call addConvertionDetails(.item_code, txtAssociatedConvertedProduct.Text, Val(txtEquivQty.Text))
+            End If
+            
             editmode = False
              MsgBox "Save successfully!"
         End If
@@ -700,6 +725,11 @@ End Sub
 
 Private Sub cmdBrowseManufacturer_Click()
 Call toogleListView(lsvManufacturers)
+End Sub
+
+Private Sub cmdViewProductList_Click()
+Set activeTextbox = txtAssociatedConvertedProduct
+frmAssociatedProduct.Show 1
 End Sub
 
 Private Sub Form_Load()
@@ -733,6 +763,17 @@ cboCategory.AddItem "Accessories"
         txtReorderPoint.Text = edit_item.reorder_point
         txtManufacturers.Text = edit_item.manufacturer.manufacturers_name
         cboCategory.Text = edit_item.item_category.category
+        
+'added conversion item details
+        Dim rs As New ADODB.Recordset
+        Set rs = getAssociatedItemToConvert(edit_item.item_code)
+        If rs.RecordCount Then
+            chkConvertibleToRetail.Value = 1
+            activeAssociatedItemCode = rs.Fields("associated_id").Value
+            txtAssociatedConvertedProduct.Text = activeAssociatedItemCode
+            txtEquivQty.Text = rs.Fields("qty").Value
+        End If
+        
     End If
 
 
