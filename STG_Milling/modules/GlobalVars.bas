@@ -20,7 +20,8 @@ Public activeSalesOrderForViewSalesDetails As String
 Public activeSalesOrderForPaymentHistory As String
 Public activeCustomerIdForRebate As Integer
 Public overwrite As Boolean
-
+Public activeAssociatedItemCode As String
+Public activeTextbox As TextBox
 
 'rebate variable
 Public rebate_grand_total As Double
@@ -34,6 +35,7 @@ Public editManufacturer As Boolean
 Public edit_manufacturer_id As Integer
 
 Public amount_to_be_debt As Double
+Public quick_create_new_customer As Boolean
 
 Sub resetAllGlobalVars()
 Set activeSales = New Sales

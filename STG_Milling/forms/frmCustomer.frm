@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmCustomer 
    BackColor       =   &H00E1A00B&
    BorderStyle     =   1  'Fixed Single
@@ -89,7 +89,9 @@ Begin VB.Form frmCustomer
             Strikethrough   =   0   'False
          EndProperty
          Height          =   336
+         ItemData        =   "frmCustomer.frx":058A
          Left            =   3420
+         List            =   "frmCustomer.frx":058C
          TabIndex        =   13
          Top             =   3720
          Width           =   3492
@@ -353,9 +355,13 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim edit_customer As New Customers
+<<<<<<< HEAD
 Private Sub cboMunicipalities_Click()
 Call auto_detect_agent_of_this_municipality(cboMunicipalities, txtAgentName)
 End Sub
+=======
+Dim agent_id As Integer
+>>>>>>> 75df66c0c59cda767ba6cdfd93472d993841b6a9
 
 Private Sub cmdAddNewItem_Click()
     Dim getlastinsertedID As String
@@ -400,8 +406,9 @@ If editmode = True Then
        If .mvaragent.agent_id <> "NULL" Then
               If .mvaragent.agent_id <> Val(lsvAgent.SelectedItem.Text) Then
                Call .mvaragent.removeCustomerOnThisAgent(.customers_id)
-               agent.agent_id = Val(lsvAgent.SelectedItem.Text)
-               
+'               agent.agent_id = Val(lsvAgent.SelectedItem.Text)
+                agent.agent_id = agent_id
+                
                Call agent.addCustomerToThisAgent(.customers_id)
                     .updateData
               Else
@@ -482,8 +489,15 @@ cboDealersType.AddItem DEALER
 cboDealersType.AddItem CONSUMER
 
 Call loadAllMunicipalitiesToCombo(cboMunicipalities)
+
+If quick_create_new_customer Then
+    useQuickCreate
+End If
 End Sub
 
+Sub useQuickCreate()
+    
+End Sub
 Private Sub lsvAgent_Click()
     txtAgentName.Text = lsvAgent.SelectedItem.SubItems(1)
     Call toogleListView(lsvAgent)

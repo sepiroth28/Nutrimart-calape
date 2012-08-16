@@ -135,24 +135,24 @@ End Function
 Function loadAllItemsToListview(lsv As ListView, sort_by As String) As ListView
 Dim list As ListItem
 Dim rs As New ADODB.Recordset
-Dim Item As New items
+Dim item As New items
 'items_id, item_code, item_qty, item_price, date_added, date_modified, manufacturers_id, reorder_point
 lsv.ListItems.Clear
 Set Collection = getAllItemsCollection(sort_by)
 
-    For Each Item In Collection
-            Set list = lsv.ListItems.Add(, , Item.item_id)
-            list.SubItems(1) = Item.item_code
-            list.SubItems(2) = Item.item_name
-            list.SubItems(3) = Item.item_description
-            list.SubItems(4) = Item.item_qty
-            list.SubItems(5) = Item.item_price
-            list.SubItems(6) = Item.dealers_price
-            list.SubItems(7) = Item.unit_of_measure
+    For Each item In Collection
+            Set list = lsv.ListItems.Add(, , item.item_id)
+            list.SubItems(1) = item.item_code
+            list.SubItems(2) = item.item_name
+            list.SubItems(3) = item.item_description
+            list.SubItems(4) = item.item_qty
+            list.SubItems(5) = item.item_price
+            list.SubItems(6) = item.dealers_price
+            list.SubItems(7) = item.unit_of_measure
             
-            If Item.manufacturers_id > 0 Then
-                Item.manufacturer.load_manufacturers (Item.manufacturers_id)
-                list.SubItems(8) = Item.manufacturer.manufacturers_name
+            If item.manufacturers_id > 0 Then
+                item.manufacturer.load_manufacturers (item.manufacturers_id)
+                list.SubItems(8) = item.manufacturer.manufacturers_name
             Else
                 list.SubItems(8) = ""
             End If
@@ -163,29 +163,29 @@ End Function
 Function loadAllItemsToListviewForRebates(lsv As ListView, sort_by As String) As ListView
 Dim list As ListItem
 Dim rs As New ADODB.Recordset
-Dim Item As New items
+Dim item As New items
 Dim sql As String
 
 'items_id, item_code, item_qty, item_price, date_added, date_modified, manufacturers_id, reorder_point
 lsv.ListItems.Clear
 Set Collection = getAllItemsCollection(sort_by)
 
-    For Each Item In Collection
-            Set list = lsv.ListItems.Add(, , Item.item_id)
+    For Each item In Collection
+            Set list = lsv.ListItems.Add(, , item.item_id)
             
-            list.Checked = Item.include_in_rebate
+            list.Checked = item.include_in_rebate
             
-            list.SubItems(1) = Item.item_code
-            list.SubItems(2) = Item.item_name
-            list.SubItems(3) = Item.item_description
-            list.SubItems(4) = Item.item_qty
-            list.SubItems(5) = Item.item_price
-            list.SubItems(6) = Item.dealers_price
-            list.SubItems(7) = Item.unit_of_measure
+            list.SubItems(1) = item.item_code
+            list.SubItems(2) = item.item_name
+            list.SubItems(3) = item.item_description
+            list.SubItems(4) = item.item_qty
+            list.SubItems(5) = item.item_price
+            list.SubItems(6) = item.dealers_price
+            list.SubItems(7) = item.unit_of_measure
             
-            If Item.manufacturers_id > 0 Then
-                Item.manufacturer.load_manufacturers (Item.manufacturers_id)
-                list.SubItems(8) = Item.manufacturer.manufacturers_name
+            If item.manufacturers_id > 0 Then
+                item.manufacturer.load_manufacturers (item.manufacturers_id)
+                list.SubItems(8) = item.manufacturer.manufacturers_name
             Else
                 list.SubItems(8) = ""
             End If
@@ -196,24 +196,24 @@ End Function
 Function loadSearchItemsToListview(lsv As ListView, item_code As String) As ListView
 Dim list As ListItem
 Dim rs As New ADODB.Recordset
-Dim Item As New items
+Dim item As New items
 'items_id, item_code, item_qty, item_price, date_added, date_modified, manufacturers_id, reorder_point
 lsv.ListItems.Clear
 Set Collection = getSearchItemsCollection(item_code)
 
-    For Each Item In Collection
-            Set list = lsv.ListItems.Add(, , Item.item_id)
-            list.SubItems(1) = Item.item_code
-            list.SubItems(2) = Item.item_name
-            list.SubItems(3) = Item.item_description
-            list.SubItems(4) = Item.item_qty
-            list.SubItems(5) = Item.item_price
-            list.SubItems(6) = Item.dealers_price
-            list.SubItems(7) = Item.unit_of_measure
+    For Each item In Collection
+            Set list = lsv.ListItems.Add(, , item.item_id)
+            list.SubItems(1) = item.item_code
+            list.SubItems(2) = item.item_name
+            list.SubItems(3) = item.item_description
+            list.SubItems(4) = item.item_qty
+            list.SubItems(5) = item.item_price
+            list.SubItems(6) = item.dealers_price
+            list.SubItems(7) = item.unit_of_measure
             
-            If Item.manufacturers_id > 0 Then
-                Item.manufacturer.load_manufacturers (Item.manufacturers_id)
-                list.SubItems(8) = Item.manufacturer.manufacturers_name
+            If item.manufacturers_id > 0 Then
+                item.manufacturer.load_manufacturers (item.manufacturers_id)
+                list.SubItems(8) = item.manufacturer.manufacturers_name
             Else
                 list.SubItems(8) = ""
             End If
@@ -334,4 +334,62 @@ End With
  
    frmItemList.txtQty.Text = "1"
 End Sub
+
+'add conversion details
+Sub addConvertionDetails(parent_id As String, associated_id As String, qty As Double)
+   
+    Dim insert As String
+    Call removeConversionDetails(parent_id)
+    
+    insert = "INSERT INTO item_conversion_details VALUES ('" & parent_id & "','" & associated_id & "'," & qty & ")"
+    db.execute insert
+End Sub
+
+'remove convertion details of item
+Sub removeConversionDetails(parent_id As String)
+    Dim delete As String
+    delete = "DELETE FROM item_conversion_details WHERE parent_id = '" & parent_id & "'"
+    db.execute delete
+End Sub
+
+'get associated product for converting to retail
+Function getAssociatedItemToConvert(parent_id As String) As ADODB.Recordset
+Dim sql As String
+Dim rs As New ADODB.Recordset
+
+sql = "SELECT * FROM item_conversion_details WHERE parent_id = '" & parent_id & "'"
+Set rs = db.execute(sql)
+Set getAssociatedItemToConvert = rs
+'Set rs = Nothing
+End Function
+Function getConversionDetails(parent_id) As ADODB.Recordset
+    sql = "SELECT * FROM item_conversion_details WHERE parent_id = '" & parent_id & "'"
+Set rs = db.execute(sql)
+Set getAssociatedItemToConvert = rs
+End Function
+
+'parent_id represents item code
+Function convertToRetails(parent_id As String, parent_qty_to_be_converted As Double)
+    Dim rs As New ADODB.Recordset
+    Set rs = getConversionDetails(parent_id)
+    
+    If rs.RecordCount Then
+        Dim associated_code As String
+        Dim item As New items
+        Dim qty_to_add As Double
+        
+        'add stocks to associated item
+        associated_code = rs.Fields("associated_id").Value
+        item = getItem(associated_code)
+        qty_to_add = Val(rs.Fields("qty").Value) * parent_qty_to_be_converted
+        item.addStock (qty_to_add)
+        
+        'deduct qty to parent_item
+        Set item = Nothing
+        item = getItem(parent_id)
+        item.stockOut (parent_qty_to_be_converted)
+    End If
+    
+End Function
+
 
