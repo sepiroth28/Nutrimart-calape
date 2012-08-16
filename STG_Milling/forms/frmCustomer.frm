@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmCustomer 
    BackColor       =   &H00E1A00B&
    BorderStyle     =   1  'Fixed Single
@@ -355,13 +355,11 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim edit_customer As New Customers
-<<<<<<< HEAD
-Private Sub cboMunicipalities_Click()
-Call auto_detect_agent_of_this_municipality(cboMunicipalities, txtAgentName)
-End Sub
-=======
 Dim agent_id As Integer
->>>>>>> 75df66c0c59cda767ba6cdfd93472d993841b6a9
+
+Private Sub cboMunicipalities_Click()
+Call auto_detect_agent_of_this_municipality(cboMunicipalities, txtAgentName, lsvagent)
+End Sub
 
 Private Sub cmdAddNewItem_Click()
     Dim getlastinsertedID As String
@@ -404,7 +402,7 @@ If editmode = True Then
         .customers_number = txtContactNumber.Text
         .dealers_type = mvardealers_type
        If .mvaragent.agent_id <> "NULL" Then
-              If .mvaragent.agent_id <> Val(lsvAgent.SelectedItem.Text) Then
+              If .mvaragent.agent_id <> Val(lsvagent.SelectedItem.Text) Then
                Call .mvaragent.removeCustomerOnThisAgent(.customers_id)
 '               agent.agent_id = Val(lsvAgent.SelectedItem.Text)
                 agent.agent_id = agent_id
@@ -417,7 +415,7 @@ If editmode = True Then
        
        Else
             
-            agent.agent_id = Val(lsvAgent.SelectedItem.Text)
+            agent.agent_id = Val(lsvagent.SelectedItem.Text)
                
             Call agent.addCustomerToThisAgent(.customers_id)
                 .updateData
@@ -434,7 +432,7 @@ Else
         .customers_number = mvarcustomers_number
         .dealers_type = mvardealers_type
         Dim newCustomerID As Integer
-        agent.agent_id = Val(lsvAgent.SelectedItem.Text)
+        agent.agent_id = Val(lsvagent.SelectedItem.Text)
         newCustomerID = .insert
         
         agent.addCustomerToThisAgent (newCustomerID)
@@ -445,7 +443,7 @@ End If
 End Sub
 
 Private Sub cmdSelectAgent_Click()
-    Call toogleListView(lsvAgent)
+    Call toogleListView(lsvagent)
 
 End Sub
 
@@ -455,15 +453,15 @@ End Sub
 
 Private Sub Form_Load()
   txtAgentName.Locked = True
-Call setAgentColumns(lsvAgent)
-With lsvAgent
+Call setAgentColumns(lsvagent)
+With lsvagent
     .ColumnHeaders(1).width = 0
     .ColumnHeaders(2).width = 3500
     .ColumnHeaders(3).width = 0
     .ColumnHeaders(4).width = 0
 End With
 
-Call loadAgentToListview(lsvAgent)
+Call loadAgentToListview(lsvagent)
     
     If editmode = True Then
         
@@ -499,8 +497,8 @@ Sub useQuickCreate()
     
 End Sub
 Private Sub lsvAgent_Click()
-    txtAgentName.Text = lsvAgent.SelectedItem.SubItems(1)
-    Call toogleListView(lsvAgent)
+    txtAgentName.Text = lsvagent.SelectedItem.SubItems(1)
+    Call toogleListView(lsvagent)
 End Sub
 
 Private Sub txtAgentName_Change()

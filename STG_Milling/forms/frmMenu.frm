@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmMenu 
    Appearance      =   0  'Flat
    BackColor       =   &H80000005&
@@ -29,7 +29,6 @@ Begin VB.Form frmMenu
    Begin VB.CommandButton cmdNewCustomer 
       BackColor       =   &H0080FF80&
       Caption         =   "NEW CUSTOMER"
-      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Tahoma"
          Size            =   9
@@ -40,11 +39,12 @@ Begin VB.Form frmMenu
          Strikethrough   =   0   'False
       EndProperty
       Height          =   555
-      Left            =   5070
+      Left            =   5100
       Style           =   1  'Graphical
       TabIndex        =   45
       Top             =   6870
-      Width           =   2595
+      Visible         =   0   'False
+      Width           =   2685
    End
    Begin VB.Frame Frame1 
       BeginProperty Font 
@@ -205,7 +205,7 @@ Begin VB.Form frmMenu
       BackColor       =   &H80000018&
       ForeColor       =   &H80000008&
       Height          =   9855
-      Left            =   0
+      Left            =   30
       Picture         =   "frmMenu.frx":6DD7E
       ScaleHeight     =   9825
       ScaleWidth      =   16545
@@ -366,7 +366,8 @@ Begin VB.Form frmMenu
          Left            =   5340
          TabIndex        =   20
          Top             =   6900
-         Width           =   2592
+         Visible         =   0   'False
+         Width           =   2205
       End
       Begin VB.CommandButton cmdNewTransaction 
          Appearance      =   0  'Flat
@@ -989,7 +990,7 @@ End Sub
 Private Sub cmdCancelTransaction_Click()
     Call prepareNewTransaction
     cmdNewAccountReceivable.SetFocus
-    cmdNewCustomer.Enabled = False
+    cmdNewCustomer.Visible = False
 End Sub
 
 Private Sub cmdClose_Click()
@@ -1025,9 +1026,8 @@ Set activeSales = New Sales
 activeSales.payment_type = PAYMENT_ACCOUNT_RECEIVABLE
 lblPaymentType.Caption = "ACCOUNT RECEIVABLE"
 activeSales.date_transact = Format(Date, "YYYY-mm-dd") & " " & intHour & ":" & intMinute & ":" & intSecond
-
+cmdNewCustomer.Visible = True
 cmdBrowseItem.SetFocus
-cmdNewCustomer.Enabled = True
 End Sub
 
 Private Sub cmdNewAccountReceivable_KeyDown(KeyCode As Integer, Shift As Integer)
@@ -1065,7 +1065,7 @@ lblPaymentType.Caption = "CASH ON DELIVERY"
 activeSales.date_transact = Format(Date, "YYYY-mm-dd") & " " & intHour & ":" & intMinute & ":" & intSecond
 
 cmdBrowseItem.SetFocus
-cmdNewCustomer.Enabled = True
+cmdNewCustomer.Visible = True
 End Sub
 
 Private Sub cmdPayment_Click()
