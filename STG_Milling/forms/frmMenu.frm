@@ -1039,6 +1039,7 @@ End If
 End Sub
 
 Private Sub cmdNewCustomer_Click()
+newcustomer = True
 Call createNewCustomer(frmCustomer.cboDealersType)
 frmCustomer.Show 1
 End Sub

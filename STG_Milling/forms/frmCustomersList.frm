@@ -132,6 +132,7 @@ ElseIf activeSales.payment_type = PAYMENT_COD Then
         Unload Me
 End If
  
+
 ' If activeSales.payment_type = PAYMENT_ACCOUNT_RECEIVABLE Then
 '    If isInLimit(Val(lsvCustomerList.SelectedItem.Text)) Then
 '        MsgBox "Customers reach his/her credit limit...", vbInformation, "Credit Limit reached"

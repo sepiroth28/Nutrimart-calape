@@ -353,13 +353,28 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim edit_customer As New Customers
+Private Sub cboMunicipalities_Click()
+Call auto_detect_agent_of_this_municipality(cboMunicipalities, txtAgentName)
+End Sub
 
 Private Sub cmdAddNewItem_Click()
-    saveData
-    editmode = False
-    Unload Me
-Call loadAllCustomersToListview(frmManageCustomer.lsvCustomer)
-
+    Dim getlastinsertedID As String
+    If newcustomer Then
+        saveData
+        getlastinsertedID = db.execute("select last_insert_id()").Fields(0).Value
+            editmode = False
+            Call activeSales.sold_to.load_customers(Val(getlastinsertedID))
+                frmMenu.txtCustomers.Text = activeSales.sold_to.customers_name
+                frmMenu.lblAgent.Caption = activeSales.sold_to.mvaragent.agent_name
+                frmMenu.lblDealerType.Caption = activeSales.sold_to.dealers_type
+                'checkProcessButton
+                Unload Me
+    Else
+            saveData
+            editmode = False
+            Unload Me
+            Call loadAllCustomersToListview(frmManageCustomer.lsvCustomer)
+    End If
 End Sub
 
 Sub saveData()
@@ -425,6 +440,10 @@ End Sub
 Private Sub cmdSelectAgent_Click()
     Call toogleListView(lsvAgent)
 
+End Sub
+
+Private Sub Form_Activate()
+txtCustomersName.SetFocus
 End Sub
 
 Private Sub Form_Load()

@@ -29,8 +29,7 @@ Public rebate_grand_total_qty As Double
 Public selectedSOForHistory As String
 
 Public customer_id_for_list_of_account_receivable As Integer
-
-
+Public newcustomer As Boolean
 Public editManufacturer As Boolean
 Public edit_manufacturer_id As Integer
 

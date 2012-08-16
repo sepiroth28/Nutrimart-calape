@@ -102,9 +102,17 @@ lsv.ListItems.Clear
     Loop
 End Sub
 
-Sub createNewCustomer(cbo As ComboBox)
-With cbo
+Sub createNewCustomer(cbocustype As ComboBox)
+With cbocustype
 .Text = "consumer"
 .Enabled = False
 End With
+End Sub
+
+Sub auto_detect_agent_of_this_municipality(cbomunicipality As ComboBox, txtagent As TextBox)
+Dim rs As New ADODB.Recordset
+Dim sql As String
+sql = "select m.municipal_id,m.municipal_name,ma.agent_id,ma.municipal_id,a.agent_id,a.Name from municipalities m inner join municipal_agent ma on m.municipal_id=ma.municipal_id inner join agent a on ma.agent_id=a.agent_id where m.municipal_name='" & cbomunicipality & "'"
+Set rs = db.execute(sql)
+txtagent = rs.Fields("Name").Value
 End Sub
