@@ -44,12 +44,9 @@ Private mvartemp_item_code As String 'local copy
 'local variable(s) to hold property value(s)
 Private mvarinclude_in_rebate As Boolean 'local copy
 'local variable(s) to hold property value(s)
-'Private mvaritem_with_tracking As Integer
-''local variable(s) to hold property value(s)
-'Private mvaritem_with_half_tracking As Integer
-Private mvaritem_with_tracking As New item_with_tracking
-'
-
+Private mvaritem_with_tracking As Integer
+'local variable(s) to hold property value(s)
+Private mvaritem_with_half_tracking As Integer
 Public Property Let include_in_rebate(ByVal vData As Boolean)
 'used when assigning a value to the property, on the left side of an assignment.
 'Syntax: X.include_in_rebate = 5
@@ -92,18 +89,8 @@ Public Property Get item_category() As item_category
 'Syntax: Debug.Print X.item_category
     Set item_category = mvaritem_category
 End Property
-Public Property Set item_with_tracking(ByVal vData As item_with_tracking)
-'used when assigning an Object to the property, on the left side of a Set statement.
-'Syntax: Set x.item_category = Form1
-    Set mvaritem_with_tracking = vData
-End Property
 
 
-Public Property Get item_with_tracking() As item_with_tracking
-'used when retrieving value of a property, on the right side of an assignment.
-'Syntax: Debug.Print X.item_category
-    Set item_with_tracking = mvaritem_with_tracking
-End Property
 
 Public Property Let dealers_price(ByVal vData As Double)
 'used when assigning a value to the property, on the left side of an assignment.
@@ -214,13 +201,15 @@ On Error Resume Next
         .include_in_rebate = rs.Fields("include_in_rebate").Value
         .item_name = rs.Fields("item_name").Value
         .item_description = rs.Fields("item_description").Value
+        '.image = rs.Fields("image").Value
         .item_status = rs.Fields("status").Value
         .unit_of_measure = rs.Fields("unit_of_measure").Value
         .item_price = rs.Fields("item_price").Value
         .dealers_price = rs.Fields("dealers_price").Value
+        .item_with_tracking = rs.Fields("with_tracking").Value
+        .item_with_half_tracking = rs.Fields("with_half").Value
         .manufacturer.load_manufacturers (.manufacturers_id)
         .item_category.load_item_category (.item_code)
-        .item_with_tracking.load_item_with_tracking (.item_code)
     End With
     Set rs = Nothing
     'Set load_item = temp
@@ -255,6 +244,7 @@ Public Sub update()
     
     update = "UPDATE inventory set item_code = '" & Me.item_code & "' WHERE item_id = " & Me.item_id
     db.execute update
+    
     'MsgBox update
 End Sub
 
@@ -492,6 +482,4 @@ Private Sub Class_Initialize()
     Me.dealers_price = 0
     Me.item_qty = 0
     Me.item_status = 1
-    Me.item_with_half_tracking = 0
-    Me.item_with_tracking = 0
 End Sub

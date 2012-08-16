@@ -50,7 +50,7 @@ Begin VB.Form frmItemForm
          Left            =   3240
          TabIndex        =   24
          Tag             =   "*Item price"
-         Top             =   4170
+         Top             =   4140
          Width           =   2955
       End
       Begin VB.TextBox txtQty 
@@ -272,7 +272,7 @@ Begin VB.Form frmItemForm
          Left            =   240
          TabIndex        =   2
          Tag             =   "*Item name"
-         Top             =   1890
+         Top             =   1860
          Width           =   6555
       End
       Begin VB.TextBox txtItemCode 
@@ -553,6 +553,7 @@ If validated Then
                 editmode = False
                 activeItemId = 0
                 editManufacturersId = 0
+                
         Else
             .manufacturers_id = lsvManufacturers.SelectedItem.Text
             .insert
@@ -569,8 +570,8 @@ If validated Then
 Else
      Dim msg As String
     
-       For Each Col In validate_msg
-         msg = msg & "Please input " & Col & vbCrLf
+       For Each col In validate_msg
+         msg = msg & "Please input " & col & vbCrLf
        Next
     Set validate_msg = Nothing
     Set validate_msg = New Collection

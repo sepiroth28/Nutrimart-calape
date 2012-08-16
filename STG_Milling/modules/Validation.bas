@@ -18,6 +18,7 @@ For Each cntl In frm.Controls
         End If
     End If
 Next
+
 End Function
 Function ClearFields(frm As Form) As Boolean
     Dim cntl As Control
