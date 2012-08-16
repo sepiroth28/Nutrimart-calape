@@ -280,7 +280,7 @@ Begin VB.Form frmMenu
       End
       Begin VB.CommandButton cmdAddTracking 
          BackColor       =   &H0080FF80&
-         Caption         =   "ADD TRUCKING PRICE"
+         Caption         =   "ADJUST TRUCKING PRICE"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   9
@@ -299,7 +299,7 @@ Begin VB.Form frmMenu
       End
       Begin VB.CommandButton cmdAddDiscount 
          BackColor       =   &H00FF80FF&
-         Caption         =   "ADD DISCOUNT"
+         Caption         =   "ADD DISCOUNT/ITEM"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   9

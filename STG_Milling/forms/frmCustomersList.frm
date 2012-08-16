@@ -27,7 +27,7 @@ Begin VB.Form frmCustomersList
          Strikethrough   =   0   'False
       EndProperty
       Height          =   612
-      Left            =   4260
+      Left            =   4290
       TabIndex        =   2
       Top             =   5700
       Width           =   1572
@@ -153,6 +153,10 @@ End If
 'End If
 End Sub
 
+Private Sub Form_Activate()
+txtSearchCustomer.SetFocus
+End Sub
+
 Private Sub Form_Load()
 Call loadAllCustomersToListview(lsvCustomerList)
 End Sub
@@ -166,4 +170,10 @@ Private Sub txtSearchCustomer_Change()
 Dim rs As New ADODB.Recordset
 Set rs = searchCustomersByName(txtSearchCustomer)
 Call loadCustomerRSToListView(lsvCustomerList, rs)
+End Sub
+
+Private Sub txtSearchCustomer_KeyPress(KeyAscii As Integer)
+If KeyAscii = 13 Then
+Call cmdSelect_Click
+End If
 End Sub

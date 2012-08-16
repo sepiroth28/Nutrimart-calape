@@ -191,7 +191,7 @@ If edit_municipal = True Then
     sql = "UPDATE municipalities SET municipal_name = '" & txtMunicipalName.Text & "',tracking_price=" & Val(txtTrackingPrice.Text) & " WHERE municipal_id = " & municipality_id
     db.execute sql
 Else
-    sql = "INSERT INTO municipal_name VALUES(null,'" & txtMunicipalName.Text & "'," & Val(txtTrackingPrice.Text) & ")"
+    sql = "INSERT INTO municipalities VALUES(null,'" & txtMunicipalName.Text & "'," & Val(txtTrackingPrice.Text) & ")"
     db.execute sql
 End If
 

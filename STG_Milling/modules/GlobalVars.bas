@@ -19,6 +19,7 @@ Public activeSalesOrderForViewSales As String
 Public activeSalesOrderForViewSalesDetails As String
 Public activeSalesOrderForPaymentHistory As String
 Public activeCustomerIdForRebate As Integer
+Public overwrite As Boolean
 
 
 'rebate variable
