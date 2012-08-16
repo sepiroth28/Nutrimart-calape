@@ -26,6 +26,26 @@ Begin VB.Form frmMenu
    Picture         =   "frmMenu.frx":058A
    ScaleHeight     =   9870
    ScaleWidth      =   16560
+   Begin VB.CommandButton cmdNewCustomer 
+      BackColor       =   &H0080FF80&
+      Caption         =   "NEW CUSTOMER"
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   9
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   555
+      Left            =   5070
+      Style           =   1  'Graphical
+      TabIndex        =   45
+      Top             =   6870
+      Width           =   2595
+   End
    Begin VB.Frame Frame1 
       BeginProperty Font 
          Name            =   "Tahoma"
@@ -969,6 +989,7 @@ End Sub
 Private Sub cmdCancelTransaction_Click()
     Call prepareNewTransaction
     cmdNewAccountReceivable.SetFocus
+    cmdNewCustomer.Enabled = False
 End Sub
 
 Private Sub cmdClose_Click()
@@ -1006,6 +1027,7 @@ lblPaymentType.Caption = "ACCOUNT RECEIVABLE"
 activeSales.date_transact = Format(Date, "YYYY-mm-dd") & " " & intHour & ":" & intMinute & ":" & intSecond
 
 cmdBrowseItem.SetFocus
+cmdNewCustomer.Enabled = True
 End Sub
 
 Private Sub cmdNewAccountReceivable_KeyDown(KeyCode As Integer, Shift As Integer)
@@ -1014,6 +1036,11 @@ If KeyCode = vbKeyF2 Then
 ElseIf KeyCode = vbKeyF3 Then
     cmdNewTransaction_Click
 End If
+End Sub
+
+Private Sub cmdNewCustomer_Click()
+Call createNewCustomer(frmCustomer.cboDealersType)
+frmCustomer.Show 1
 End Sub
 
 Private Sub cmdNewTransaction_Click()
@@ -1037,6 +1064,7 @@ lblPaymentType.Caption = "CASH ON DELIVERY"
 activeSales.date_transact = Format(Date, "YYYY-mm-dd") & " " & intHour & ":" & intMinute & ":" & intSecond
 
 cmdBrowseItem.SetFocus
+cmdNewCustomer.Enabled = True
 End Sub
 
 Private Sub cmdPayment_Click()
